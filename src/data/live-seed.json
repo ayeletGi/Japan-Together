@@ -74,6 +74,16 @@
     },
     "luggage-narita-sameday": {
       "time": "14:30"
+    },
+    "d18-02": {
+      "title": "🚌 Airport Limousine · Shin-Urayasu → נריטה T1",
+      "time": "11:03",
+      "end": "12:05",
+      "place": "Shin-Urayasu Station",
+      "placeLabel": "Shin-Urayasu → נריטה T1",
+      "status": "confirmed",
+      "note": "הוזמן ושולם לשתיכן (2 × ¥2,900). יציאה 11:03 מתחנת Shin-Urayasu, הגעה משוערת 12:05 לנריטה טרמינל 1 — כ־3.5 שעות לפני LY92. קוד ה־QR לעלייה (להראות לנהג) בתיקייה הפרטית. שינוי או ביטול עד 5 דקות לפני היציאה באתר limousinebus.co.jp. מוקד: 03-3665-7220 (9:00–18:00).",
+      "why": "Booked on 1.11 (confirmation email from limousinebus.co.jp): 11:03 from Shin-Urayasu, paid by card. Before this the event said no booking was made."
     }
   },
   "added": {},
@@ -89,6 +99,10 @@
     },
     "2037-11-03": {
       "route": "נריטה T1 → Narita Express עד תחנת Tokyo (לקנות במקום) → ארוחה ב־T’s Tantan בתוך התחנה, עם המזוודות → JR ל־Shinagawa → צ׳ק־אין במלון → ארוחת ערב וקניות קלות. המסעדות הן הצעות גמישות ולא הזמנות."
+    },
+    "2037-11-18": {
+      "route": "צ׳ק־אאוט מ־Oriental Hotel Tokyo Bay (עד 12:00, אבל יוצאות קודם) → הליכה לתחנת Shin-Urayasu → Airport Limousine ב־11:03 → נריטה T1 בסביבות 12:05 → LY92 ב־15:45.",
+      "why": "The airport bus is booked for 11:03; the route said to find a bus on the day."
     }
   },
   "expenses": {
@@ -165,6 +179,34 @@
       "outsideTrip": true,
       "date": "2026-09-11",
       "at": 1789117200000,
+      "addedBy": "claude"
+    },
+    "limousine": {
+      "title": "Airport Limousine · Shin-Urayasu → נריטה, שתיכן",
+      "category": "train",
+      "currency": "JPY",
+      "amount": 5800,
+      "owner": "both",
+      "state": "paid",
+      "paidBy": "dana",
+      "settled": false,
+      "note": "2 × ¥2,900, שולם בכרטיס אשראי בהזמנה.",
+      "dateLabel": "18.11",
+      "date": "2026-11-01",
+      "at": 1793563200000,
+      "addedBy": "claude"
+    },
+    "esim_dana": {
+      "title": "eSIM יפן · Voye Global, 30 יום 25GB (לדנה)",
+      "category": "other",
+      "currency": "ILS",
+      "amount": 58,
+      "owner": "dana",
+      "state": "paid",
+      "paidBy": "dana",
+      "note": "₪87 פחות הנחה של ₪29. eSIM אחד בלבד בהזמנה.",
+      "date": "2026-10-22",
+      "at": 1792655429000,
       "addedBy": "claude"
     }
   },
@@ -729,7 +771,7 @@
     "item-pack-insurance": {
       "list": "pack",
       "text": "פוליסת הביטוח ומספר החירום שלה",
-      "note": "",
+      "note": "מוקד כלל לסיוע רפואי 24/7: ‎+972-3-5789010 · WhatsApp ‎054-4557755. הפוליסה המלאה (3 קבצי PDF) במייל של כלל מ־31.10.",
       "category": "documents",
       "done": false,
       "at": 1792320339863
@@ -1017,7 +1059,8 @@
       "done": false,
       "text": "eSIM",
       "category": "",
-      "removed": true
+      "removed": false,
+      "note": "לדנה נקנה (Voye Global, יפן 30 יום 25GB, 22.10) — להתקין לפני הטיסה. לנועה לא נמצא eSIM במייל; לבדוק."
     },
     "item-mvjb7287-7mlkv": {
       "list": "gifts-noa",
@@ -1135,7 +1178,7 @@
       "category": "now"
     },
     "flight.insurance": {
-      "note": ""
+      "note": "לדנה: כלל ״מדיכלל עולמי״, נרכשה 31.10. לנועה לא נמצאה פוליסה במייל של דנה — לבדוק."
     },
     "item-mvjijqqd-dg5c4": {
       "list": "list-mvje3s3b-dpxoo",

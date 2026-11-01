@@ -26,6 +26,10 @@ export interface TicketEntry {
 const official = {
   elal: { label: 'אתר / אפליקציית EL AL', url: 'https://www.elal.com/' },
   smartEx: { label: 'Reservation Details ב־SmartEX', url: 'https://smart-ex.jp/en/' },
+  limousine: {
+    label: 'ניהול ההזמנה ב־Airport Limousine',
+    url: 'https://webservice.limousinebus.co.jp/web/en/Top.aspx',
+  },
   usj: { label: 'האתר הרשמי של USJ', url: 'https://www.usj.co.jp/web/en/us' },
   disney: { label: 'אפליקציית Tokyo Disney Resort', url: 'https://www.tokyodisneyresort.jp/en/' },
   teamLab: { label: 'האתר של teamLab Planets', url: 'https://teamlabplanets.dmm.com/en' },
@@ -81,6 +85,18 @@ export const tickets: TicketEntry[] = [
     quantity: 'אושר לשתיכן · קרון 14, 8D/8E',
     bring: 'QR-Ticket מ־SmartEX או כרטיס IC משויך לכל אחת. מייל האישור אינו כרטיס.',
     howToOpen: official.smartEx,
+  },
+  {
+    id: 'limousine',
+    category: 'trains',
+    title: 'Airport Limousine · Shin-Urayasu → נריטה T1',
+    date: '2037-11-18',
+    eventIds: ['d18-02'],
+    when: '18.11 · יציאה 11:03 · הגעה משוערת 12:05',
+    quantity: 'אושר ושולם לשתיכן',
+    bring:
+      'קוד ה־QR מהמייל של limousinebus.co.jp (להראות לנהג). שינוי או ביטול עד 5 דקות לפני היציאה.',
+    howToOpen: official.limousine,
   },
   {
     id: 'usj',

@@ -396,8 +396,8 @@ export const dailyBudget: DailyDay[] = [
     extra: [],
     shop: [{ label: 'Duty free בנריטה: ממתקים, KitKat', yen: 3000 }],
     foodBudget: 4500,
-    rides: 2300,
-    notSuica: 2300,
-    tip: 'לבזבז את המטבעות האחרונים בשדה.',
+    // The airport limousine (¥2,900 each) was prepaid on 1.11 and is in the trip costs.
+    rides: 0,
+    tip: 'האוטובוס לנריטה כבר שולם. לבזבז את המטבעות האחרונים בשדה.',
   },
 ];

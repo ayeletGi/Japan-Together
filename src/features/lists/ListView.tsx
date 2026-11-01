@@ -74,9 +74,10 @@ export function ListView({
       else delete next[id];
       return next;
     });
-  // Done items sit folded under their category's "✓ 3 done" toggle, so the open items of every
-  // category stay close together; the toggle unfolds them. This holds the categories unfolded.
-  const [shownDone, setShownDone] = useState<Record<string, boolean>>({});
+  // Categories show what is left to do; everything done waits folded under one "✓ 17 done"
+  // toggle at the bottom of the list, in a single run with no category headings.
+  const [showDone, setShowDone] = useState(false);
+  const doneItems = sections.flatMap((section) => section.items.filter((item) => item.done));
   const rows = (items: Item[]) => (
     <ul className="todo-list list-items">
       {items.map((item) => (
@@ -219,7 +220,6 @@ export function ListView({
         const progress = listProgress({ ...list, items: section.items });
         // A list with no categories at all needs no "Other" heading.
         const titled = section.category || sections.length > 1;
-        const doneItems = section.items.filter((item) => item.done);
         return (
           // Prefixed, so a category typed as "-" never shares a key with the uncategorised one.
           <div key={`category:${section.category}`}>
@@ -242,29 +242,29 @@ export function ListView({
               </div>
             )}
             {rows(section.items.filter((item) => !item.done))}
-            {progress.done > 0 && (
-              <button
-                type="button"
-                className="list-done-toggle"
-                aria-expanded={!!shownDone[section.category]}
-                onClick={() =>
-                  setShownDone((all) => ({ ...all, [section.category]: !all[section.category] }))
-                }
-              >
-                <Check size={14} aria-hidden="true" />
-                {t('lists.doneCount', { count: progress.done })} ·{' '}
-                {shownDone[section.category] ? t('lists.hideDone') : t('lists.showDone')}
-                {shownDone[section.category] ? (
-                  <ChevronUp size={14} aria-hidden="true" />
-                ) : (
-                  <ChevronDown size={14} aria-hidden="true" />
-                )}
-              </button>
-            )}
-            {progress.done > 0 && shownDone[section.category] && rows(doneItems)}
           </div>
         );
       })}
+      {doneItems.length > 0 && (
+        <>
+          <button
+            type="button"
+            className="list-done-toggle"
+            aria-expanded={showDone}
+            onClick={() => setShowDone((shown) => !shown)}
+          >
+            <Check size={14} aria-hidden="true" />
+            {t('lists.doneCount', { count: doneItems.length })} ·{' '}
+            {showDone ? t('lists.hideDone') : t('lists.showDone')}
+            {showDone ? (
+              <ChevronUp size={14} aria-hidden="true" />
+            ) : (
+              <ChevronDown size={14} aria-hidden="true" />
+            )}
+          </button>
+          {showDone && rows(doneItems)}
+        </>
+      )}
     </section>
   );
 }

@@ -170,6 +170,39 @@ describe('editing a list item in place', () => {
   });
 });
 
+describe('searching a list', () => {
+  it('shows only the items that match, done ones too, and clears back to the list', async () => {
+    const server = fakeServer();
+    renderLists();
+    const card = () => screen.queryByRole('button', { name: new RegExp(`^${textOf()}`) });
+    fireEvent.click(
+      screen.getByRole('button', { name: i18n.t('lists.doneToggle', { name: textOf() }) }),
+    );
+    await waitFor(() => expect(server.state.listItems[ITEM]).toMatchObject({ done: true }));
+    expect(card()).toBeNull();
+
+    const box = screen.getByRole('searchbox', { name: i18n.t('lists.search', { name: PACK }) });
+    fireEvent.change(box, { target: { value: textOf().toUpperCase() } });
+    expect(card()).not.toBeNull();
+    expect(
+      screen.queryByRole('button', {
+        name: new RegExp(i18n.t('lists.doneCount', { count: 1 })),
+      }),
+    ).toBeNull();
+
+    fireEvent.change(box, { target: { value: 'zzz-nothing' } });
+    expect(card()).toBeNull();
+    expect(screen.getByText(i18n.t('lists.searchNone', { query: 'zzz-nothing' }))).toBeTruthy();
+
+    fireEvent.click(screen.getByRole('button', { name: i18n.t('lists.clearSearch') }));
+    expect(box).toHaveProperty('value', '');
+    expect(card()).toBeNull();
+    expect(
+      screen.getByRole('button', { name: new RegExp(i18n.t('lists.doneCount', { count: 1 })) }),
+    ).toBeTruthy();
+  });
+});
+
 describe('an item card', () => {
   it('opens the edit when tapped, and only the circle ticks it', async () => {
     const server = fakeServer();

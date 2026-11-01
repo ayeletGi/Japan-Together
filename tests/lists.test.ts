@@ -30,6 +30,7 @@ import {
   removeList,
   renameList,
   reorderLists,
+  searchItems,
   setDone,
 } from '../src/features/lists/lists';
 
@@ -815,5 +816,35 @@ describe("an item's link box", () => {
   it('lets the server refuse a link that is not a web address', () => {
     expect(entryProblem('listItems', 'item-x', { link: 'javascript:alert(1)' })).not.toBeNull();
     expect(entryProblem('listItems', 'item-x', { link: '' })).toBeNull();
+  });
+});
+
+describe('searchItems', () => {
+  const pack = () => {
+    let items: Items = {};
+    for (const [text, note] of [
+      ['Passport', ''],
+      ['Sunscreen', 'SPF 50'],
+      ['Café map', 'Kyoto'],
+    ])
+      items = merged(items, newItem('pack', { text, note }));
+    const find = () =>
+      buildLists({ lists: {}, listItems: items }, 'en').find((list) => list.id === 'pack')!;
+    const passport = find().items.find((item) => item.text === 'Passport')!;
+    items = merged(items, setDone(passport, 'pack', true));
+    return find();
+  };
+  const texts = (query: string) => searchItems(pack(), query).map((item) => item.text);
+
+  it('finds by name or note, whatever the case or accents', () => {
+    expect(texts('sun')).toEqual(['Sunscreen']);
+    expect(texts('spf')).toEqual(['Sunscreen']);
+    expect(texts('CAFE')).toEqual(['Café map']);
+    expect(texts('kyoto map')).toEqual(['Café map']);
+    expect(texts('tokyo')).toEqual([]);
+  });
+
+  it('finds done items too, after the open ones', () => {
+    expect(texts('p')).toEqual(['Sunscreen', 'Café map', 'Passport']);
   });
 });

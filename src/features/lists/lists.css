@@ -722,6 +722,43 @@
   cursor: pointer;
 }
 
+/* The open list's search: a rounded box with its magnifier inside. */
+.list-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 12px 0 4px;
+}
+
+.list-search-icon {
+  position: absolute;
+  inset-inline-start: 12px;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.list-search-input {
+  width: 100%;
+  padding-inline-start: 36px;
+  padding-inline-end: 40px;
+  border-radius: 999px;
+}
+
+/* The browser's own clear button; ours sits in its place. */
+.list-search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.list-search-clear {
+  position: absolute;
+  inset-inline-end: 6px;
+}
+
+.list-search-count {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
 /* Each group's points: a small sticker on its stamp, in the group's colour. */
 .list-group-seal {
   position: relative;

@@ -220,6 +220,7 @@ export function ListView({
         const progress = listProgress({ ...list, items: section.items });
         // A list with no categories at all needs no "Other" heading.
         const titled = section.category || sections.length > 1;
+        const open = section.items.filter((item) => !item.done);
         return (
           // Prefixed, so a category typed as "-" never shares a key with the uncategorised one.
           <div key={`category:${section.category}`}>
@@ -241,7 +242,8 @@ export function ListView({
                 </button>
               </div>
             )}
-            {rows(section.items.filter((item) => !item.done))}
+            {/* A category with everything done keeps its heading, with no empty list under it. */}
+            {open.length > 0 && rows(open)}
           </div>
         );
       })}

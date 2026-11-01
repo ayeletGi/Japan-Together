@@ -208,6 +208,29 @@ describe('an item card', () => {
     expect(card()).toBeNull();
   });
 
+  it('gathers done items from every category under the one toggle, with no empty list left', () => {
+    const server = fakeServer();
+    // Passports from "documents", and every item of "meds", so that category has none left open.
+    const done = [ITEM, 'item-pack-meds', 'item-pack-firstaid', 'item-pack-meds-check'];
+    for (const key of done) server.state.listItems[key] = { ...base.listItems[key], done: true };
+    setLiveChanges(structuredClone(server.state));
+    renderLists();
+
+    const toggles = screen.getAllByRole('button', {
+      name: new RegExp(i18n.t('lists.doneCount', { count: done.length })),
+    });
+    expect(toggles).toHaveLength(1);
+    expect(document.querySelectorAll('.list-done-toggle')).toHaveLength(1);
+    expect(document.querySelector('ul.list-items:empty')).toBeNull();
+
+    fireEvent.click(toggles[0]!);
+    const shown = toggles[0]!.nextElementSibling!;
+    for (const key of done)
+      expect(
+        within(shown as HTMLElement).getByText(base.listItems[key]!.text as string),
+      ).toBeTruthy();
+  });
+
   it('opens a link pasted in the note from its pill, and the edit moves it to the link box', async () => {
     const shop = 'https://example.com/watch';
     const server = fakeServer();

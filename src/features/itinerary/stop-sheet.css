@@ -1,0 +1,196 @@
+/* The stop sheet: leave block, journey, ticket, status, hotel link and help around the stop. */
+.leave-block {
+  padding: 14px;
+  border-radius: 22px;
+  background: var(--sun-soft);
+  color: var(--sun-ink);
+}
+
+.leave-label {
+  font-size: 13px;
+}
+
+.leave-big {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.leave-mid {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.leave-arrive {
+  text-align: end;
+}
+
+.leave-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+  counter-reset: step;
+}
+
+.leave-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.leave-steps li::before {
+  content: counter(step);
+  counter-increment: step;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--sun-ink);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.leave-note {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.leave-why {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.leave-why summary {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.leave-why p {
+  margin-top: 6px;
+  color: var(--ink);
+}
+
+.leave-block .leave-maps {
+  margin-top: 8px;
+  color: var(--sun-ink);
+}
+
+.journey-line {
+  padding: 12px 14px;
+  border-radius: var(--radius-box);
+  background: var(--sky-2);
+}
+
+.journey-line small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.journey-clock {
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.ticket-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 22px;
+  background: var(--lav-soft);
+  color: var(--lav-ink);
+}
+
+.ticket-block .icon-tile {
+  background: var(--card);
+}
+
+.ticket-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ticket-text small {
+  font-size: 12px;
+}
+
+.ticket-title {
+  font-size: 15px;
+}
+
+.ticket-text .text-link {
+  color: var(--lav-ink);
+}
+
+.stop-tip {
+  padding: 8px 12px;
+  border-radius: var(--radius-box);
+  background: var(--pink-soft);
+  color: var(--berry);
+  font-size: 13px;
+}
+
+.to-book {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: var(--radius-box);
+  background: var(--sun-soft);
+  color: var(--sun-ink);
+  font-size: 13px;
+}
+
+.to-book strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.to-book p {
+  color: var(--ink);
+}
+
+.stop-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+.stop-status .source-check {
+  width: 100%;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.help-around h3 {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.stop-details {
+  font-size: 13px;
+}
+
+.stop-details summary {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.stop-details > :not(summary) {
+  display: block;
+  margin-top: 8px;
+}

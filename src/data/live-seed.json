@@ -1,0 +1,1254 @@
+{
+  "version": 249,
+  "events": {
+    "gym-2037-11-14": {
+      "title": "🏋️ אימון השבוע השני — מוצ״ש Gold’s Gym Omori",
+      "why": "Now the only workout of the second week."
+    },
+    "d3-02": {
+      "title": "Narita Express → Tokyo",
+      "why": "Since the lunch moved to Tokyo Station (see 'd3-04'). The Narita Express stops at Tokyo Station before Shinagawa, and T's Tantan is inside the JR gates there (GRANSTA, Keiyo Street, 10:00–22:00), so lunch moves before the check-in instead of a trip back after it.",
+      "note": "לקנות כרטיס לאחר הנחיתה, לאחר ביקורת דרכונים ומזוודות. אין עדיין כרטיס רכבת לשדה. אין לקבוע יציאה מדויקת מראש. הכי פשוט: כרטיס N’EX עד Tokyo (הרכבת עוצרת שם לפני Shinagawa), ארוחה ב־T’s Tantan בתוך התחנה, ומשם JR (Yamanote או Keihin-Tohoku) ל־Shinagawa עם Suica, כ־10 דקות.",
+      "time": "14:00"
+    },
+    "to-disney-hotel": {
+      "title": "🧳 מעבר מלון: Shibuya → תחנת Tokyo → Shin-Urayasu",
+      "time": "16:30",
+      "why": "15.11: Omori → Tokyo Station → dinner → Keiyo Line → check-in, then laundry and an early night before Disney. 15.11 in the order it is lived: Tokyo Station dinner is on the way, before the Keiyo Line to Shin-Urayasu.",
+      "end": "17:00",
+      "note": "משיבויה לתחנת Tokyo ב־JR Yamanote, כ־25 דקות — המזוודות כבר בדרך ל־Oriental. אוכלות ב־T’s Tantan, ומאותה שדרה (Keiyo Street) קו Keiyo ל־Shin-Urayasu, כ־20 דקות. המלון ליד התחנה. שעות משוערות, לבדוק Google Maps בזמן אמת."
+    },
+    "d3-04": {
+      "time": "15:30",
+      "why": "Lunch at Tokyo Station on the way from Narita, then check-in (see 'd3-04').",
+      "note": "בדרך מהשדה, בלי המזוודות (נשלחו מנריטה עם SAGAWA): יורדות מה־N’EX בתחנת Tokyo. המסעדה בתוך שערי JR, ב־GRANSTA בשדרת Keiyo Street (בכיוון קו Keiyo), פתוחה בערך 10:00–22:00. 100% טבעוני לפי התכנון. אם בכל זאת המזוודות איתכן — המקום קטן, ויש בתוך השערים שמירת חפצים של GRANSTA ולוקרים. 3.11 הוא חג (יום התרבות), אז התחנה עמוסה. השעה תלויה בזמן היציאה מהשדה."
+    },
+    "d3-03": {
+      "time": "17:00",
+      "note": "לינה 3–5 בנובמבר, שתי אורחות, חדר Twin. 17:00 כאן היא שעת הגעה משוערת בלבד, אחרי הארוחה בתחנת Tokyo. | שעות המלון: קבלת חדרים מ־15:00; פינוי חדר עד 11:00."
+    },
+    "d15-04": {
+      "time": "17:00",
+      "note": "בתחנת Tokyo, בדרך לקו Keiyo — בתכנון בלבד. ביום ראשון סוגרים מוקדם יותר (בערך 21:00), אז ארוחה מוקדמת."
+    },
+    "d15-05": {
+      "time": "18:30",
+      "note": "לינה 15–18 בנובמבר. צ׳ק־אין מ־15:00; 18:30 כאן שעת הגעה משוערת. | שעות המלון: קבלת חדרים מ־15:00; פינוי חדר עד 12:00. | המלון נמצא ב־Shin-Urayasu; אל תבלבלו עם מלון Disney רשמי במאיהמה. יש לו שאטל Partner Hotel לפארקים."
+    },
+    "shibuya-markets": {
+      "end": "16:15",
+      "why": "Without the trip back to Omori, the Shibuya shopping runs until the train to Tokyo Station."
+    },
+    "d12-04": {
+      "note": "אושר לשתיכן — כל אחת הזמינה בנפרד, באותו חדר ובאותה שעה. טיפול 110 דקות כולל אבחון; כ־₪372.72 לכל אחת (שער 12.10). איחור של מעל 10 דקות עלול לקצר טיפול. תשלום בכרטיס בלבד.",
+      "why": "Each of us booked separately (the confirmation in Drive is Dana's); same room, same time."
+    },
+    "d6-03": {
+      "note": "שעה משוערת בלבד; יש לתאם עם זמני הדלקת נרות. הכביסה עברה לבוקר יום ראשון 8.11 — כביסה וייבוש לוקחים שעה וחצי עד שלוש שעות, וזה צפוף מדי לפני שבת.",
+      "why": "A full wash and dry takes 1.5–3 hours, too tight before candle lighting; see laundry.ts."
+    },
+    "d5-01": {
+      "note": "צ׳ק־אאוט עד 11:00, רק עם התיק הקטן — המזוודות נשלחו לקובה ב־4.11. | שעות המלון: קבלת חדרים מ־15:00; פינוי חדר עד 11:00.",
+      "why": "The suitcases go ahead by Yamato on 4.11 (see luggage.ts), so 5.11 has no trip back to the hotel."
+    },
+    "d5-02": {
+      "note": "להציץ בכמה חנויות Mandarake בתוך Nakano Broadway. שעות משתנות לפי חנות; הגעה סביב 12:00 הגיונית. בלי מזוודות — מכאן ישר לשינקנסן: לצאת עד 16:10."
+    },
+    "d11-01": {
+      "note": "צ׳ק־אאוט עד 11:00, רק עם התיק הקטן — המזוודות נשלחו לאומורי ב־10.11."
+    },
+    "d15-02": {
+      "note": "Shibuya Sky לא הוזמן לפי האישורים שנמסרו. אפשר במקום זה קניות / שווקים באזור, בלי להתחייב לכרטיס נוסף. המזוודות כבר נשלחו ל־Oriental, אז אין צורך לחזור לאומורי."
+    },
+    "gym-2037-11-12": {
+      "removed": true,
+      "why": "Morning workout before the long Shibuya + spa day; the late arrival the night before makes it too tight."
+    },
+    "bags-shinagawa": {
+      "removed": true,
+      "why": "We always send the suitcases ahead (decided 15.10.2026; see luggage.ts), so nobody goes back for them."
+    },
+    "omori-luggage": {
+      "removed": true,
+      "why": "We always send the suitcases ahead (decided 15.10.2026; see luggage.ts), so nobody goes back for them."
+    },
+    "luggage-narita-sameday": {
+      "time": "14:30"
+    }
+  },
+  "added": {},
+  "days": {
+    "2037-11-05": {
+      "route": "בוקר: צ׳ק־אאוט מ־Shinagawa Prince עם תיק קטן (המזוודות נשלחו לקובה ב־4.11) → Nakano Broadway ומנגה/אספנות → מ־Nakano ישר לתחנת Shinagawa, NOZOMI 53 ב־17:19 → Shin-Kobe 19:53 → CANDEO Kobe, שם מחכות המזוודות. להשאיר 30–45 דקות בתחנה לפני הרכבת."
+    },
+    "2037-11-11": {
+      "route": "צ׳ק־אאוט ממלון אוסקה עם תיק קטן (המזוודות נשלחו לאומורי ב־10.11) → ארוחה / סיבוב בשינסאיבאשי → אם COPIC בעדיפות גבוהה: Tools Osaka Umeda בדרך צפונה, רק אם יש די זמן → לצאת לכיוון Shin-Osaka לכל המאוחר ב־17:00 → NOZOMI 46 ב־18:30 → Shinagawa ב־20:49 → נסיעה מקומית אל MYSTAYS PREMIER Omori."
+    },
+    "2037-11-15": {
+      "route": "בוקר: צ׳ק־אאוט ב־MYSTAYS Omori ושליחת המזוודות ב־Yamato ל־Oriental Hotel → Shibuya Sky (אם תזמינו) + שווקים וקניות בשיבויה / Ebisu → JR לתחנת Tokyo וארוחה ב־T’s Tantan → קו Keiyo ל־Shin-Urayasu → צ׳ק־אין ב־Oriental Hotel Tokyo Bay וכביסה. זה יום מעבר מלון נפרד, לפני דיסנילנד ב־16.11."
+    },
+    "2037-11-03": {
+      "route": "נריטה T1 → Narita Express עד תחנת Tokyo (לקנות במקום) → ארוחה ב־T’s Tantan בתוך התחנה, עם המזוודות → JR ל־Shinagawa → צ׳ק־אין במלון → ארוחת ערב וקניות קלות. המסעדות הן הצעות גמישות ולא הזמנות."
+    }
+  },
+  "expenses": {
+    "teamlab": {
+      "settled": false
+    },
+    "usj": {
+      "settled": false
+    },
+    "uzukyoto": {
+      "currency": "ILS",
+      "amount": 341.56,
+      "original": {
+        "amount": 17600,
+        "currency": "JPY"
+      },
+      "settled": false
+    },
+    "shinkansen_out": {
+      "currency": "ILS",
+      "amount": 589.95,
+      "original": {
+        "amount": 30580,
+        "currency": "JPY"
+      },
+      "state": "paid",
+      "paidBy": "dana",
+      "settled": false,
+      "parts": {
+        "dana": 294.97,
+        "noa": 294.98
+      }
+    },
+    "shinkansen_back": {
+      "currency": "ILS",
+      "amount": 571.07,
+      "original": {
+        "amount": 29040,
+        "currency": "JPY"
+      },
+      "state": "paid",
+      "paidBy": "dana",
+      "settled": false
+    },
+    "disneyland": {
+      "currency": "ILS",
+      "amount": 420.3,
+      "original": {
+        "amount": 21800,
+        "currency": "JPY"
+      },
+      "paidBy": "dana",
+      "settled": false
+    },
+    "disneysea": {
+      "currency": "ILS",
+      "amount": 420.3,
+      "original": {
+        "amount": 21800,
+        "currency": "JPY"
+      },
+      "paidBy": "dana",
+      "settled": false
+    },
+    "shared_750": {
+      "title": "מוצ'י · לא חלק מתקציב הטיול",
+      "category": "other",
+      "currency": "ILS",
+      "amount": 750,
+      "owner": "both",
+      "state": "paid",
+      "paidBy": "noa",
+      "settled": false,
+      "outsideTrip": true,
+      "date": "2026-09-11",
+      "at": 1789117200000,
+      "addedBy": "claude"
+    }
+  },
+  "photoFolders": {},
+  "lists": {
+    "list-food": {
+      "name": "אוכל",
+      "order": 5,
+      "owner": "both"
+    },
+    "list-mvjdaqs1-8fpz4": {
+      "name": "מתנות (אביה)",
+      "order": 4,
+      "owner": "both"
+    },
+    "gifts-dana": {
+      "name": "מתנות",
+      "order": 2,
+      "owner": "dana"
+    },
+    "gifts-noa": {
+      "name": "מתנות",
+      "order": 3,
+      "owner": "noa"
+    },
+    "flight": {
+      "name": "לפני הטיסה",
+      "owner": "dana"
+    },
+    "list-mvje3s3b-dpxoo": {
+      "name": "לפני הטיסה",
+      "order": 1,
+      "owner": "noa"
+    },
+    "pack": {
+      "order": 6,
+      "name": "לארוז",
+      "owner": "dana"
+    }
+  },
+  "listItems": {
+    "flight.vjw": {
+      "done": false,
+      "text": "Visit Japan Web"
+    },
+    "flight.battery": {
+      "done": false,
+      "removed": true
+    },
+    "flight.tickets": {
+      "done": false,
+      "category": "now"
+    },
+    "flight.airport": {
+      "done": false,
+      "category": "flightDay",
+      "removed": true
+    },
+    "flight.qr": {
+      "done": false,
+      "category": "",
+      "removed": true
+    },
+    "flight.offline": {
+      "done": false,
+      "removed": true
+    },
+    "flight.checkin": {
+      "done": false,
+      "category": "now",
+      "removed": true
+    },
+    "item-old-mv9k7u9d-qgn5f": {
+      "list": "gifts-dana",
+      "text": "אלבום קיפופ",
+      "note": "שולי",
+      "done": false,
+      "at": 1792312536447,
+      "category": "friends"
+    },
+    "item-old-mv9k8txm-it9w6": {
+      "list": "gifts-dana",
+      "text": "קלפי פוקימון",
+      "note": "נבו",
+      "done": false,
+      "at": 1792312536448,
+      "category": "friends"
+    },
+    "item-old-mv9k8yh5-wm0xw": {
+      "list": "list-mvjdaqs1-8fpz4",
+      "text": "מצלמה",
+      "note": "אביה",
+      "done": false,
+      "at": 1792312536449
+    },
+    "item-food-01": {
+      "list": "list-food",
+      "text": "טורטיות",
+      "note": "2 חבילות",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074788
+    },
+    "item-food-02": {
+      "list": "list-food",
+      "text": "טונה",
+      "note": "12 חבילות במים (2 בשמן)",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074789
+    },
+    "item-food-03": {
+      "list": "list-food",
+      "text": "שימורים",
+      "note": "לבדוק בסופר",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074790
+    },
+    "item-food-04": {
+      "list": "list-food",
+      "text": "מנות חמות",
+      "note": "8-10 (נודלס, קוסקוס, פסטה עגבניות)",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074791
+    },
+    "item-food-05": {
+      "list": "list-food",
+      "text": "קוסקוס",
+      "note": "חבילה אחת",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074792
+    },
+    "item-food-06": {
+      "list": "list-food",
+      "text": "טחינה",
+      "note": "בקבוק לחיץ",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074793
+    },
+    "item-food-07": {
+      "list": "list-food",
+      "text": "דיסת שיבולת שועל",
+      "note": "חבילה אחת",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074794
+    },
+    "item-food-08": {
+      "list": "list-food",
+      "text": "רוטב סויה",
+      "note": "1",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074795
+    },
+    "item-food-09": {
+      "list": "list-food",
+      "text": "רוטב צ'ילי",
+      "note": "1",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074796
+    },
+    "item-food-10": {
+      "list": "list-food",
+      "text": "דבש",
+      "note": "1",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074797
+    },
+    "item-food-11": {
+      "list": "list-food",
+      "text": "רוטב עגבניות",
+      "note": "4 קטנות",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074798
+    },
+    "item-food-12": {
+      "list": "list-food",
+      "text": "מיונז",
+      "note": "1",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074799
+    },
+    "item-food-13": {
+      "list": "list-food",
+      "text": "חטיפי חלבון",
+      "note": "40 (והרבה)",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074800
+    },
+    "item-food-14": {
+      "list": "list-food",
+      "text": "חטיפים",
+      "note": "במבה, אפרופו, דוריטוס חמוץ חריף, כיפלי מקלות קטשופ, גומי, שוקולד",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074801
+    },
+    "item-food-15": {
+      "list": "list-food",
+      "text": "שוקו",
+      "note": "שקיות אינסטנט",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074802
+    },
+    "item-food-16": {
+      "list": "list-food",
+      "text": "אבקת מרק",
+      "note": "חבילה אחת",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074803
+    },
+    "item-food-17": {
+      "list": "list-food",
+      "text": "לחמניות / לחם לשבוע הראשון",
+      "note": "6 לחמניות או כיכר",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074804
+    },
+    "item-food-18": {
+      "list": "list-food",
+      "text": "תבלין לדג מיה",
+      "note": "1",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074805
+    },
+    "item-food-19": {
+      "list": "list-food",
+      "text": "חומץ אורז",
+      "note": "1",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074806
+    },
+    "item-food-20": {
+      "list": "list-food",
+      "text": "חטיף אצות",
+      "note": "אריזה גדולה",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074807
+    },
+    "item-food-21": {
+      "list": "list-food",
+      "text": "שמן קנולה",
+      "note": "1",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074808
+    },
+    "item-food-22": {
+      "list": "list-food",
+      "text": "קרקרים / פריכיות",
+      "note": "",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074809
+    },
+    "item-food-23": {
+      "list": "list-food",
+      "text": "ביסקוויטים / עוגיות",
+      "note": "",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074810
+    },
+    "item-food-24": {
+      "list": "list-food",
+      "text": "תבלינים קטנים",
+      "note": "פפריקה, כמון?",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074811
+    },
+    "item-food-25": {
+      "list": "list-food",
+      "text": "מסטיקים",
+      "note": "",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074812
+    },
+    "item-food-26": {
+      "list": "list-food",
+      "text": "פותחן שימורים",
+      "note": "",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074813
+    },
+    "item-food-27": {
+      "list": "list-food",
+      "text": "סיר חשמלי",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074814
+    },
+    "item-food-28": {
+      "list": "list-food",
+      "text": "סיר אורז",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074815
+    },
+    "item-food-29": {
+      "list": "list-food",
+      "text": "סיר ביצים",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074816
+    },
+    "item-food-30": {
+      "list": "list-food",
+      "text": "ביצים בצבע לבן",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074817
+    },
+    "item-food-31": {
+      "list": "list-food",
+      "text": "אורז לבן",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074818
+    },
+    "item-food-32": {
+      "list": "list-food",
+      "text": "פסטה ללא ביצים מאיטליה",
+      "note": "ברילה",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074819
+    },
+    "item-food-33": {
+      "list": "list-food",
+      "text": "ירקות ופירות",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074820
+    },
+    "item-food-34": {
+      "list": "list-food",
+      "text": "חלב",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074821
+    },
+    "item-food-35": {
+      "list": "list-food",
+      "text": "טופו לבן",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074822
+    },
+    "item-food-36": {
+      "list": "list-food",
+      "text": "סלמון / דגים",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074823
+    },
+    "item-food-37": {
+      "list": "list-food",
+      "text": "קרש חיתוך",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074824
+    },
+    "item-food-38": {
+      "list": "list-food",
+      "text": "סכין",
+      "note": "זולה — להשאיר ביפן, לא בתיק היד",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074825
+    },
+    "item-food-39": {
+      "list": "list-food",
+      "text": "אצות נורי",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074826
+    },
+    "item-food-40": {
+      "list": "list-food",
+      "text": "תה / קפה",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074827
+    },
+    "item-food-41": {
+      "list": "list-food",
+      "text": "צידנית",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074828
+    },
+    "item-food-42": {
+      "list": "list-food",
+      "text": "קרחונית",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074829
+    },
+    "item-food-43": {
+      "list": "list-food",
+      "text": "קופסאות אוכל",
+      "note": "בנטו - תלוי בגודל",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074830
+    },
+    "item-food-44": {
+      "list": "list-food",
+      "text": "סכו\"ם לבשל איתו",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074831
+    },
+    "item-food-45": {
+      "list": "list-food",
+      "text": "קולפן",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074832
+    },
+    "item-food-46": {
+      "list": "list-food",
+      "text": "קולפן של כרוב",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074833
+    },
+    "item-food-47": {
+      "list": "list-food",
+      "text": "חותכנים לבנטו",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074834
+    },
+    "item-food-48": {
+      "list": "list-food",
+      "text": "שקיות זיפלוק / אוכל",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074835
+    },
+    "item-food-49": {
+      "list": "list-food",
+      "text": "מלח",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074836
+    },
+    "item-food-50": {
+      "list": "list-food",
+      "text": "פלפל שחור",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074837
+    },
+    "item-print-bookings": {
+      "list": "flight",
+      "text": "להדפיס את כל ההזמנות",
+      "note": "ביום משרד",
+      "category": "now",
+      "done": false,
+      "at": 1792320045527
+    },
+    "item-sms-package": {
+      "list": "flight",
+      "text": "לבדוק חבילת SMS בחברת הטלפון האישית",
+      "note": "",
+      "category": "now",
+      "done": true,
+      "at": 1792320045528
+    },
+    "item-apps": {
+      "list": "flight",
+      "text": "להוריד את כל האפליקציות לשתינו",
+      "note": "SmartEX, Suica, Visit Japan Web, Disney, USJ",
+      "category": "now",
+      "done": false,
+      "at": 1792320045529
+    },
+    "item-airtag": {
+      "list": "pack",
+      "text": "AirTag למזוודות",
+      "note": "",
+      "category": "electronics",
+      "done": false,
+      "at": 1792320045530
+    },
+    "flight.cash": {
+      "text": "כמה ין במזומן להוציא",
+      "note": "להחליט על סכום;",
+      "category": "now"
+    },
+    "flight.maps": {
+      "note": "טוקיו, קובה, אוסקה וקיוטו",
+      "done": false,
+      "category": "now"
+    },
+    "item-pack-passports": {
+      "list": "pack",
+      "text": "דרכונים",
+      "note": "וגם צילום של כל דרכון בשני הטלפונים",
+      "category": "documents",
+      "done": false,
+      "at": 1792320339860
+    },
+    "item-pack-printed": {
+      "list": "pack",
+      "text": "הזמנות מודפסות",
+      "note": "בעיקר שני כרטיסי ה־QR המלאים של יוניברסל — כתוב עליהם להדפיס",
+      "category": "documents",
+      "done": false,
+      "at": 1792320339861
+    },
+    "item-pack-addresses": {
+      "list": "pack",
+      "text": "כתובות המלונות ביפנית",
+      "note": "למוניות ולטפסי שליחת המזוודות",
+      "category": "documents",
+      "done": false,
+      "at": 1792320339862
+    },
+    "item-pack-insurance": {
+      "list": "pack",
+      "text": "פוליסת הביטוח ומספר החירום שלה",
+      "note": "",
+      "category": "documents",
+      "done": false,
+      "at": 1792320339863
+    },
+    "item-pack-chargers": {
+      "list": "pack",
+      "text": "מטענים וכבלים לטלפונים",
+      "note": "",
+      "category": "electronics",
+      "done": false,
+      "at": 1792320339864
+    },
+    "item-pack-powerbanks": {
+      "list": "pack",
+      "text": "מטען נייד",
+      "note": "ימי דיסני ויוניברסל ארוכים",
+      "category": "electronics",
+      "done": false,
+      "at": 1792320339865
+    },
+    "item-pack-adapter": {
+      "list": "pack",
+      "text": "מתאם חשמל ליפן",
+      "note": "שני פינים שטוחים",
+      "category": "electronics",
+      "done": false,
+      "at": 1792320339866
+    },
+    "item-pack-layers": {
+      "list": "pack",
+      "text": "שכבות לנובמבר קריר",
+      "note": "",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339867
+    },
+    "item-pack-rain": {
+      "list": "pack",
+      "text": "מעיל גשם קל או מטרייה",
+      "note": "",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339868
+    },
+    "item-pack-shoes": {
+      "list": "pack",
+      "text": "נעלי הליכה נוחות",
+      "note": "הרבה הליכה, ושני ימי דיסני",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339869
+    },
+    "item-pack-gym": {
+      "list": "pack",
+      "text": "בגדי ונעלי אימון",
+      "note": "Gold’s Gym בקובה ובאומורי",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339870
+    },
+    "item-pack-shabbat": {
+      "list": "pack",
+      "text": "בגדי שבת",
+      "note": "לשתי השבתות",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339871
+    },
+    "item-pack-socks": {
+      "list": "pack",
+      "text": "גרביים יפות",
+      "note": "חולצים נעליים במקדשים ובחלק מהמסעדות",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339872
+    },
+    "item-pack-trousers": {
+      "list": "pack",
+      "text": "מכנסיים שאפשר להפשיל",
+      "note": "ל־teamLab ב־4.11",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339873
+    },
+    "item-pack-towel": {
+      "list": "pack",
+      "text": "מגבת ידיים קטנה",
+      "note": "בהרבה שירותים ביפן אין מגבות נייר",
+      "category": "toiletries",
+      "done": false,
+      "at": 1792320339874
+    },
+    "item-pack-detergent": {
+      "list": "pack",
+      "text": "דפי כביסה",
+      "note": "",
+      "category": "toiletries",
+      "done": false,
+      "at": 1792320339875
+    },
+    "item-pack-wipes": {
+      "list": "pack",
+      "text": "מגבונים",
+      "note": "",
+      "category": "toiletries",
+      "done": false,
+      "at": 1792320339876
+    },
+    "item-pack-meds": {
+      "list": "pack",
+      "text": "תרופות קבועות עם מרשם",
+      "note": "",
+      "category": "meds",
+      "done": false,
+      "at": 1792320339877
+    },
+    "item-pack-firstaid": {
+      "list": "pack",
+      "text": "משככי כאבים, פלסטרים, תרופות לבטן ולאלרגיה",
+      "note": "",
+      "category": "meds",
+      "done": false,
+      "at": 1792320339878
+    },
+    "item-pack-meds-check": {
+      "list": "pack",
+      "text": "לבדוק כל תרופה מול חוקי היבוא של יפן",
+      "note": "חלק מתרופות ההצטננות הנפוצות אסורות שם",
+      "category": "meds",
+      "done": false,
+      "at": 1792320339879
+    },
+    "item-pack-coins": {
+      "list": "pack",
+      "text": "ארנק מטבעות",
+      "note": "ביפן משתמשים בהרבה מטבעות",
+      "category": "כללי",
+      "done": false,
+      "at": 1792320339880
+    },
+    "item-pack-trash": {
+      "list": "pack",
+      "text": "שקית קטנה לזבל",
+      "note": "אין הרבה פחים ברחוב",
+      "category": "כללי",
+      "done": false,
+      "at": 1792320339881
+    },
+    "item-pack-foldbag": {
+      "list": "pack",
+      "text": "תיק מתקפל ריק",
+      "note": "למתנות בדרך הביתה",
+      "category": "כללי",
+      "done": false,
+      "at": 1792320339882
+    },
+    "item-flight-smartex": {
+      "list": "flight",
+      "text": "SmartEX: לשייך את כרטיסי השינקנסן ל־Suica או להפיק QR",
+      "note": "5.11 ו־11.11",
+      "category": "now",
+      "done": false,
+      "at": 1792320339883
+    },
+    "item-flight-limousine": {
+      "list": "flight",
+      "text": "להזמין Airport Limousine ל־18.11",
+      "note": "מ־Shin-Urayasu לנריטה T1 — עדיין לא הוזמן",
+      "category": "now",
+      "done": false,
+      "at": 1792320339884
+    },
+    "item-flight-disney": {
+      "list": "flight",
+      "text": "אפליקציית דיסני + שני הכרטיסים",
+      "note": "ולבדוק אם מותר להכניס אוכל לפארק",
+      "category": "now",
+      "done": false,
+      "at": 1792320339888
+    },
+    "item-flight-shuttle": {
+      "list": "flight",
+      "text": "לבדוק שעות שאטל של Oriental Hotel",
+      "note": "ל־16–17.11",
+      "category": "now",
+      "done": false,
+      "at": 1792320339889
+    },
+    "item-flight-baggage": {
+      "list": "flight",
+      "text": "לבדוק משקל מזוודות מותר באל על",
+      "note": "רשימת האוכל כבדה",
+      "category": "now",
+      "done": true,
+      "at": 1792320339890
+    },
+    "item-food-liquids": {
+      "list": "list-food",
+      "text": "חשוב: נוזלים במזוודה הגדולה",
+      "note": "טחינה, סויה, צ׳ילי, דבש, מיונז, שמן, חומץ",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792320339893
+    },
+    "item-food-meat": {
+      "list": "list-food",
+      "text": "חשוב: אסור להכניס ליפן מוצרי בשר",
+      "note": "גם לא בשימורים. דגים וחטיפים בסדר",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792320339894
+    },
+    "item-food-soap": {
+      "list": "list-food",
+      "text": "סבון כלים וספוג",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339895
+    },
+    "item-food-paper": {
+      "list": "list-food",
+      "text": "מגבות נייר",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339896
+    },
+    "item-food-disposable": {
+      "list": "list-food",
+      "text": "צלחות וכוסות חד־פעמיות",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339897
+    },
+    "item-food-foil": {
+      "list": "list-food",
+      "text": "נייר כסף",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339898
+    },
+    "item-food-bags": {
+      "list": "list-food",
+      "text": "שקיות זבל",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339899
+    },
+    "flight.sushi": {
+      "removed": true
+    },
+    "flight.minamo": {
+      "removed": true
+    },
+    "flight.passport": {
+      "done": true
+    },
+    "flight.card": {
+      "done": true,
+      "removed": true
+    },
+    "flight.plug": {
+      "done": true,
+      "removed": true
+    },
+    "flight.socks": {
+      "removed": true
+    },
+    "flight.teamlab": {
+      "removed": true
+    },
+    "item-mvdzh8ul-s6cfb": {
+      "list": "pack",
+      "text": "בודק משקל למזוודה",
+      "note": "",
+      "category": "electronics",
+      "done": false,
+      "at": 1792337513997
+    },
+    "flight.esim": {
+      "done": false,
+      "text": "eSIM",
+      "category": "",
+      "removed": true
+    },
+    "item-mvjb7287-7mlkv": {
+      "list": "gifts-noa",
+      "text": "מאצ'ה",
+      "note": "גללללל",
+      "category": "friends",
+      "done": false,
+      "at": 1792659525127
+    },
+    "item-mvjb7an5-ypdv7": {
+      "list": "list-mvjdaqs1-8fpz4",
+      "text": "מאצ'ה",
+      "note": "אביה",
+      "category": "",
+      "done": false,
+      "at": 1792659536033,
+      "photo": "ccca3086-533c-4a75-88ca-076641f8eeaf"
+    },
+    "item-mvjb7j8f-f1rl7": {
+      "list": "list-mvjdaqs1-8fpz4",
+      "text": "מוצ'י",
+      "note": "אביה",
+      "category": "",
+      "done": false,
+      "at": 1792659547167
+    },
+    "item-mvjb7tds-nrb7r": {
+      "list": "list-mvjdaqs1-8fpz4",
+      "text": "פטל מצופה מאצ'ה",
+      "note": "אביה",
+      "category": "",
+      "done": false,
+      "at": 1792659560320
+    },
+    "item-mvjb8isx-pgmx6": {
+      "list": "gifts-noa",
+      "text": "ממתקים שישרדו משלוח",
+      "note": "קלי",
+      "category": "family",
+      "done": false,
+      "at": 1792659593265
+    },
+    "item-mvjb8y3d-ty13m": {
+      "list": "gifts-noa",
+      "text": "סט סכינים",
+      "note": "נועה",
+      "category": "us",
+      "done": false,
+      "at": 1792659613081
+    },
+    "item-mvjb94q9-pwwyn": {
+      "list": "gifts-noa",
+      "text": "ניילון נצמד",
+      "note": "נועה",
+      "category": "us",
+      "done": false,
+      "at": 1792659621681
+    },
+    "item-mvjb9f3f-5g3jr": {
+      "list": "gifts-noa",
+      "text": "ספריי קירור לגוף",
+      "note": "נועה",
+      "category": "us",
+      "done": false,
+      "at": 1792659635115
+    },
+    "item-mvjb9siq-9xnsl": {
+      "list": "gifts-noa",
+      "text": "שעון",
+      "note": "זאב https://www.discovery-japan.me/category/select/pid/459/language/en/currency/JPY?category=watch",
+      "category": "family",
+      "done": false,
+      "at": 1792659652514,
+      "photo": "3edad8d2-c46f-47ee-92e7-96bbad1e29fd"
+    },
+    "item-mvjb9xxt-leue7": {
+      "list": "gifts-noa",
+      "text": "מצלמה",
+      "note": "זאב · סוני, עדיף DSC-T700 (נפתחת בהזזה) · לבדוק איזה כרטיס זיכרון וסוללה צריך",
+      "category": "family",
+      "done": false,
+      "at": 1792659659537,
+      "photo": "0291d469-2f57-40d7-b1c5-df512f92554e"
+    },
+    "item-mvjdgtym-w94rm": {
+      "list": "list-mvjdaqs1-8fpz4",
+      "text": "מילוי למסכת שער fino",
+      "note": "",
+      "photo": "5ffaa854-9686-4da7-879e-a6c2ae289d76",
+      "done": false,
+      "at": 1792663340206
+    },
+    "item-mvjdi0y6-xp5jf": {
+      "list": "list-mvjdaqs1-8fpz4",
+      "text": "מסכת אורז המשחה",
+      "note": "",
+      "photo": "afcd3875-2733-4cf5-b65d-59c90a8f73d5",
+      "done": false,
+      "at": 1792663395918
+    },
+    "item-mvjii235-jpo3w": {
+      "list": "list-mvje3s3b-dpxoo",
+      "text": "Visit Japan Web",
+      "note": "לשמור את קודי ה־QR של הביקורת והמכס, שיעבדו גם בלי אינטרנט",
+      "done": false,
+      "at": 1792671795474,
+      "category": "now"
+    },
+    "item-mvjiivop-8jmp1": {
+      "list": "list-mvje3s3b-dpxoo",
+      "text": "ביטוח נסיעות",
+      "note": "",
+      "done": true,
+      "at": 1792671833833,
+      "category": "now"
+    },
+    "flight.insurance": {
+      "note": ""
+    },
+    "item-mvjijqqd-dg5c4": {
+      "list": "list-mvje3s3b-dpxoo",
+      "text": "eSIM",
+      "note": "להתקין מראש, להפעיל בנחיתה",
+      "done": false,
+      "at": 1792671874069,
+      "category": "now"
+    },
+    "flight.suica": {
+      "removed": true
+    },
+    "item-mvjikge4-0in2z": {
+      "list": "list-mvje3s3b-dpxoo",
+      "text": "Suica בארנק של הטלפון",
+      "note": "לטעון קצת כסף לרכבות ולמינימרקטים",
+      "done": true,
+      "at": 1792671907324
+    },
+    "item-mvjilwyp-erwyt": {
+      "list": "list-mvje3s3b-dpxoo",
+      "text": "כרטיס אשראי בלי עמלת מט״ח",
+      "note": "",
+      "done": false,
+      "at": 1792671975457
+    },
+    "flight.shabbat": {
+      "removed": true
+    },
+    "item-mvjin6cj-xb4vg": {
+      "list": "list-mvje3s3b-dpxoo",
+      "text": "צ׳ק־אין אונליין",
+      "note": "נפתח 24 שעות לפני ההמראה",
+      "done": false,
+      "at": 1792672034275
+    },
+    "item-mvjio03l-0o8ti": {
+      "list": "list-mvje3s3b-dpxoo",
+      "text": "מפות אופליין בגוגל מפות",
+      "note": "טוקיו, קובה, אוסקה וקיוטו",
+      "done": false,
+      "at": 1792672072833
+    },
+    "item-mvjippkg-sp03n": {
+      "list": "gifts-dana",
+      "text": "סקין קייר",
+      "note": "רבקה, רננה, אלה ותמימה",
+      "category": "friends",
+      "done": false,
+      "at": 1792672152496
+    },
+    "item-mvjiqdg1-7vmzk": {
+      "list": "gifts-dana",
+      "text": "מרקרים קופיק",
+      "note": "אילת",
+      "category": "us",
+      "done": false,
+      "at": 1792672183441
+    },
+    "item-mvjiqm6d-zpw5l": {
+      "list": "gifts-dana",
+      "text": "סקין קייר",
+      "note": "אחיות שלי",
+      "category": "family",
+      "done": false,
+      "at": 1792672194757
+    },
+    "link.1xi7isp9zi8ml": {
+      "of": "item-mvjijqqd-dg5c4",
+      "list": "flight",
+      "done": true
+    },
+    "link.5gsjgw15ga6eq": {
+      "of": "item-mvjii235-jpo3w",
+      "list": "flight",
+      "done": false
+    },
+    "link.v5sbb01j9u5bg": {
+      "of": "item-mvjiivop-8jmp1",
+      "list": "flight",
+      "done": false
+    },
+    "link.1rsuxhkl6rnhu": {
+      "of": "item-sms-package",
+      "list": "list-mvje3s3b-dpxoo",
+      "done": true
+    },
+    "link.1fsficrlpynp5": {
+      "of": "item-flight-smartex",
+      "list": "list-mvje3s3b-dpxoo",
+      "done": false
+    }
+  },
+  "payments": {
+    "bit-2037-10-18": {
+      "from": "noa",
+      "to": "dana",
+      "currency": "ILS",
+      "amount": 751.29,
+      "date": "2037-10-18",
+      "note": "Bit · רכבות ומסעדה (שני השינקנסנים + UZU Kyoto)",
+      "at": 1792314000000,
+      "addedBy": "claude"
+    },
+    "bit-2026-09-24": {
+      "from": "noa",
+      "to": "dana",
+      "currency": "ILS",
+      "amount": 934.96,
+      "date": "2026-09-24",
+      "note": "Bit · החזר אטרקציות (יוניברסל, teamLab, שני ימי דיסני, פחות ₪375 של מוצ'י)",
+      "at": 1790240400000,
+      "addedBy": "claude"
+    }
+  }
+}

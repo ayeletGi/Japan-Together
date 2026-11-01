@@ -1,0 +1,194 @@
+/* The Useful tab: converter, emergency numbers, taxi card, tickets, bookings and phrases. */
+.useful {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 4px;
+}
+
+.useful-kicker {
+  color: var(--berry);
+  font-size: 13px;
+}
+
+.useful-head h1 {
+  font-size: 26px;
+}
+
+.useful-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.useful .section-title {
+  margin-top: 4px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+}
+
+.emergency-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.emergency {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.emergency-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: var(--ink);
+  text-align: start;
+  cursor: pointer;
+}
+
+.emergency-tile--big {
+  border: 1px solid var(--hairline);
+}
+
+/* Numbers in the regular body font, not bold. */
+.emergency-tile .emergency-number {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.emergency-tile--big .emergency-number {
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.emergency-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Copy hint in the tile's far corner (left in Hebrew). */
+.emergency-copy {
+  position: absolute;
+  top: 10px;
+  inset-inline-end: 10px;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.emergency-tile--big .emergency-copy {
+  color: var(--muted);
+}
+
+.taxi-more {
+  align-self: flex-start;
+  min-height: 32px;
+  color: var(--lav-ink);
+  font-size: 12px;
+}
+
+.phrases {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phrase {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: var(--card);
+  color: inherit;
+  text-align: start;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.phrase-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.phrase-text small {
+  font-size: 12px;
+}
+
+.phrase-jp {
+  flex: none;
+  max-width: 45%;
+  color: var(--berry);
+  font-size: 14px;
+  text-align: end;
+}
+
+.phrase-big {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+
+.phrase-ja {
+  color: var(--ink);
+  font-size: 30px;
+  line-height: 1.45;
+  line-break: strict;
+}
+
+.useful-offline:empty {
+  display: none;
+}
+
+.kosher-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Rows sit inside the card like the emergency tiles: a hairline, no shadow of their own. */
+.kosher-links .action-row {
+  border: 1px solid var(--hairline);
+  box-shadow: none;
+}
+
+/* Row icons: just the glyph, in the selected yen chip's dark ink, on the row's white. */
+.kosher-links .icon-tile {
+  background: none;
+  color: var(--on-pink);
+}
+
+.kosher-links .action-row-text > span {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* The yen chip's pink shows only as a border while a box is hovered. */
+.emergency-tile--big,
+.kosher-links .action-row {
+  transition: border-color var(--dur-tap);
+}
+
+@media (hover: hover) {
+  .emergency-tile--big:hover,
+  .kosher-links .action-row:hover {
+    border-color: var(--pink);
+  }
+}

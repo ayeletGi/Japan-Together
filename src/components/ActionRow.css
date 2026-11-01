@@ -1,0 +1,34 @@
+.action-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  padding: 9px 12px;
+  border-radius: var(--radius-box);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  text-align: start;
+}
+
+.action-row-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.action-row-text small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.action-row-end {
+  color: var(--muted);
+}

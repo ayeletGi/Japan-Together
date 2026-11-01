@@ -1,0 +1,43 @@
+.day-greeting {
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.greeting-word {
+  display: inline-block;
+  white-space: pre;
+  animation: greet-in var(--dur-greet-word) ease-out both;
+}
+
+.greeting-face {
+  display: inline-block;
+  margin-inline-start: 3px;
+  font-size: 13px;
+  animation: greet-hop var(--dur-greet-face) ease-out both;
+}
+
+@keyframes greet-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+}
+
+@keyframes greet-hop {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.6) rotate(-12deg);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.12) rotate(6deg);
+  }
+
+  100% {
+    transform: none;
+  }
+}

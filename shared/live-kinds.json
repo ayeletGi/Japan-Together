@@ -1,0 +1,15 @@
+{
+  "tables": {
+    "events": "event_changes",
+    "added": "added_events",
+    "days": "day_changes",
+    "expenses": "expenses",
+    "photoFolders": "photo_folders",
+    "lists": "lists",
+    "listItems": "list_items",
+    "payments": "payments"
+  },
+  "maxEntries": 10,
+  "maxDataChars": 20000,
+  "keyPattern": "^[\\w.:-]{1,80}$"
+}

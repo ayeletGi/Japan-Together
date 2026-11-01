@@ -1,0 +1,89 @@
+.sheet-open,
+.sheet-open body {
+  overflow: hidden;
+}
+
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: var(--backdrop);
+  animation: sheet-fade var(--dur-fade) ease;
+}
+
+.sheet {
+  width: 100%;
+  max-width: 560px;
+  max-height: 88vh;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+  padding: 10px var(--gutter) calc(20px + env(safe-area-inset-bottom, 0px));
+  background: var(--bg);
+  box-shadow: var(--shadow-sheet);
+  animation: sheet-up var(--dur-sheet) ease-out;
+}
+
+.sheet:focus {
+  outline: none;
+}
+
+.sheet-grab {
+  width: 44px;
+  height: 5px;
+  margin: 0 auto 12px;
+  border-radius: 9px;
+  background: var(--line);
+}
+
+.sheet-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sheet-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.sheet-heading h2 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.sheet-kicker,
+.sheet-sub {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.sheet-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* Desktop: the same bottom sheet, centred over the page rather than the rail. */
+@media (min-width: 860px) {
+  .sheet-backdrop {
+    padding-inline-start: var(--rail-width);
+  }
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-fade {
+  from {
+    opacity: 0;
+  }
+}

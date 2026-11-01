@@ -1,0 +1,149 @@
+/* "Before the flight": the card on Today (countdown, bar, next item), and the round ticks the Lists tab uses. */
+.checklist-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  color: inherit;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.countdown {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-box);
+  background: var(--pink-soft);
+  color: var(--berry);
+  line-height: 1;
+}
+
+.countdown b {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.countdown small {
+  margin-top: 2px;
+  font-size: 11px;
+}
+
+.checklist-card-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.checklist-card-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.checklist-card .muted {
+  font-size: 12px;
+}
+
+.checklist-chevron {
+  flex: none;
+  color: var(--muted);
+}
+
+.checklist-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.todo-group {
+  margin: 14px 2px 8px;
+  color: var(--berry);
+  font-size: 14px;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.todo {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: var(--card);
+  color: inherit;
+  text-align: start;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.todo-tick {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-top: 1px;
+  border: 2px solid var(--pink);
+  border-radius: 50%;
+  color: transparent;
+  transition:
+    background var(--dur-fade) var(--ease-out),
+    color var(--dur-fade) var(--ease-out);
+}
+
+.todo[aria-pressed='true'] .todo-tick,
+.todo--done .todo-tick {
+  background: var(--pink);
+  color: var(--on-pink);
+}
+
+.todo--pop .todo-tick {
+  animation: tick-pop var(--dur-tick) var(--ease-spring);
+}
+
+.todo-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.todo-text small {
+  font-size: 12px;
+}
+
+.todo[aria-pressed='true'] .todo-title,
+.todo--done .todo-title {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--muted);
+}
+
+@keyframes tick-pop {
+  0% {
+    transform: scale(0.6);
+  }
+
+  60% {
+    transform: scale(1.18);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,587 @@
+/* Budget: the coin-jar card, category tiles, what we pay in Japan, and every booking. */
+.budget {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 4px;
+}
+
+.budget-kicker {
+  color: var(--berry);
+  font-size: 13px;
+}
+
+.budget-head h1 {
+  font-size: 26px;
+}
+
+.budget-top {
+  display: grid;
+  gap: 12px;
+}
+
+.jar-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.coin-jar {
+  flex: none;
+}
+
+.coin-jar .coin {
+  fill: var(--coin);
+  stroke: var(--coin-edge);
+  stroke-width: 1.5;
+}
+
+.jar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.jar-total {
+  color: var(--berry);
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.jar-text b {
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.jar-shares {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.jar-balance {
+  margin-top: 8px;
+}
+
+.budget-bar {
+  display: flex;
+  gap: 2px;
+  height: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+}
+
+.budget-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.budget-rows li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.budget-rows b {
+  font-weight: 400;
+}
+
+.budget-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-inline-end: 8px;
+  border-radius: 50%;
+}
+
+.budget-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.budget-note svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--accent);
+}
+
+.balance-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.balance-text {
+  display: flex;
+  flex: 1 1 220px;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.balance-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.balance-actions .btn {
+  gap: 6px;
+}
+
+.balance-card > svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--accent);
+}
+
+.balance-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Paid on the spot in Japan */
+.on-site {
+  display: grid;
+  gap: 10px;
+}
+
+.on-site-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.on-site-date {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  font-size: 15px;
+}
+
+.on-site-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.on-site-text small,
+.on-site-amount small {
+  font-size: 12px;
+}
+
+.on-site-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--berry);
+  white-space: nowrap;
+}
+
+/* Every booking */
+.budget-all > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tap);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.expense-list {
+  display: grid;
+  gap: 8px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.expense {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: var(--radius-box);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+
+.expense-main {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.expense-date {
+  flex: none;
+  min-width: 56px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.expense-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+}
+
+.expense-amount {
+  flex: none;
+  color: var(--berry);
+  font-size: 14px;
+}
+
+.expense-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.expense-billing summary {
+  color: var(--accent);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.expense-billing ul {
+  display: grid;
+  gap: 3px;
+  margin: 6px 0 0;
+  padding-inline-start: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 420px) {
+  .jar-card {
+    gap: 12px;
+  }
+
+  .coin-jar {
+    width: 72px;
+    height: 81px;
+  }
+
+  .expense-main {
+    flex-wrap: wrap;
+  }
+
+  .expense-date {
+    min-width: 0;
+  }
+}
+
+/* Room at the end of the page so the + never hides the last row. */
+.budget {
+  padding-bottom: 72px;
+}
+
+/* The latest costs and settle-ups added in the app, newest first. */
+.activity {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.activity-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-box);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+
+.activity-row--payment {
+  background: var(--mint-soft);
+}
+
+.activity-date {
+  flex: none;
+  min-width: 40px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.activity-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  font-size: 14px;
+}
+
+.activity-text svg {
+  vertical-align: -2px;
+  color: var(--mint-ink);
+}
+
+.activity-text small,
+.activity-amount small {
+  font-size: 12px;
+}
+
+.activity-amount {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.expense-edit {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--lav-soft);
+  color: var(--lav-ink);
+  cursor: pointer;
+}
+
+.expense-edit:active {
+  background: var(--lav);
+}
+
+/* The + cost and settle-up sheets. */
+.cost-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cost-field {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.cost-choice {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.cost-choice legend {
+  margin-bottom: 4px;
+  padding: 0;
+}
+
+.cost-amount {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.cost-amount .input {
+  font-size: 20px;
+}
+
+.cost-currency {
+  flex: none;
+  flex-wrap: nowrap;
+}
+
+.cost-currency .chip {
+  min-width: 44px;
+  justify-content: center;
+}
+
+.cost-parts,
+.cost-row {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 420px) {
+  .cost-row {
+    flex-direction: column;
+  }
+}
+
+.cost-owed {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: var(--radius-box);
+  background: var(--pink-soft);
+  font-size: 14px;
+}
+
+.cost-problem {
+  margin: 0;
+  color: var(--pink-deep);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cost-delete {
+  gap: 6px;
+  align-self: flex-end;
+}
+
+/* Daily budget: a row of days (one, or two for a range), card vs cash, and the split. */
+.daily-all {
+  padding: 4px 2px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.daily-all[aria-pressed='true'] {
+  color: var(--muted);
+}
+
+.daily-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.daily-hint {
+  margin: 0 0 4px;
+  font-size: 13px;
+}
+
+.daily-days {
+  display: flex;
+  gap: 5px;
+  padding: 4px 0 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.daily-day {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  min-width: 46px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.daily-day b {
+  font-size: 15px;
+}
+
+.daily-day.is-inside {
+  border-color: var(--pink-soft);
+  background: var(--pink-soft);
+}
+
+.daily-day[aria-pressed='true'] {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: var(--on-pink);
+}
+
+.daily-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.daily-head > span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.daily-head small {
+  font-size: 13px;
+}
+
+.daily-total {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.daily-pay {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 14px;
+}
+
+.daily-pay > div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 8px 12px;
+  border-radius: 14px;
+  font-size: 13px;
+}
+
+.daily-pay b {
+  font-size: 18px;
+}
+
+.daily-pay-card {
+  background: var(--lav-soft);
+}
+
+.daily-pay-cash {
+  background: var(--sun-soft);
+}
+
+.daily-note {
+  margin: 12px 0 0;
+  font-size: 12px;
+}

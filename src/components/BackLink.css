@@ -1,0 +1,14 @@
+/* "Back to the day": a small pill above sub-pages. */
+.back-link {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px 0 10px;
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  color: var(--berry);
+  font-size: 14px;
+  box-shadow: var(--shadow-sm);
+}

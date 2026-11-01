@@ -1,0 +1,866 @@
+{
+  "lists": {
+    "list-food": {
+      "name": "אוכל",
+      "order": 5
+    }
+  },
+  "listItems": {
+    "flight.vjw": {
+      "done": false
+    },
+    "flight.battery": {
+      "done": false
+    },
+    "flight.tickets": {
+      "done": false
+    },
+    "flight.airport": {
+      "done": false
+    },
+    "flight.qr": {
+      "done": false
+    },
+    "flight.offline": {
+      "done": false
+    },
+    "flight.checkin": {
+      "done": false
+    },
+    "item-old-mv9k7u9d-qgn5f": {
+      "list": "gifts-dana",
+      "text": "פריט 1",
+      "note": "הערה 1",
+      "done": false,
+      "at": 1792312536447
+    },
+    "item-old-mv9k8txm-it9w6": {
+      "list": "gifts-dana",
+      "text": "פריט 2",
+      "note": "הערה 2",
+      "done": false,
+      "at": 1792312536448
+    },
+    "item-old-mv9k8yh5-wm0xw": {
+      "list": "gifts-dana",
+      "text": "פריט 3",
+      "note": "הערה 3",
+      "done": false,
+      "at": 1792312536449
+    },
+    "item-food-01": {
+      "list": "list-food",
+      "text": "פריט 4",
+      "note": "הערה 4",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074788
+    },
+    "item-food-02": {
+      "list": "list-food",
+      "text": "פריט 5",
+      "note": "הערה 5",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074789
+    },
+    "item-food-03": {
+      "list": "list-food",
+      "text": "פריט 6",
+      "note": "הערה 6",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074790
+    },
+    "item-food-04": {
+      "list": "list-food",
+      "text": "פריט 7",
+      "note": "הערה 7",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074791
+    },
+    "item-food-05": {
+      "list": "list-food",
+      "text": "פריט 8",
+      "note": "הערה 8",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074792
+    },
+    "item-food-06": {
+      "list": "list-food",
+      "text": "פריט 9",
+      "note": "הערה 9",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074793
+    },
+    "item-food-07": {
+      "list": "list-food",
+      "text": "פריט 10",
+      "note": "הערה 10",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074794
+    },
+    "item-food-08": {
+      "list": "list-food",
+      "text": "פריט 11",
+      "note": "הערה 11",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074795
+    },
+    "item-food-09": {
+      "list": "list-food",
+      "text": "פריט 12",
+      "note": "הערה 12",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074796
+    },
+    "item-food-10": {
+      "list": "list-food",
+      "text": "פריט 13",
+      "note": "הערה 13",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074797
+    },
+    "item-food-11": {
+      "list": "list-food",
+      "text": "פריט 14",
+      "note": "הערה 14",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074798
+    },
+    "item-food-12": {
+      "list": "list-food",
+      "text": "פריט 15",
+      "note": "הערה 15",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074799
+    },
+    "item-food-13": {
+      "list": "list-food",
+      "text": "פריט 16",
+      "note": "הערה 16",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074800
+    },
+    "item-food-14": {
+      "list": "list-food",
+      "text": "פריט 17",
+      "note": "הערה 17",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074801
+    },
+    "item-food-15": {
+      "list": "list-food",
+      "text": "פריט 18",
+      "note": "הערה 18",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074802
+    },
+    "item-food-16": {
+      "list": "list-food",
+      "text": "פריט 19",
+      "note": "הערה 19",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074803
+    },
+    "item-food-17": {
+      "list": "list-food",
+      "text": "פריט 20",
+      "note": "הערה 20",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074804
+    },
+    "item-food-18": {
+      "list": "list-food",
+      "text": "פריט 21",
+      "note": "הערה 21",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074805
+    },
+    "item-food-19": {
+      "list": "list-food",
+      "text": "פריט 22",
+      "note": "הערה 22",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074806
+    },
+    "item-food-20": {
+      "list": "list-food",
+      "text": "פריט 23",
+      "note": "הערה 23",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074807
+    },
+    "item-food-21": {
+      "list": "list-food",
+      "text": "פריט 24",
+      "note": "הערה 24",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074808
+    },
+    "item-food-22": {
+      "list": "list-food",
+      "text": "פריט 25",
+      "note": "",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074809
+    },
+    "item-food-23": {
+      "list": "list-food",
+      "text": "פריט 26",
+      "note": "",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074810
+    },
+    "item-food-24": {
+      "list": "list-food",
+      "text": "פריט 27",
+      "note": "הערה 27",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074811
+    },
+    "item-food-25": {
+      "list": "list-food",
+      "text": "פריט 28",
+      "note": "",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074812
+    },
+    "item-food-26": {
+      "list": "list-food",
+      "text": "פריט 29",
+      "note": "",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792319074813
+    },
+    "item-food-27": {
+      "list": "list-food",
+      "text": "פריט 30",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074814
+    },
+    "item-food-28": {
+      "list": "list-food",
+      "text": "פריט 31",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074815
+    },
+    "item-food-29": {
+      "list": "list-food",
+      "text": "פריט 32",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074816
+    },
+    "item-food-30": {
+      "list": "list-food",
+      "text": "פריט 33",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074817
+    },
+    "item-food-31": {
+      "list": "list-food",
+      "text": "פריט 34",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074818
+    },
+    "item-food-32": {
+      "list": "list-food",
+      "text": "פריט 35",
+      "note": "הערה 35",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074819
+    },
+    "item-food-33": {
+      "list": "list-food",
+      "text": "פריט 36",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074820
+    },
+    "item-food-34": {
+      "list": "list-food",
+      "text": "פריט 37",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074821
+    },
+    "item-food-35": {
+      "list": "list-food",
+      "text": "פריט 38",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074822
+    },
+    "item-food-36": {
+      "list": "list-food",
+      "text": "פריט 39",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074823
+    },
+    "item-food-37": {
+      "list": "list-food",
+      "text": "פריט 40",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074824
+    },
+    "item-food-38": {
+      "list": "list-food",
+      "text": "פריט 41",
+      "note": "הערה 41",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074825
+    },
+    "item-food-39": {
+      "list": "list-food",
+      "text": "פריט 42",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074826
+    },
+    "item-food-40": {
+      "list": "list-food",
+      "text": "פריט 43",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074827
+    },
+    "item-food-41": {
+      "list": "list-food",
+      "text": "פריט 44",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074828
+    },
+    "item-food-42": {
+      "list": "list-food",
+      "text": "פריט 45",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074829
+    },
+    "item-food-43": {
+      "list": "list-food",
+      "text": "פריט 46",
+      "note": "הערה 46",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074830
+    },
+    "item-food-44": {
+      "list": "list-food",
+      "text": "פריט 47",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074831
+    },
+    "item-food-45": {
+      "list": "list-food",
+      "text": "פריט 48",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074832
+    },
+    "item-food-46": {
+      "list": "list-food",
+      "text": "פריט 49",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074833
+    },
+    "item-food-47": {
+      "list": "list-food",
+      "text": "פריט 50",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074834
+    },
+    "item-food-48": {
+      "list": "list-food",
+      "text": "פריט 51",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074835
+    },
+    "item-food-49": {
+      "list": "list-food",
+      "text": "פריט 52",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074836
+    },
+    "item-food-50": {
+      "list": "list-food",
+      "text": "פריט 53",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792319074837
+    },
+    "item-print-bookings": {
+      "list": "flight",
+      "text": "פריט 54",
+      "note": "הערה 54",
+      "category": "week",
+      "done": false,
+      "at": 1792320045527
+    },
+    "item-sms-package": {
+      "list": "flight",
+      "text": "פריט 55",
+      "note": "",
+      "category": "now",
+      "done": false,
+      "at": 1792320045528
+    },
+    "item-apps": {
+      "list": "flight",
+      "text": "פריט 56",
+      "note": "הערה 56",
+      "category": "week",
+      "done": false,
+      "at": 1792320045529
+    },
+    "item-airtag": {
+      "list": "pack",
+      "text": "פריט 57",
+      "note": "",
+      "category": "electronics",
+      "done": false,
+      "at": 1792320045530
+    },
+    "flight.cash": {
+      "text": "פריט 58",
+      "note": "הערה 58"
+    },
+    "flight.maps": {
+      "note": "הערה 58",
+      "done": false
+    },
+    "item-pack-passports": {
+      "list": "pack",
+      "text": "דרכונים",
+      "note": "וגם צילום של כל דרכון בשני הטלפונים",
+      "category": "documents",
+      "done": false,
+      "at": 1792320339860
+    },
+    "item-pack-printed": {
+      "list": "pack",
+      "text": "פריט 59",
+      "note": "הערה 59",
+      "category": "documents",
+      "done": false,
+      "at": 1792320339861
+    },
+    "item-pack-addresses": {
+      "list": "pack",
+      "text": "פריט 60",
+      "note": "הערה 60",
+      "category": "documents",
+      "done": false,
+      "at": 1792320339862
+    },
+    "item-pack-insurance": {
+      "list": "pack",
+      "text": "פריט 61",
+      "note": "",
+      "category": "documents",
+      "done": false,
+      "at": 1792320339863
+    },
+    "item-pack-chargers": {
+      "list": "pack",
+      "text": "פריט 62",
+      "note": "",
+      "category": "electronics",
+      "done": false,
+      "at": 1792320339864
+    },
+    "item-pack-powerbanks": {
+      "list": "pack",
+      "text": "פריט 63",
+      "note": "הערה 63",
+      "category": "electronics",
+      "done": false,
+      "at": 1792320339865
+    },
+    "item-pack-adapter": {
+      "list": "pack",
+      "text": "פריט 64",
+      "note": "הערה 64",
+      "category": "electronics",
+      "done": false,
+      "at": 1792320339866
+    },
+    "item-pack-layers": {
+      "list": "pack",
+      "text": "פריט 65",
+      "note": "",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339867
+    },
+    "item-pack-rain": {
+      "list": "pack",
+      "text": "פריט 66",
+      "note": "",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339868
+    },
+    "item-pack-shoes": {
+      "list": "pack",
+      "text": "פריט 67",
+      "note": "הערה 67",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339869
+    },
+    "item-pack-gym": {
+      "list": "pack",
+      "text": "פריט 68",
+      "note": "הערה 68",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339870
+    },
+    "item-pack-shabbat": {
+      "list": "pack",
+      "text": "פריט 69",
+      "note": "הערה 69",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339871
+    },
+    "item-pack-socks": {
+      "list": "pack",
+      "text": "פריט 70",
+      "note": "הערה 70",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339872
+    },
+    "item-pack-trousers": {
+      "list": "pack",
+      "text": "פריט 71",
+      "note": "הערה 71",
+      "category": "clothes",
+      "done": false,
+      "at": 1792320339873
+    },
+    "item-pack-towel": {
+      "list": "pack",
+      "text": "פריט 72",
+      "note": "הערה 72",
+      "category": "toiletries",
+      "done": false,
+      "at": 1792320339874
+    },
+    "item-pack-detergent": {
+      "list": "pack",
+      "text": "פריט 73",
+      "note": "",
+      "category": "toiletries",
+      "done": false,
+      "at": 1792320339875
+    },
+    "item-pack-wipes": {
+      "list": "pack",
+      "text": "פריט 74",
+      "note": "",
+      "category": "toiletries",
+      "done": false,
+      "at": 1792320339876
+    },
+    "item-pack-meds": {
+      "list": "pack",
+      "text": "פריט 75",
+      "note": "",
+      "category": "meds",
+      "done": false,
+      "at": 1792320339877
+    },
+    "item-pack-firstaid": {
+      "list": "pack",
+      "text": "פריט 76",
+      "note": "",
+      "category": "meds",
+      "done": false,
+      "at": 1792320339878
+    },
+    "item-pack-meds-check": {
+      "list": "pack",
+      "text": "פריט 77",
+      "note": "הערה 77",
+      "category": "meds",
+      "done": false,
+      "at": 1792320339879
+    },
+    "item-pack-coins": {
+      "list": "pack",
+      "text": "פריט 78",
+      "note": "הערה 78",
+      "category": "כללי",
+      "done": false,
+      "at": 1792320339880
+    },
+    "item-pack-trash": {
+      "list": "pack",
+      "text": "פריט 79",
+      "note": "הערה 79",
+      "category": "כללי",
+      "done": false,
+      "at": 1792320339881
+    },
+    "item-pack-foldbag": {
+      "list": "pack",
+      "text": "פריט 80",
+      "note": "הערה 80",
+      "category": "כללי",
+      "done": false,
+      "at": 1792320339882
+    },
+    "item-flight-smartex": {
+      "list": "flight",
+      "text": "פריט 81",
+      "note": "הערה 81",
+      "category": "week",
+      "done": false,
+      "at": 1792320339883
+    },
+    "item-flight-limousine": {
+      "list": "flight",
+      "text": "פריט 82",
+      "note": "הערה 82",
+      "category": "now",
+      "done": false,
+      "at": 1792320339884
+    },
+    "item-flight-checkin-back": {
+      "list": "flight",
+      "text": "פריט 83",
+      "note": "הערה 83",
+      "category": "flightDay",
+      "done": false,
+      "at": 1792320339885
+    },
+    "item-flight-chabad": {
+      "list": "flight",
+      "text": "פריט 84",
+      "note": "הערה 84",
+      "category": "אחרי שמגיעים למלון",
+      "done": false,
+      "at": 1792320339886
+    },
+    "item-flight-candles": {
+      "list": "flight",
+      "text": "פריט 85",
+      "note": "הערה 85",
+      "category": "week",
+      "done": false,
+      "at": 1792320339887
+    },
+    "item-flight-disney": {
+      "list": "flight",
+      "text": "פריט 86",
+      "note": "הערה 86",
+      "category": "week",
+      "done": false,
+      "at": 1792320339888
+    },
+    "item-flight-shuttle": {
+      "list": "flight",
+      "text": "פריט 87",
+      "note": "הערה 87",
+      "category": "week",
+      "done": false,
+      "at": 1792320339889
+    },
+    "item-flight-baggage": {
+      "list": "flight",
+      "text": "פריט 88",
+      "note": "הערה 88",
+      "category": "week",
+      "done": false,
+      "at": 1792320339890
+    },
+    "item-flight-ride": {
+      "list": "flight",
+      "text": "פריט 89",
+      "note": "הערה 89",
+      "category": "week",
+      "done": true,
+      "at": 1792320339891
+    },
+    "item-flight-bank": {
+      "list": "flight",
+      "text": "פריט 90",
+      "note": "הערה 90",
+      "category": "week",
+      "done": false,
+      "at": 1792320339892
+    },
+    "item-food-liquids": {
+      "list": "list-food",
+      "text": "פריט 91",
+      "note": "הערה 91",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792320339893
+    },
+    "item-food-meat": {
+      "list": "list-food",
+      "text": "פריט 92",
+      "note": "הערה 92",
+      "category": "להביא מהארץ",
+      "done": false,
+      "at": 1792320339894
+    },
+    "item-food-soap": {
+      "list": "list-food",
+      "text": "פריט 93",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339895
+    },
+    "item-food-paper": {
+      "list": "list-food",
+      "text": "פריט 94",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339896
+    },
+    "item-food-disposable": {
+      "list": "list-food",
+      "text": "פריט 95",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339897
+    },
+    "item-food-foil": {
+      "list": "list-food",
+      "text": "פריט 96",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339898
+    },
+    "item-food-bags": {
+      "list": "list-food",
+      "text": "פריט 97",
+      "note": "",
+      "category": "לקנות ביפן",
+      "done": false,
+      "at": 1792320339899
+    },
+    "item-gift-noa-reminder": {
+      "list": "gifts-noa",
+      "text": "פריט 98",
+      "note": "",
+      "done": false,
+      "at": 1792320339900
+    },
+    "item-gift-dana-passport": {
+      "list": "gifts-dana",
+      "text": "פריט 99",
+      "note": "הערה 99",
+      "done": false,
+      "at": 1792320339901
+    },
+    "flight.sushi": {
+      "removed": true
+    },
+    "flight.minamo": {
+      "removed": true
+    },
+    "flight.passport": {
+      "done": true
+    },
+    "flight.card": {
+      "done": true
+    },
+    "flight.plug": {
+      "done": true
+    },
+    "flight.socks": {
+      "removed": true
+    },
+    "flight.teamlab": {
+      "removed": true
+    },
+    "item-mvdzh8ul-s6cfb": {
+      "list": "pack",
+      "text": "פריט 100",
+      "note": "",
+      "category": "electronics",
+      "done": false,
+      "at": 1792337513997
+    },
+    "flight.esim": {
+      "done": false
+    },
+    "item-mvidt64o-5awov": {
+      "list": "gifts-dana",
+      "text": "פריט 101",
+      "note": "הערה 101",
+      "category": "friends",
+      "done": false,
+      "at": 1792603449672
+    }
+  }
+}

@@ -1,0 +1,513 @@
+{
+  "version": 5,
+  "files": {
+    "json": "60f6a0eaf711211e6ca34ae136f99771b4e7d243b5f0ff4a5c0766aeb11c0253"
+  },
+  "days": [
+    {
+      "date": "2037-11-02",
+      "count": 1,
+      "events": [
+        {
+          "id": "d2-01",
+          "sha256": "e70daf971d69bb903edf5778307a76d9a08c00f9de57382e084a132eba079b28"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-03",
+      "count": 5,
+      "events": [
+        {
+          "id": "d3-01",
+          "sha256": "404a68be903470b647a2fea71c60d9cbdd23443966ca6ffe488fdaf8acc494a5"
+        },
+        {
+          "id": "d3-03",
+          "sha256": "0fdc1227f8464133923d7ac99d333a2d4dfb91229e49c8c7a9fca2c304e6fd02"
+        },
+        {
+          "id": "d3-04",
+          "sha256": "77eaa741db8b703c15931fc5912dcafa2e8a7fe91c95fda089acddc77a1d1b4a"
+        },
+        {
+          "id": "d3-05",
+          "sha256": "e1d127ab9bb6233afcf41419e32f6de7771a447d92351d9d566e32aeec2aa2cb"
+        },
+        {
+          "id": "d3-02",
+          "sha256": "66c9d647c0fab39031fa9facd0c577d815ead65e81f813b652abe9d2eed84753"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-04",
+      "count": 6,
+      "events": [
+        {
+          "id": "d4-01",
+          "sha256": "8ab10b390d6c66389c0b7a84c36a21c5c827c0a52d3cdc9c11fede3cf9598d61"
+        },
+        {
+          "id": "d4-02",
+          "sha256": "0d56208f779f99fa62f2b5c2cf248d30ef51656cbb37c526a24244b5646fe861"
+        },
+        {
+          "id": "d4-03",
+          "sha256": "a98d5a7ad29af03b8c37f4be36215139c8e80c5c0a779d80ae020914a11f47eb"
+        },
+        {
+          "id": "shop-itoya-ginza",
+          "sha256": "6e50e4314bcbbb80b527d42540d0cda40cf3bef1249af3971fa4c656b193f2f1"
+        },
+        {
+          "id": "d4-04",
+          "sha256": "ebe6c9be7c9bf0d69cf5906cd9afce2b7b9ecc64308c1f9ed095d300d47a43e3"
+        },
+        {
+          "id": "gym-2037-11-04",
+          "sha256": "ec45a32c2da32f7ff50715e5f98e771e05884fad9da1bc06944d823762f706fe"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-05",
+      "count": 5,
+      "events": [
+        {
+          "id": "d5-02",
+          "sha256": "a2f301716c204696277f26a5278bdba50e1cfa956397b969a3b275c867ed480a"
+        },
+        {
+          "id": "bags-shinagawa",
+          "sha256": "ef217ef7176873b75e44cf5ad3f9ffb064e8750753dc7d9dfcf2e48a3018a003"
+        },
+        {
+          "id": "d5-03",
+          "sha256": "c423e5c08b212ca1842cd218666ab0434532f6af1d0d91cb91d4262e9ed68b3e"
+        },
+        {
+          "id": "d5-04",
+          "sha256": "84b66da1999a07038d31956c02da3e22555c2fded35b4174faca130e9bc276b2"
+        },
+        {
+          "id": "d5-01",
+          "sha256": "e4e7422cb2614a797d5a660dd0d94f34accd9bb56fb6ebc11337b57b91c65853"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-06",
+      "count": 4,
+      "events": [
+        {
+          "id": "d6-01",
+          "sha256": "25a235aef2f7e9078f3b89603421975528ab2577eec07743dc3f25abaf3d6881"
+        },
+        {
+          "id": "d6-02",
+          "sha256": "646d3488a6d01c652d305bcd09c34bfabba8c7a81ecf9941375fc6ac4e9dac88"
+        },
+        {
+          "id": "d6-03",
+          "sha256": "bc4cbe7d92075b69663fa9353937da167ff67787196cf1f3944ac68e9117bd81"
+        },
+        {
+          "id": "d6-04",
+          "sha256": "51d420c594577fe089fe9dd6b8cac3bbae1b38db9702d5fc330ffaf30a2d52c3"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-07",
+      "count": 3,
+      "events": [
+        {
+          "id": "d7-02",
+          "sha256": "6fb20f0a9671ffacb305ac90dbbbceaec09e4c98c6bde212e987a31a02902943"
+        },
+        {
+          "id": "gym-kobe-motzash",
+          "sha256": "7be818a16b911e2dd07b96a258dfa6e9cdf414c6a3ac6b345532a9d0782b8a98"
+        },
+        {
+          "id": "d7-01",
+          "sha256": "7f1320bc28d107c1f1d30b05e6738375ca1d5787d2727fbab8c86a27596cacf1"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-08",
+      "count": 7,
+      "events": [
+        {
+          "id": "d8-03",
+          "sha256": "593e79d0ab0eb23bd9fb285730116a7545d46ebe26eb3b4399345d73717ffb09"
+        },
+        {
+          "id": "d8-04",
+          "sha256": "5e52cf7ae79095c49fc87feffbe245ca447962a32ad906e337fc1051d2111f74"
+        },
+        {
+          "id": "d8-05",
+          "sha256": "1d4558b7ebe63dcd6ed7132af989897d0e644125c3ffe12331b6117ac75f57ba"
+        },
+        {
+          "id": "osaka-shinsaibashi-shopping",
+          "sha256": "41404ac738317f3e420388dbd63e9aa44d3439bcd3ba7c0982315680007eed8f"
+        },
+        {
+          "id": "d8-06",
+          "sha256": "3b8b6a8a426a93eadf6d68c2b781eef86252e59516efa1e7c521bb9ac37e0070"
+        },
+        {
+          "id": "d8-01",
+          "sha256": "85ef9de017784fcde5680d4b17644bae3a0e085aa5738b560fd61bbd724921d7"
+        },
+        {
+          "id": "d8-02",
+          "sha256": "5089e94829a55abf36832840650849568fe8231b2cc475506718e3d0be9a3f2c"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-09",
+      "count": 7,
+      "events": [
+        {
+          "id": "d9-01",
+          "sha256": "14840edd6ca77f907d57fc1b60cff3b158c6a7b3a4b05c4c812acb87923c9bb4"
+        },
+        {
+          "id": "d9-02",
+          "sha256": "b3db9030418c3bb9fb8e45823f3b5e66e6a58db30702af0ea615903b6e093716"
+        },
+        {
+          "id": "d9-03",
+          "sha256": "c8b7c6454f4d9603ceeb7adfb173713407a4240ca0a8d4f6a1693512996a2c26"
+        },
+        {
+          "id": "gion-walk",
+          "sha256": "58f8d789743961f2188e879af374722fa739194d64adc17305a0ebd682a939b9"
+        },
+        {
+          "id": "d9-04",
+          "sha256": "f6431b41a9581cb2b44f1a9b26f5ab0455a6097ce5439475452cf66d4fa2cb6a"
+        },
+        {
+          "id": "d9-05",
+          "sha256": "3db2e9191f0e0ba101cfbd42cfef701126d84cb6bf01ff76d3e5404a37e474cd"
+        },
+        {
+          "id": "d9-06",
+          "sha256": "b25df54c3438ef67854ab0f1f9b315fd7c250ea48820200b405894be73a3eabf"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-10",
+      "count": 8,
+      "events": [
+        {
+          "id": "d10-04",
+          "sha256": "f294b723791bf903a1684f19a40b7836da12b7e73bccdcdf497390cdf26de771"
+        },
+        {
+          "id": "d10-05",
+          "sha256": "45917225d2cbd8d5dfaeae46b0a8826f25abdf0ca12b3970e5113c34492f4447"
+        },
+        {
+          "id": "d10-06",
+          "sha256": "095af86df4f5b61318b0b6b16d7d855d5e8fab87d416facdf5a2c6868ff4b9b4"
+        },
+        {
+          "id": "d10-07",
+          "sha256": "d6ee37c2aa2aa48a3f5b8b4aa5a33a00be8fb0ddd945e2aad8220a70469bf83d"
+        },
+        {
+          "id": "d10-08",
+          "sha256": "53958268ad13afefb1e99e14898413c4ace0d39116819fb76b3467d271898de1"
+        },
+        {
+          "id": "d10-01",
+          "sha256": "c5ae6a91e7c3e5ebb391bc5c46676a598dd2d81449f765d100f0442aa84f8e38"
+        },
+        {
+          "id": "d10-02",
+          "sha256": "4fee99828ebf5cb8df535c631835c3b8e6d9dc63dc9b5e0a404b1e0ae0ec2628"
+        },
+        {
+          "id": "d10-03",
+          "sha256": "8ee58f419ddc0a72c38b8d862558ca93a9d2a237c062e002f744ab1985498871"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-11",
+      "count": 7,
+      "events": [
+        {
+          "id": "d11-02",
+          "sha256": "adc2b083cfe038506c0d9a9a150206bb1397efd87578cedf94e9057afd0a6164"
+        },
+        {
+          "id": "d11-03",
+          "sha256": "39d15757f956a154008808308924578051fab9031eac54797e56d94f3f5d996f"
+        },
+        {
+          "id": "tools-osaka-option",
+          "sha256": "e01558028585c499070e8626b78855238866d8fb2301a3b04aaed4f46c96338d"
+        },
+        {
+          "id": "shin-osaka-buffer",
+          "sha256": "1d5d352440125f605bd4c68d21b724891a4167256b5ceb58d123b9b540682b6e"
+        },
+        {
+          "id": "d11-04",
+          "sha256": "6ae437618ba0c5b198eccd7523c39b7054e6ebed73e3185be2d3b24fc6cc0754"
+        },
+        {
+          "id": "d11-05",
+          "sha256": "2de56956c8d0143bd6e0881d557a5971d4096f00e1a95d890cc3a27087ba09a5"
+        },
+        {
+          "id": "d11-01",
+          "sha256": "1438287737f5571413fab2d0b6398b6440036ea5ecbcd3b348126340dd6aaf15"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-12",
+      "count": 8,
+      "events": [
+        {
+          "id": "gym-2037-11-12",
+          "sha256": "3fea117fd8b27b946534021111d56be0caf129ae77b9ab57d3d9938aec16fc17"
+        },
+        {
+          "id": "d12-01",
+          "sha256": "3fa8764899a48f943a6ecdd0b0f39ebce61028a4e98a9e355a718a6d6d9d954e"
+        },
+        {
+          "id": "shibuya-109",
+          "sha256": "bca6dc22d17ce56771d525eca464dc49dac1962108fd41deeb7ef139c1a328a0"
+        },
+        {
+          "id": "d12-02",
+          "sha256": "4beb7cb51e04cda620e5929a28d7d5b9a2fa7a8104eca1c930c11837281fb324"
+        },
+        {
+          "id": "harajuku-shopping",
+          "sha256": "25d5804a70e0d4909302fa81cbfb54daecf20e43601236b37c0dc3c1bc81c147"
+        },
+        {
+          "id": "shibuya-parco",
+          "sha256": "89c0708c02ffb42cbf80008d0d17ede2fc5a1ca561d8dc8b00dd3df1eb01e3c5"
+        },
+        {
+          "id": "d12-03",
+          "sha256": "2b0d5ea5004303a30fd3bb585431d0165bd7efd811e56d4eb289086332425c7f"
+        },
+        {
+          "id": "d12-04",
+          "sha256": "41d245c5d58ad8baa81280e34c111f3ce422d87567dc532827a7f16e6b7247e7"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-13",
+      "count": 6,
+      "events": [
+        {
+          "id": "d13-01",
+          "sha256": "02ca438da92491424f41590f977adc4b1d248404c8ba91e05dc14c36c15615b3"
+        },
+        {
+          "id": "d13-02",
+          "sha256": "bce17f7a9e24264cabb8d4d6d4a30d13cf4b5ec285ad3be9ef928f701c35e3cb"
+        },
+        {
+          "id": "sekaido-shinjuku",
+          "sha256": "29b1611821d4866a4f188b2fed267791fbfc7de10884cba0cb2134b975129a5c"
+        },
+        {
+          "id": "d13-03",
+          "sha256": "1808bea3549122e2633719e71db736f46ef275c6938c416ddd41ec8755cb926d"
+        },
+        {
+          "id": "d13-04",
+          "sha256": "de24967f7cc0f30507371cb339a0e6654fd3c569caf598af84873ef6cbe1e003"
+        },
+        {
+          "id": "d13-05",
+          "sha256": "b5b63070f1e1ca82cda0870db5b616dccb36910b066ee9cda8c835bf43d78bcd"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-14",
+      "count": 3,
+      "events": [
+        {
+          "id": "gym-2037-11-14",
+          "sha256": "d2c8973756405d0c1fa256b4fb9d581927c4d015821705d82760039cad345ce3"
+        },
+        {
+          "id": "d14-01",
+          "sha256": "4aa44d9214f5e96f47d06c925c12701175dc86c5d3a3f093e0c4cce32649e7e6"
+        },
+        {
+          "id": "d14-02",
+          "sha256": "8c92371188e83f19b80065ac1e67f2619c69979bce563a4d46b9ccc0d5276b9f"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-15",
+      "count": 8,
+      "events": [
+        {
+          "id": "d15-02",
+          "sha256": "5892f6b9bc6e37684164a4aac1dcfce6cd682475513982824dc339f77c1b781e"
+        },
+        {
+          "id": "d15-03",
+          "sha256": "7738944d78d4350916ffc2dba90f2bd4e4a9cb1a08ed42178badaa20ae0491af"
+        },
+        {
+          "id": "shibuya-markets",
+          "sha256": "0f3bb60ef5b6d60f89b0e9f524556be5c0a0df2852e7402c711a9a255895d333"
+        },
+        {
+          "id": "omori-luggage",
+          "sha256": "79c4b292a787800922e7fba8b3dc26db40bb9649dfb8b1e8eab541567f397b01"
+        },
+        {
+          "id": "to-disney-hotel",
+          "sha256": "18ad6fb412436588e7185daef24ddd334390279a6cb1aae6dc54cf853f11e933"
+        },
+        {
+          "id": "d15-04",
+          "sha256": "cd1dc35862efe141abceb4cfa2b909aa75790e2b664e796ae1b76e31bc615413"
+        },
+        {
+          "id": "d15-05",
+          "sha256": "4447a577222f48a29af281cc46b2344e0191e7389e69987617680ef78083baec"
+        },
+        {
+          "id": "d15-01",
+          "sha256": "bd1deeb273f5988318c2a2402fc7212c58b9ca9a43b9770ac22c98fdb72277e4"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-16",
+      "count": 4,
+      "events": [
+        {
+          "id": "shuttle-to-disney-16",
+          "sha256": "e6cce933966a10ea47dc362aa01d98d9328872048f5bb994e2a4358c6083da09"
+        },
+        {
+          "id": "d16-01",
+          "sha256": "79aabde92b35a8ca29c81a0acdc3dccb2601bad6467b6a48c585887be92eeb09"
+        },
+        {
+          "id": "d16-02",
+          "sha256": "f3dbfde835d9261b0d81e2b44076eb250ac728e994402da168adf57adb3de6fe"
+        },
+        {
+          "id": "shuttle-back-16",
+          "sha256": "522e13ae84bbaa1289c7d0230120afa55406e7d9a5c972b481fe26714eb647b0"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-17",
+      "count": 4,
+      "events": [
+        {
+          "id": "shuttle-to-disney-17",
+          "sha256": "012e4b8f618d3196709625d62708a31de54e8d2145871f25692333040ffe72cb"
+        },
+        {
+          "id": "d17-01",
+          "sha256": "c99aeb47a9850e3173ae88f4687958eec54648f9601c3d9085116bf6e71afe9b"
+        },
+        {
+          "id": "d17-02",
+          "sha256": "56b0c925208ee2570016108ea9cb0d823a2cd15947a95829d8609c458f2deb62"
+        },
+        {
+          "id": "shuttle-back-17",
+          "sha256": "e47d7e3696666484dccdb29cc4f82f442cec7caf75f9c3b9447b80dea3876d5e"
+        }
+      ]
+    },
+    {
+      "date": "2037-11-18",
+      "count": 3,
+      "events": [
+        {
+          "id": "d18-03",
+          "sha256": "d223b4dd8a8f826f892257d0999dfd697f13222f08e03e0bd14b3c40eaa03079"
+        },
+        {
+          "id": "d18-01",
+          "sha256": "c0d3d190214852aec9fd2f3ecfa1947a3faf48baa8283a207a3c7ddc8f0fd214"
+        },
+        {
+          "id": "d18-02",
+          "sha256": "0bad08b05723638fae4a6dbbcdff2870a460f85b4da84aca5808a657a9572b65"
+        }
+      ]
+    }
+  ],
+  "extras": [
+    {
+      "name": "SHOP_HOURS",
+      "entries": 7,
+      "sha256": "a9a92a1cce579fbad701ffb524146891c192eeb6073a43a6636638ae6d859fcf"
+    },
+    {
+      "name": "FOOD_HOURS",
+      "entries": 18,
+      "sha256": "71204b2c82a9dc4bc0fffc94777037ce0fed2fd2f93b013bd3f8ff4cf9b4ac8d"
+    },
+    {
+      "name": "COST_ITEMS",
+      "entries": 16,
+      "sha256": "4a3f984155cae75d6c7484e33a8ce938db17a23ce7b788a688817f5c122cc5f0"
+    },
+    {
+      "name": "PASS_ITEMS",
+      "entries": 8,
+      "sha256": "b2bdb3772fd9a8b64d6cd2ab3ae5c0c4297f3dae6b09bd376d923654abf7cd4b"
+    },
+    {
+      "name": "PREFLIGHT",
+      "entries": 14,
+      "sha256": "733de497ca6dc290eba76184ea68b35b09d09985b570fae48e261a825f5c29cd"
+    },
+    {
+      "name": "RESTAURANTS",
+      "entries": 20,
+      "sha256": "2b5f488b24f3f4b01744fac931361ab02ca5359c6d9ca2c2aabdf8ecaab4d76f"
+    },
+    {
+      "name": "SHOPPING_RECS",
+      "entries": 7,
+      "sha256": "9cdf4679bc1c0c6da6c846b69b9953b68d8ff6b0bb488e72ac0ba55bd6a79b20"
+    },
+    {
+      "name": "GYMS_RECS",
+      "entries": 6,
+      "sha256": "1fa2c8e3de8498467e2a46a01286b30f84b7b4605f483f795a8067b828b78ec4"
+    },
+    {
+      "name": "DAY_DIRECTIONS",
+      "entries": 17,
+      "sha256": "19ee546f4e3bc10c623e4f04ab4c0f6cc5b56b1ff43259570c8067aa4cfe11c5"
+    }
+  ]
+}

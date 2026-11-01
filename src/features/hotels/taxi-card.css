@@ -1,0 +1,68 @@
+/* The taxi card: a hotel's Japanese name, large, for the driver. */
+.taxi-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-box);
+  background: var(--lav-soft);
+  color: var(--lav-ink);
+}
+
+.taxi-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.taxi-text small {
+  font-size: 12px;
+}
+
+.taxi-name {
+  color: var(--lav-ink);
+  font-size: 22px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.taxi-unchecked {
+  opacity: 0.8;
+}
+
+.taxi-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.taxi-card--calm {
+  background: var(--card);
+  color: var(--muted);
+  box-shadow: var(--shadow);
+}
+
+.taxi-card--calm .taxi-label {
+  margin-bottom: 4px;
+}
+
+.taxi-expand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.taxi-big {
+  padding-bottom: 16px;
+}
+
+.taxi-big-name {
+  color: var(--lav-ink);
+  font-size: 44px;
+  line-height: 1.35;
+  line-break: strict;
+}

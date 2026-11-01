@@ -1,0 +1,65 @@
+.sky-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Large blurred patches of light drifting side to side, not drawn clouds. */
+.sky-cloud {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--cloud);
+  opacity: var(--cloud-opacity);
+  filter: blur(40px);
+  animation: sky-drift var(--dur) ease-in-out infinite alternate;
+}
+
+.sky-leaf {
+  position: absolute;
+  top: -24px;
+  opacity: 0.28;
+  animation: sky-fall var(--dur) linear var(--delay) infinite;
+}
+
+.sky-leaf i {
+  display: block;
+  width: 8px;
+  height: 11px;
+  border-radius: 0 100% 0 100%;
+  background: var(--leaf-color);
+  animation: sky-sway 5s ease-in-out var(--delay) infinite alternate;
+}
+
+@keyframes sky-drift {
+  from {
+    transform: translateX(-40px);
+  }
+
+  to {
+    transform: translateX(60px);
+  }
+}
+
+@keyframes sky-fall {
+  to {
+    transform: translateY(calc(100vh + 48px));
+  }
+}
+
+@keyframes sky-sway {
+  from {
+    transform: translateX(-10px) rotate(-30deg);
+  }
+
+  to {
+    transform: translateX(10px) rotate(30deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sky-layer {
+    display: none;
+  }
+}

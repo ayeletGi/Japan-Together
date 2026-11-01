@@ -1,0 +1,54 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: calc(10px + env(safe-area-inset-top, 0px)) var(--gutter) 10px;
+}
+
+.top-bar-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: var(--berry);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.top-bar-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-bar-actions {
+  display: flex;
+  flex: none;
+  gap: 8px;
+}
+
+/* Narrow phones: tighter buttons so the name keeps room. */
+@media (max-width: 400px) {
+  .top-bar-actions {
+    gap: 6px;
+  }
+
+  .top-bar-actions .quick-button {
+    padding: 0 11px;
+  }
+
+  .top-bar-brand {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 860px) {
+  .top-bar-brand {
+    visibility: hidden;
+  }
+}

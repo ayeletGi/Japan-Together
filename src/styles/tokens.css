@@ -1,0 +1,252 @@
+/* Design tokens ("Neko City"): a soft sky page, frosted white cards, pastel pink as the main colour
+   and lavender, mint, sky and sun as thin accents. Every colour, shadow, radius and duration the
+   app uses is defined here; component CSS only refers to these names. Light values live on
+   :root and the dark values below them. */
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --page: linear-gradient(180deg, #eaf3fc 0%, #f4f8fd 45%, #fcfdfe 100%);
+  --bg: #fffbfd;
+  --frost: rgba(255, 255, 255, 0.86);
+  --card: #ffffff;
+  --nav: rgba(255, 255, 255, 0.86);
+  --backdrop: rgba(52, 48, 61, 0.32);
+
+  /* Text */
+  --ink: #34303d;
+  --muted: #8a7e93;
+  /* A done list item: soft mauve, and a lighter one for its ring. */
+  --done: #7a6680;
+  --done-soft: #cbbfce;
+  --line: #f6e7ee;
+  --hairline: rgba(150, 110, 160, 0.13);
+  --dash: rgba(244, 154, 182, 0.3);
+
+  /* Accents */
+  --pink: #f7b7cb;
+  --pink-deep: #e58fae;
+  --pink-soft: #fdeef3;
+  --berry: #8a3a58;
+  --accent: #b5527c;
+  --on-pink: #4b1528;
+  --lav: #b9a6e8;
+  --lav-soft: #efeafb;
+  --lav-ink: #5d4a8f;
+  --lav-deep: #9d88d6;
+  --mint: #a8dcbc;
+  --mint-soft: #e7f6ec;
+  --mint-ink: #3b7a58;
+  --mint-deep: #7fc7a2;
+  --sky: #dcecfb;
+  --sky-2: #eef5fd;
+  --sky-ink: #2f5f8f;
+  --sky-strong: #9fc6ec;
+  --sun-soft: #fff0d6;
+  --sun-ink: #8a5a14;
+  --gray-soft: #efedf2;
+  --gray-ink: #5f5a66;
+  --hanko: #d6403a;
+  --hanko-soft: rgba(214, 64, 58, 0.07);
+  --route-faint: #f6d3df;
+
+  /* Illustration: skyline, Fuji, trees, the cat, coins and falling leaves */
+  --b1: #f2d4e1;
+  --b2: #e6ddf8;
+  --b3: #fbe2ea;
+  --b4: #ead8f3;
+  --fuji: #ffffff;
+  --fuji-cap: #c9def6;
+  --tree: #ffc6d6;
+  --tree-2: #ffd8e4;
+  --cat: #3a3540;
+  --cat-face: #ffffff;
+  --cat-ear: #f7c3d2;
+  --cat-ear-lav: #d9ccf5;
+  --flower-heart: #ffe3a3;
+  --dango-stick: #b08a5a;
+  --coin: #f9c86a;
+  --coin-edge: #c48a2c;
+  --cloud: #ffffff;
+  --cloud-opacity: 0.8;
+  --leaf-1: #9fd4b0;
+  --leaf-2: #ecd06e;
+  --leaf-3: #b8dc8e;
+  --leaf-4: #f2c96a;
+  --leaf-5: #8fcca6;
+  --leaf-6: #f2a38f;
+
+  /* Shadows: neutral grey, never tinted */
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 6px 18px -8px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px -6px rgba(0, 0, 0, 0.09);
+  --shadow-nav: 0 -4px 18px rgba(0, 0, 0, 0.06);
+  --shadow-rail: 4px 0 22px rgba(0, 0, 0, 0.05);
+  --shadow-sheet: 0 -10px 40px rgba(0, 0, 0, 0.16);
+  --shadow-chip-on: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --press-inset: inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+  --ring: 0 0 0 2px var(--pink);
+  --ring-soft: 0 0 0 2px var(--pink-soft);
+
+  /* Type */
+  --font-display: 'Fredoka', 'Varela Round', system-ui, sans-serif;
+  --font-body: 'Varela Round', system-ui, sans-serif;
+  --font-jp: 'Hiragino Maru Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+
+  /* Shape */
+  --radius-hero: 28px;
+  --radius-sheet: 26px;
+  --radius-card: 24px;
+  --radius-box: 18px;
+  --radius-tile: 15px;
+  --radius-pill: 99px;
+  --gutter: 16px;
+  --rail-width: 212px;
+  --content-max: 1180px;
+  --tap: 44px;
+
+  /* Motion (about 30% slower than snappy, as asked) */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-spring: cubic-bezier(0.3, 1.6, 0.5, 1);
+  --ease-walk: cubic-bezier(0.3, 1.3, 0.5, 1);
+  --ease-glide: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-tap: 0.18s;
+  --dur-fade: 0.26s;
+  --dur-sheet: 0.33s;
+  --dur-route: 0.47s;
+  --dur-toast: 0.39s;
+  --dur-page: 0.49s;
+  --dur-tick: 0.52s;
+  --dur-tab: 0.59s;
+  --dur-tab-slide: 0.68s;
+  --dur-tab-fade: 0.4s;
+  --dur-reveal: 0.65s;
+  --dur-stamp: 0.65s;
+  --dur-hanko: 0.72s;
+  --dur-bar: 0.78s;
+  --dur-greet-word: 0.9s;
+  --dur-walk: 1.04s;
+  --dur-greet-face: 1.2s;
+  --dur-thud: 0.45s;
+  --delay-thud: 0.29s;
+}
+
+/* Dark: follows the phone unless the top-bar toggle picked a theme (data-theme on <html>). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --page: linear-gradient(180deg, #1e1922, #221c27);
+    --bg: #1e1922;
+    --frost: rgba(42, 35, 47, 0.88);
+    --card: #2a232f;
+    --nav: rgba(42, 35, 47, 0.94);
+    --backdrop: rgba(8, 6, 10, 0.55);
+    --ink: #f4eaf0;
+    --muted: #b6a7b8;
+    --done: #a593a9;
+    --done-soft: #5a4b5e;
+    --line: #3a3040;
+    --hairline: rgba(244, 154, 182, 0.14);
+    --dash: rgba(244, 154, 182, 0.2);
+    --pink: #f49ab6;
+    --pink-deep: #f49ab6;
+    --pink-soft: #4a2b3b;
+    --berry: #ffbdd2;
+    --accent: #ff9fc0;
+    --on-pink: #3a0f22;
+    --lav: #9d88d6;
+    --lav-soft: #352d48;
+    --lav-ink: #d3c6f7;
+    --lav-deep: #b9a6e8;
+    --mint: #5aa47c;
+    --mint-soft: #213a2c;
+    --mint-ink: #a8dcbc;
+    --sky: #22324a;
+    --sky-2: #1c2636;
+    --sky-ink: #a9cdf0;
+    --sky-strong: #5d8fbf;
+    --sun-soft: #3d3020;
+    --sun-ink: #f2c97a;
+    --gray-soft: #2e2a33;
+    --gray-ink: #cbc4d0;
+    --hanko: #ff7b72;
+    --hanko-soft: rgba(255, 123, 114, 0.12);
+    --route-faint: #4a3440;
+    --b1: #4a3040;
+    --b2: #3a3352;
+    --b3: #4f3343;
+    --b4: #41324d;
+    --fuji: #d9dfee;
+    --fuji-cap: #a9bcd8;
+    --tree: #7a4560;
+    --tree-2: #8d5470;
+    --cat: #15111a;
+    --cat-face: #f4eaf0;
+    --cloud: #4a3f56;
+    --cloud-opacity: 0.25;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(244, 154, 182, 0.1);
+    --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.28);
+    --shadow-nav: 0 -4px 18px rgba(0, 0, 0, 0.3);
+    --shadow-rail: 4px 0 22px rgba(0, 0, 0, 0.3);
+    --shadow-sheet: 0 -10px 40px rgba(0, 0, 0, 0.45);
+    --shadow-chip-on: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --page: linear-gradient(180deg, #1e1922, #221c27);
+  --bg: #1e1922;
+  --frost: rgba(42, 35, 47, 0.88);
+  --card: #2a232f;
+  --nav: rgba(42, 35, 47, 0.94);
+  --backdrop: rgba(8, 6, 10, 0.55);
+  --ink: #f4eaf0;
+  --muted: #b6a7b8;
+  --done: #a593a9;
+  --done-soft: #5a4b5e;
+  --line: #3a3040;
+  --hairline: rgba(244, 154, 182, 0.14);
+  --dash: rgba(244, 154, 182, 0.2);
+  --pink: #f49ab6;
+  --pink-deep: #f49ab6;
+  --pink-soft: #4a2b3b;
+  --berry: #ffbdd2;
+  --accent: #ff9fc0;
+  --on-pink: #3a0f22;
+  --lav: #9d88d6;
+  --lav-soft: #352d48;
+  --lav-ink: #d3c6f7;
+  --lav-deep: #b9a6e8;
+  --mint: #5aa47c;
+  --mint-soft: #213a2c;
+  --mint-ink: #a8dcbc;
+  --sky: #22324a;
+  --sky-2: #1c2636;
+  --sky-ink: #a9cdf0;
+  --sky-strong: #5d8fbf;
+  --sun-soft: #3d3020;
+  --sun-ink: #f2c97a;
+  --gray-soft: #2e2a33;
+  --gray-ink: #cbc4d0;
+  --hanko: #ff7b72;
+  --hanko-soft: rgba(255, 123, 114, 0.12);
+  --route-faint: #4a3440;
+  --b1: #4a3040;
+  --b2: #3a3352;
+  --b3: #4f3343;
+  --b4: #41324d;
+  --fuji: #d9dfee;
+  --fuji-cap: #a9bcd8;
+  --tree: #7a4560;
+  --tree-2: #8d5470;
+  --cat: #15111a;
+  --cat-face: #f4eaf0;
+  --cloud: #4a3f56;
+  --cloud-opacity: 0.25;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(244, 154, 182, 0.1);
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.28);
+  --shadow-nav: 0 -4px 18px rgba(0, 0, 0, 0.3);
+  --shadow-rail: 4px 0 22px rgba(0, 0, 0, 0.3);
+  --shadow-sheet: 0 -10px 40px rgba(0, 0, 0, 0.45);
+  --shadow-chip-on: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

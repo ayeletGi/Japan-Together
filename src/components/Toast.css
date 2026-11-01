@@ -1,0 +1,32 @@
+.toast {
+  position: fixed;
+  inset-inline: 0;
+  bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  z-index: 70;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity var(--dur-toast),
+    transform var(--dur-toast);
+  pointer-events: none;
+}
+
+.toast--on {
+  opacity: 1;
+  transform: none;
+}
+
+@media (min-width: 860px) {
+  .toast {
+    inset-inline-start: var(--rail-width);
+    bottom: 32px;
+  }
+}

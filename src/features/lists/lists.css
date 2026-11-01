@@ -1,0 +1,798 @@
+/* The Lists tab: list chips, an add form, then round ticks (shared with the checklist) with edit and delete buttons. */
+.list-chips {
+  flex-wrap: wrap;
+  gap: 14px 12px;
+  margin: 12px 0 20px;
+}
+
+.list-chips .chip {
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+.list-new-chip {
+  border-style: dashed;
+}
+
+.list-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.list-form .btn {
+  margin-top: 8px;
+}
+
+.list-count {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.lists-kicker {
+  color: var(--berry);
+  font-size: 13px;
+}
+
+.lists-head h1 {
+  font-size: 26px;
+}
+
+.lists .todo-list {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lists .todo-group + .todo-list {
+  margin-top: 0;
+}
+
+.list-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.list-chips .chip {
+  text-decoration: none;
+}
+
+.list-chips .chip[aria-current='page'] {
+  background: var(--pink);
+  color: var(--on-pink);
+  box-shadow: var(--shadow-chip-on);
+}
+
+.list-action {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+/* Category picker in the add and edit forms: chips, or a small field for a new one. */
+.list-categories {
+  min-width: 0;
+  margin: 6px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.list-categories legend {
+  margin-bottom: 6px;
+  padding: 0;
+}
+
+/* One row that scrolls sideways, fading at its far end so a cut-off chip says there is more. */
+.list-categories .chip-row {
+  flex-wrap: nowrap;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 6px;
+  scrollbar-width: none;
+  mask-image: linear-gradient(to left, #000 calc(100% - 28px), transparent);
+}
+
+:root[dir='ltr'] .list-categories .chip-row {
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+}
+
+.list-categories .chip {
+  flex: none;
+}
+
+.list-categories .chip-row::-webkit-scrollbar {
+  display: none;
+}
+
+.list-category-input {
+  width: 160px;
+  min-height: 40px;
+}
+
+.list-category {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.list-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+/* The round + that floats above the tab bar: add to the open list (the code first, once per phone). */
+/* Room at the end of the page so the + never hides the last item. */
+.lists {
+  padding-bottom: 72px;
+}
+
+/* The list's title with a small ✏️ and 🗑 at the far end, or a name field while renaming. */
+.list-title-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.list-title-action {
+  width: 34px;
+  height: 34px;
+}
+
+/* Gifts a phone kept before the lists were shared, until they move. */
+.list-phone-gifts p {
+  margin: 0 0 6px;
+}
+
+.list-phone-gifts ul {
+  margin: 0;
+  padding-inline-start: 18px;
+}
+
+/* A category's heading with its own + at the far end. */
+.list-category-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.list-category-add {
+  width: 34px;
+  height: 34px;
+  color: var(--berry);
+}
+
+/* An item's card: the item, its photo, then ✏️ and 🗑 behind a thin line, all in one. */
+.list-card {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+
+.list-card .todo {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.list-item-actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  align-self: stretch;
+  gap: 2px;
+  margin-block: 10px;
+  padding-inline: 4px;
+  border-inline-start: 1.5px solid var(--line);
+}
+
+.list-item-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 40px;
+  padding: 0;
+  border-radius: 12px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+/* In more than one list: a small pink line naming the other lists. */
+.list-linked {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 4px;
+  margin-top: 4px;
+  color: var(--berry);
+  font-size: 12px;
+}
+
+.list-linked-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--lav-soft);
+  color: var(--lav-ink);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.list-linked-note svg {
+  flex: none;
+  margin-top: 1px;
+}
+
+.list-categories .chip svg {
+  margin-inline-end: 4px;
+  vertical-align: -2px;
+}
+
+/* An item's photo: a small square before the buttons; tapping it opens the photo big. */
+
+.list-thumb {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--pink-soft);
+  color: var(--muted);
+  box-shadow: var(--shadow-sm);
+}
+
+.list-card .list-thumb {
+  margin: 8px;
+}
+
+.list-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* A link in the item: a small "Link ↗" pill beside its name, above the button under the text. */
+.list-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.list-link {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--pink-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.list-photo-big {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+.list-photo-missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-photo-missing--big {
+  flex-direction: column;
+  gap: 8px;
+  min-height: 160px;
+  border-radius: 16px;
+  background: var(--pink-soft);
+  color: var(--muted);
+}
+
+/* In the add and edit forms: "Add a photo" and "Add a link" side by side, or what each holds. */
+.list-extras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.list-extras .btn {
+  margin-top: 0;
+}
+
+.list-extra-add {
+  border: 1.5px dashed var(--pink);
+}
+
+.list-link-field {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  gap: 8px;
+}
+
+.list-link-box {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+}
+
+.list-link-box .input {
+  flex: 1;
+  min-width: 0;
+  padding-inline-start: 40px;
+}
+
+/* The box is left-to-right (an address), so its icon sits on its left in both languages. */
+.list-link-open {
+  background: var(--lav-soft);
+  color: var(--lav-ink);
+}
+
+.list-link-field-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+.list-photo-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list-photo-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* An item card: the circle ticks it, the rest of the card opens its edit form. */
+.list-todo {
+  padding: 0;
+  gap: 0;
+  cursor: default;
+}
+
+.list-tick {
+  display: flex;
+  flex: none;
+  align-self: stretch;
+  padding: 10px 12px;
+  padding-inline-end: 10px;
+  background: none;
+  cursor: pointer;
+}
+
+.list-open {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  padding-inline-start: 0;
+  text-align: start;
+}
+
+/* Taps on the text fall through to this button; only the link sits above it. */
+.list-open .todo-text {
+  pointer-events: none;
+}
+
+.list-open-button {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* The edit form's top bar: its title, then duplicate, cancel and save. */
+.list-edit-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: -4px;
+}
+
+.list-edit-title {
+  flex: 1;
+  margin: 0;
+  color: var(--berry);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.list-save {
+  width: 44px;
+  height: 44px;
+  background: var(--pink);
+  color: var(--on-pink);
+}
+
+/* Reordering the lists: a long press lifts a chip, which follows the finger over a dashed gap. */
+.list-chip {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.list-chips .list-chip--gap,
+.list-chips .list-chip--gap[aria-current='page'] {
+  border: 2px dashed var(--pink);
+  background: transparent;
+  color: transparent;
+  box-shadow: none;
+}
+
+.list-chip--lifted {
+  position: fixed;
+  z-index: 50;
+  min-height: 48px;
+  padding: 0 20px;
+  outline: 2px solid var(--pink);
+  background: var(--card);
+  font-size: 16px;
+  box-shadow: var(--shadow-sheet);
+  transform: scale(1.08) rotate(-3deg);
+  pointer-events: none;
+}
+
+.list-drag-hint {
+  margin: -8px 0 8px;
+  color: var(--berry);
+  text-align: center;
+}
+
+/* Whose lists: three stamps like the stamp rally's; the picked one is stamped and tilted. */
+.list-groups {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+
+.list-group {
+  --group-ring: var(--pink-deep);
+  --group-soft: var(--pink-soft);
+  --group-ink: var(--berry);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.list-group--noa {
+  --group-ring: var(--lav-deep);
+  --group-soft: var(--lav-soft);
+  --group-ink: var(--lav-ink);
+}
+
+.list-group--both {
+  --group-ring: var(--mint-deep);
+  --group-soft: var(--mint-soft);
+  --group-ink: var(--mint-ink);
+}
+
+.list-group-seal {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: 2px dashed var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  transition:
+    transform var(--dur-stamp) var(--ease-spring),
+    background-color var(--dur-tap) ease;
+}
+
+.list-group-cats {
+  width: 46px;
+  height: 46px;
+  opacity: 0.55;
+}
+
+/* The other groups' stamps rest in a pale tint of their own colour, not grey,
+   until a lifted chip over one opens it up (--drop). */
+.list-group[aria-pressed='false']:not(.list-group--drop) .list-group-seal {
+  border-color: color-mix(in srgb, var(--group-ring) 55%, transparent);
+}
+
+.list-group[aria-pressed='false']:not(.list-group--drop) .list-group-cats {
+  opacity: 0.8;
+}
+
+.list-group[aria-pressed='false'] .list-group-name {
+  /* Mixed with grey, not see-through, so the name stays readable on any background. */
+  color: color-mix(in srgb, var(--group-ink) 55%, var(--muted));
+}
+
+.list-group[aria-pressed='true'] .list-group-seal {
+  border: 2.5px solid var(--group-ring);
+  background: var(--group-soft);
+  transform: rotate(-10deg);
+}
+
+.list-group[aria-pressed='true'] .list-group-cats {
+  opacity: 1;
+}
+
+.list-group-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.list-group[aria-pressed='true'] .list-group-name {
+  color: var(--group-ink);
+}
+
+/* A lifted chip over another group's stamp: the stamp opens up to take the list. */
+.list-group--drop .list-group-seal {
+  border: 2.5px dashed var(--group-ring);
+  background: var(--group-soft);
+  transform: scale(1.12);
+  box-shadow: 0 0 0 6px var(--group-soft);
+}
+
+.list-group--drop .list-group-cats {
+  opacity: 1;
+}
+
+/* ⇄ on a list's title: the other two groups, as small stamps, to move the list to. */
+.list-move {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 12px;
+  padding: 10px 14px;
+}
+
+.list-move-label {
+  flex: 1;
+  font-size: 14px;
+}
+
+.list-move-to .list-group-seal {
+  width: 48px;
+  height: 48px;
+}
+
+.list-move-to .list-group-cats {
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+}
+
+.list-move-to .list-group-name {
+  font-size: 13px;
+}
+
+.list-group-count {
+  margin-top: -4px;
+  font-size: 12px;
+}
+
+.group-cat-face {
+  fill: var(--cat-face);
+  stroke: var(--cat);
+  stroke-linejoin: round;
+}
+
+.group-cat-eye {
+  fill: var(--cat);
+}
+
+.group-cat-ear {
+  fill: var(--cat-ear);
+}
+
+.group-cat-cheek {
+  stroke: var(--pink);
+  stroke-width: 2;
+}
+
+.group-cat--noa .group-cat-ear {
+  fill: var(--cat-ear-lav);
+}
+
+.group-cat--noa .group-cat-cheek {
+  stroke: var(--lav);
+}
+
+.group-flower circle {
+  fill: var(--cat-ear-lav);
+  stroke: var(--cat);
+  stroke-width: 1.1;
+}
+
+.group-flower .group-flower-heart {
+  fill: var(--flower-heart);
+}
+
+.group-dango-stick {
+  stroke: var(--dango-stick);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+.group-dango {
+  stroke: var(--cat);
+  stroke-width: 0.9;
+}
+
+.group-dango--pink {
+  fill: var(--pink);
+}
+
+.group-dango--white {
+  fill: var(--cat-face);
+}
+
+.group-dango--green {
+  fill: var(--mint);
+}
+
+/* A done item turns soft mauve, its line the same colour as its text: nothing on it stays pink. */
+/* An empty ring with a mauve ✓ inside, not a filled circle. */
+.list-card .todo--done .todo-tick {
+  border-color: var(--done-soft);
+  background: none;
+  color: var(--done);
+}
+
+.list-card .todo--done .todo-title {
+  color: var(--done);
+  text-decoration-color: var(--done);
+}
+
+/* …and shrinks to one short row: just its name, no note, no "also in", no shadow. */
+.list-card:has(.todo--done) {
+  box-shadow: none;
+}
+
+.list-card .todo--done small,
+.list-card .todo--done .list-linked {
+  display: none;
+}
+
+.list-card .todo--done .list-tick,
+.list-card .todo--done .list-open {
+  padding-block: 6px;
+}
+
+.list-card .todo--done .todo-title {
+  font-size: 14px;
+}
+
+/* "✓ 3 done · show": opens and closes a category's done items. */
+.list-done-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px auto;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  color: var(--berry);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Each group's points: a small sticker on its stamp, in the group's colour. */
+.list-group-seal {
+  position: relative;
+}
+
+.list-group-points {
+  position: absolute;
+  bottom: -6px;
+  inset-inline-start: 50%;
+  translate: 50% 0;
+  padding: 0 5px;
+  border: 1px solid var(--group-ring);
+  border-radius: var(--radius-pill);
+  background: var(--group-soft);
+  color: var(--group-ink);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+[dir='ltr'] .list-group-points {
+  translate: -50% 0;
+}
+
+/* The picked stamp is tilted; its sticker stays level. */
+.list-group[aria-pressed='true'] .list-group-points {
+  rotate: 10deg;
+}
+
+.list-group-points.is-popping {
+  animation: list-points-bump 420ms ease-out;
+}
+
+/* "+10" floats up from above the stamp and fades. */
+.list-group-pop {
+  position: absolute;
+  top: -14px;
+  inset-inline-end: -6px;
+  color: var(--group-ink);
+  font-size: 12px;
+  font-weight: 800;
+  pointer-events: none;
+  opacity: 0;
+  animation: list-points-rise 1100ms ease-out;
+}
+
+.list-group[aria-pressed='true'] .list-group-pop {
+  rotate: 10deg;
+}
+
+@keyframes list-points-bump {
+  40% {
+    scale: 1.2;
+  }
+}
+
+@keyframes list-points-rise {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-group-points.is-popping,
+  .list-group-pop {
+    animation: none;
+  }
+}

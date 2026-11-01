@@ -1,0 +1,101 @@
+/* Edit mode of the day plan, and the replace / add sheets. */
+.day-plan-actions {
+  gap: 8px;
+}
+
+.plan-row.is-editing .plan-box {
+  opacity: 1;
+}
+
+.plan-row.is-pinned .plan-box {
+  background: var(--sky-2);
+  box-shadow: none;
+}
+
+.edit-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.time-stepper {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--sky-2);
+}
+
+.time-stepper b {
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.time-stepper button,
+.mini-button {
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  color: var(--berry);
+  box-shadow: var(--shadow-sm);
+}
+
+.mini-button {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mini-button--wide {
+  padding: 0 12px;
+  color: var(--berry);
+}
+
+.edit-actions {
+  gap: 6px;
+}
+
+.plan-edit-footer {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.plan-edit-footer .btn--primary {
+  flex: 1;
+}
+
+.plan-edit-note {
+  margin: 8px 2px 0;
+}
+
+.sheet-subtitle {
+  margin: 4px 0 -4px;
+  font-size: 15px;
+}
+
+.custom-stop {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.add-time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.add-time .input {
+  width: 130px;
+}
+
+.add-stop {
+  display: contents;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,61 @@
+/* The export sheet, and the plan printed to PDF from it. */
+.export-options {
+  margin-top: 14px;
+}
+
+.print-plan {
+  display: none;
+}
+
+@media print {
+  body > :not(.print-plan) {
+    display: none;
+  }
+
+  .print-plan {
+    display: block;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  .print-day {
+    margin-bottom: 18pt;
+  }
+
+  .print-day + .print-day {
+    break-before: page;
+  }
+
+  .print-day h2 {
+    font-size: 15pt;
+    margin-bottom: 4pt;
+  }
+
+  .print-day p {
+    margin: 2pt 0;
+  }
+
+  .print-day table {
+    width: 100%;
+    margin-top: 8pt;
+    border-collapse: collapse;
+  }
+
+  .print-day th,
+  .print-day td {
+    padding: 4pt 6pt;
+    border-bottom: 0.5pt solid #bbb;
+    text-align: start;
+    vertical-align: top;
+    white-space: pre-line;
+  }
+
+  .print-day td:first-child {
+    white-space: nowrap;
+  }
+
+  .print-day small {
+    display: block;
+    color: #555;
+  }
+}

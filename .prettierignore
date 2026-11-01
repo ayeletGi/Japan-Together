@@ -1,0 +1,7 @@
+dist
+node_modules
+.npm-cache
+package-lock.json
+tests/fixtures
+*.md
+src/data/trip-days.json

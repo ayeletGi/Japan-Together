@@ -1,0 +1,32 @@
+.weather-badge {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px 7px 10px;
+  border-radius: var(--radius-box);
+  background: var(--frost);
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+
+.weather-badge-icon {
+  display: flex;
+  color: var(--sun-ink);
+}
+
+.weather-badge-high {
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.weather-badge-range {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.weather-badge--waiting .weather-badge-icon {
+  color: var(--sky-ink);
+}

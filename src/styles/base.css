@@ -1,0 +1,143 @@
+/* Element defaults: the sky page, type, focus, and the shared tap feedback. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page) fixed;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+:is(a, button, input, select, summary, [tabindex]):focus-visible {
+  outline: 2.5px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+bdi {
+  unicode-bidi: isolate;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Times, dates and money: Fredoka with tabular digits so columns line up. */
+.num {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* A time or number range kept whole inside running text (see RichText). */
+.range {
+  white-space: nowrap;
+}
+
+.jp {
+  font-family: var(--font-jp);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Tap feedback on everything pressable. */
+button,
+a {
+  transition: transform var(--dur-tap) ease;
+}
+
+button:active:not(:disabled),
+a:active {
+  transform: scale(0.96);
+}
+
+/* Directional icons are drawn for RTL; mirror them on LTR pages. */
+[dir='ltr'] .flip-ltr {
+  scale: -1 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

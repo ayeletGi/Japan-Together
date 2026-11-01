@@ -1,0 +1,52 @@
+.hanko {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  border: 2.5px solid var(--hanko);
+  border-radius: 50%;
+  background: var(--hanko-soft);
+  color: var(--hanko);
+  font-size: 17px;
+  font-weight: 700;
+  opacity: 0.75;
+  transform: rotate(-14deg);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hanko--fresh {
+  animation: hanko-down var(--dur-hanko) var(--ease-spring) both;
+}
+
+@keyframes hanko-down {
+  0% {
+    opacity: 0;
+    transform: scale(2.2) rotate(6deg);
+  }
+
+  55% {
+    opacity: 0.95;
+    transform: scale(0.92) rotate(-16deg);
+  }
+
+  100% {
+    opacity: 0.75;
+    transform: scale(1) rotate(-14deg);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .hanko {
+    mix-blend-mode: normal;
+  }
+}
+
+:root[data-theme='dark'] .hanko {
+  mix-blend-mode: normal;
+}

@@ -1,0 +1,29 @@
+/* Days left until the trip: tiny soft text on a gentle curve just over the first day's chip. */
+.day-chip:has(.trip-countdown) {
+  position: relative;
+}
+
+.trip-countdown {
+  position: absolute;
+  bottom: calc(100% - 1px);
+  /* A little wider than the chip so the whole phrase fits on the curve. */
+  inset-inline-start: -8px;
+  width: calc(100% + 16px);
+  height: 12px;
+  overflow: visible;
+  /* Deep berry so it reads clearly over the pastel rooftops without a halo. */
+  fill: var(--berry);
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+/* Room above the scrolling chip row (which clips anything outside it) for the curve. */
+.day-chips:has(.trip-countdown) {
+  padding-top: 16px;
+  padding-inline-start: 8px;
+}
+
+.today-chips:has(.trip-countdown) {
+  margin-top: -42px;
+}

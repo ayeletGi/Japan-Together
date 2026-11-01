@@ -1,0 +1,216 @@
+/* The app frame: one column with a bottom tab bar on phones; desktop swaps the bar for a side rail. */
+.app-shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+}
+
+.page {
+  min-width: 0;
+}
+
+/* Content column with the side gutter. */
+.wrap {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  inset-inline-start: 8px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  color: var(--berry);
+  box-shadow: var(--shadow);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* Pages slide in from the side; clip them so a phone doesn't widen and drag the tab bar along. */
+main {
+  overflow-x: clip;
+}
+
+main:focus {
+  outline: none;
+}
+
+/* Tabs, shared by the tab bar and the side rail. */
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 14px;
+  color: var(--muted);
+  font-size: 12px;
+  transition:
+    color var(--dur-tab-fade) ease,
+    background-color var(--dur-tab-fade) ease;
+}
+
+/* Seven tabs share a phone's width: each takes an equal slice and the pip slims down. */
+.tab-bar .nav-tab {
+  flex: 1;
+  min-width: 0;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.tab-bar .nav-pip {
+  padding-inline: 8px;
+}
+
+.nav-tab[aria-current='page'] {
+  color: var(--accent);
+}
+
+/*
+ * Soft fade: the pink pill melts away on the old tab and fades in, growing slightly, on the new
+ * one, while the new icon lifts a touch. Nothing travels across the bar.
+ */
+.nav-pip {
+  position: relative;
+  display: flex;
+  padding: 3px 12px;
+  isolation: isolate;
+  border-radius: var(--radius-pill);
+  transition: transform var(--dur-tab-slide) var(--ease-glide);
+}
+
+.nav-pip::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--pink-soft);
+  content: '';
+  opacity: 0;
+  transform: scale(0.75);
+  transition:
+    opacity var(--dur-tab-fade) ease,
+    transform var(--dur-tab-slide) var(--ease-glide);
+}
+
+.nav-tab[aria-current='page'] .nav-pip {
+  transform: translateY(-2px);
+}
+
+.nav-tab[aria-current='page'] .nav-pip::before {
+  opacity: 1;
+  transform: none;
+}
+
+.tab-bar {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 8px calc(12px + env(safe-area-inset-bottom, 0px));
+  background: var(--nav);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-nav);
+}
+
+.side-rail {
+  display: none;
+}
+
+@media (min-width: 860px) {
+  .tab-bar {
+    display: none;
+  }
+
+  .app-main {
+    padding-bottom: 32px;
+  }
+
+  .side-rail {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    gap: 6px;
+    width: var(--rail-width);
+    height: 100vh;
+    padding: 24px 14px;
+    background: var(--nav);
+    box-shadow: var(--shadow-rail);
+  }
+
+  .side-rail-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px 18px;
+    color: var(--berry);
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .side-rail .nav-tab {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+
+  .side-rail .nav-tab[aria-current='page'] {
+    background: var(--pink-soft);
+  }
+
+  .side-rail .nav-pip {
+    padding: 0;
+  }
+
+  .side-rail .nav-pip::before {
+    display: none;
+  }
+
+  .side-rail .nav-tab[aria-current='page'] .nav-pip {
+    transform: none;
+  }
+}
+
+/* Screenshot mode: nothing but the page. */
+.app--screenshot .tab-bar,
+.app--screenshot .side-rail,
+.app--screenshot .top-bar-actions {
+  display: none;
+}
+
+.app--screenshot .app-main {
+  padding-bottom: 16px;
+}
+
+.screenshot-exit {
+  position: fixed;
+  top: calc(10px + env(safe-area-inset-top, 0px));
+  inset-inline-end: 10px;
+  z-index: 50;
+  opacity: 0.6;
+}

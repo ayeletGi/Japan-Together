@@ -1,0 +1,25 @@
+// Cloudflare Workers deploy of the web build (`npm run build:web`, then `npx wrangler deploy`).
+// Cloudflare serves dist-web as it is; worker/index.ts only answers /api/* (the live trip changes
+// in D1, see src/data/live.ts).
+{
+  "name": "japan-together-demo",
+  "compatibility_date": "2026-09-01",
+  "main": "worker/index.ts",
+  // Runs before every deploy, so it works whatever build command the dashboard has.
+  "build": {
+    "command": "npm run build:web",
+  },
+  "assets": {
+    "directory": "./dist-web",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "japan-together-demo",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations",
+    },
+  ],
+}

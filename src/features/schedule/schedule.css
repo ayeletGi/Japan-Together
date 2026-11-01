@@ -1,0 +1,348 @@
+/* The schedule: one screen to screenshot and send. */
+.schedule {
+  max-width: 760px;
+  padding-top: 8px;
+}
+
+.schedule-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 2px 0;
+}
+
+.schedule-kicker {
+  color: var(--berry);
+  font-size: 13px;
+}
+
+.schedule-head h1 {
+  font-size: 28px;
+}
+
+.schedule-flights {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.schedule-flights > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.schedule-flights b {
+  color: var(--ink);
+}
+
+/* Calendar */
+.calendar {
+  margin-top: 14px;
+  padding: 10px 8px 4px;
+  background: var(--card);
+}
+
+.calendar-head {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  padding-bottom: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(14, minmax(0, 1fr));
+  row-gap: 6px;
+  padding: 8px 0 10px;
+}
+
+.calendar-week + .calendar-week {
+  border-top: 1px solid var(--line);
+}
+
+.calendar-cell {
+  position: relative;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  min-height: 72px;
+  overflow: hidden;
+  padding: 6px 2px 4px;
+  border-radius: 12px;
+  color: var(--ink);
+  text-align: center;
+}
+
+button.calendar-cell:hover {
+  background: var(--sky-2);
+}
+
+.calendar-cell b {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.calendar-cell.is-off {
+  color: var(--muted);
+  opacity: 0.4;
+}
+
+.calendar-cell.is-today {
+  background: var(--pink-soft);
+}
+
+.calendar-cell.is-thud {
+  animation: cell-thud var(--dur-thud) ease-out var(--delay-thud);
+}
+
+@keyframes cell-thud {
+  40% {
+    transform: scale(0.94);
+  }
+}
+
+/* Each day's icon and each ribbon's city name take the city's ink colour. */
+.calendar-icon {
+  color: var(--city-ink, var(--muted));
+}
+
+.calendar-cell[data-city='tokyo'] {
+  --city-ink: var(--berry);
+}
+
+.calendar-cell[data-city='osaka'] {
+  --city-ink: var(--lav-ink);
+}
+
+.calendar-cell[data-city='kobe'] {
+  --city-ink: var(--mint-ink);
+}
+
+.calendar-cell[data-city='kyoto'] {
+  --city-ink: var(--sun-ink);
+}
+
+.calendar-cell[data-city='disney'] {
+  --city-ink: var(--sky-ink);
+}
+
+.calendar-cell[data-city='flight'] {
+  --city-ink: var(--gray-ink);
+}
+
+.calendar-main {
+  max-width: 100%;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.calendar-extra {
+  max-width: 100%;
+  color: var(--muted);
+  font-size: 9.5px;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.calendar-trip {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.1;
+}
+
+.calendar-ribbon {
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  overflow: hidden;
+  margin-inline: 1px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* The ribbon is a thin line in the city colour with the city name under it, not a filled band. */
+.calendar .calendar-ribbon {
+  position: relative;
+  align-items: flex-end;
+  padding-bottom: 2px;
+  background: none;
+  color: var(--ribbon-ink, var(--muted));
+  font-weight: 600;
+}
+
+.calendar-ribbon::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  border-radius: inherit;
+  background: var(--ribbon, var(--hairline));
+}
+
+.calendar-ribbon.tone-pink {
+  --ribbon: var(--pink);
+  --ribbon-ink: var(--berry);
+}
+
+.calendar-ribbon.tone-lav {
+  --ribbon: var(--lav);
+  --ribbon-ink: var(--lav-ink);
+}
+
+.calendar-ribbon.tone-mint {
+  --ribbon: var(--mint);
+  --ribbon-ink: var(--mint-ink);
+}
+
+.calendar-ribbon.tone-sky {
+  --ribbon: var(--sky-strong);
+  --ribbon-ink: var(--sky-ink);
+}
+
+.calendar-ribbon.tone-sun {
+  --ribbon: var(--coin);
+  --ribbon-ink: var(--sun-ink);
+}
+
+.calendar-ribbon.tone-gray {
+  --ribbon: var(--muted);
+  --ribbon-ink: var(--gray-ink);
+}
+
+.calendar-ribbon.is-start {
+  margin-inline-start: 4px;
+  border-start-start-radius: var(--radius-pill);
+  border-end-start-radius: var(--radius-pill);
+}
+
+.calendar-ribbon.is-end {
+  margin-inline-end: 4px;
+  border-start-end-radius: var(--radius-pill);
+  border-end-end-radius: var(--radius-pill);
+}
+
+@media (min-width: 600px) {
+  .calendar {
+    padding: 14px;
+  }
+
+  .calendar-cell {
+    min-height: 88px;
+  }
+
+  .calendar-cell b {
+    font-size: 18px;
+  }
+
+  .calendar-main {
+    font-size: 12px;
+  }
+
+  .calendar-extra {
+    font-size: 11.5px;
+  }
+
+  .calendar-trip {
+    font-size: 11px;
+  }
+
+  .calendar-ribbon {
+    height: 26px;
+    font-size: 13px;
+  }
+}
+
+/* Where we sleep */
+.stays {
+  margin-top: 16px;
+}
+
+.stays-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 2px 8px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.stays-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px 14px;
+}
+
+.stay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: var(--tap);
+  padding: 6px;
+  margin: -6px;
+  border-radius: 12px;
+  text-align: start;
+}
+
+.stay:hover {
+  background: var(--sky-2);
+}
+
+.stay-dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+
+.stay-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.stay-text small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.stay-chevron {
+  color: var(--muted);
+}
+
+.schedule-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.schedule .small-note {
+  margin-top: 8px;
+}
+
+.app--screenshot .schedule .small-note {
+  display: none;
+}

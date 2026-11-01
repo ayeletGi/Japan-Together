@@ -1,0 +1,24 @@
+.icon-tile {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-tile--sm {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+}
+
+.icon-tile--md {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-tile);
+}
+
+.icon-tile--lg {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+}

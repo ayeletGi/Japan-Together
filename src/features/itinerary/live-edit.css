@@ -1,0 +1,191 @@
+/* ✏️ Editing a stop in place: the pencil on each card, then the open card with the code once per
+   phone, ▲ / ▼, the activity's fields, save and undo. */
+.plan-row.is-editable .plan-box {
+  padding-inline-end: 44px;
+}
+
+.plan-edit {
+  position: absolute;
+  inset-inline-end: 6px;
+  bottom: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-pill);
+  background: var(--lav-soft);
+  color: var(--lav-ink);
+}
+
+.plan-edit:active {
+  background: var(--lav);
+}
+
+.plan-box.live-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  box-shadow:
+    0 0 0 2px var(--pink),
+    var(--shadow-sm);
+}
+
+.live-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.live-card-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.live-close {
+  width: 36px;
+  height: 36px;
+}
+
+.live-move {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px 6px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--pink-soft);
+  color: var(--berry);
+  font-size: 14px;
+}
+
+.live-move span {
+  flex: 1;
+  padding-inline-start: 6px;
+}
+
+.live-move .mini-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--berry);
+}
+
+.live-pinned {
+  margin: 0;
+}
+
+.live-more {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.live-more summary {
+  color: var(--accent);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.live-more[open] summary {
+  margin-bottom: 12px;
+}
+
+.live-more[open] > .live-field + .live-field {
+  margin-top: 12px;
+}
+
+.live-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.live-intro {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: var(--lav-soft);
+  color: var(--lav-ink);
+  font-size: 14px;
+}
+
+.live-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.live-field label {
+  color: var(--berry);
+  font-size: 13px;
+}
+
+.live-field .input,
+.live-field textarea {
+  width: 100%;
+  font: inherit;
+}
+
+.live-field textarea {
+  resize: vertical;
+}
+
+.live-field .input:focus-visible {
+  border-color: var(--pink-deep);
+  outline: 2px solid var(--pink-soft);
+}
+
+.live-code {
+  font-size: 22px;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+
+.live-times {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.live-times + small {
+  margin-top: -6px;
+}
+
+.live-error {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--pink-soft);
+  color: var(--berry);
+  font-size: 14px;
+}
+
+.live-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--dash);
+}
+
+.live-undo {
+  background: var(--lav-soft);
+  color: var(--lav-ink);
+  box-shadow: none;
+}
+
+.live-lock {
+  font-size: 13px;
+}
+
+.live-confirm {
+  display: grid;
+  gap: 8px;
+}

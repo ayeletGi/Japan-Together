@@ -1,0 +1,93 @@
+/* A day's route: map card, the legs as a timeline, and the neighbouring days. */
+.route {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 760px;
+  padding-top: 12px;
+}
+
+.route-kicker {
+  color: var(--berry);
+  font-size: 13px;
+}
+
+.route-head h1 {
+  font-size: 26px;
+}
+
+.route-head .muted {
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.route-map-card {
+  padding: 10px;
+}
+
+.route-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.route-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.route-step-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.route-step-body small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.route-step-to {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.route-step-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.route-step-maps {
+  background: var(--pink-soft);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+.route-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.route-departures {
+  align-self: flex-start;
+}
+
+.route-days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+}

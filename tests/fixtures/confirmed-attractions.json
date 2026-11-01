@@ -1,0 +1,98 @@
+[
+  {
+    "id": "d4-01",
+    "date": "2037-11-04",
+    "time": "10:00",
+    "end": "10:30",
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d9-03",
+    "date": "2037-11-09",
+    "time": "10:30",
+    "end": null,
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d10-04",
+    "date": "2037-11-10",
+    "time": "15:30",
+    "end": "16:30",
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d10-05",
+    "date": "2037-11-10",
+    "time": "15:30",
+    "end": "16:00",
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d10-06",
+    "date": "2037-11-10",
+    "time": "16:00",
+    "end": "16:30",
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d10-07",
+    "date": "2037-11-10",
+    "time": "18:00",
+    "end": "18:30",
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d10-01",
+    "date": "2037-11-10",
+    "time": null,
+    "end": null,
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d10-02",
+    "date": "2037-11-10",
+    "time": null,
+    "end": null,
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d10-03",
+    "date": "2037-11-10",
+    "time": null,
+    "end": null,
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d12-04",
+    "date": "2037-11-12",
+    "time": "19:00",
+    "end": "20:50",
+    "kind": "activity",
+    "status": "confirmed"
+  },
+  {
+    "id": "d16-01",
+    "date": "2037-11-16",
+    "time": null,
+    "end": null,
+    "kind": "ticket",
+    "status": "confirmed"
+  },
+  {
+    "id": "d17-01",
+    "date": "2037-11-17",
+    "time": null,
+    "end": null,
+    "kind": "ticket",
+    "status": "confirmed"
+  }
+]

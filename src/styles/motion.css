@@ -1,0 +1,88 @@
+/* Page transitions and the scroll reveal. One-shot only; the ambient sky lives in SkyBackground. */
+.page--in {
+  animation: page-in var(--dur-page) var(--ease-out) backwards;
+}
+
+.page--forward {
+  animation: page-forward var(--dur-route) var(--ease-out) backwards;
+}
+
+.page--back {
+  animation: page-back var(--dur-route) var(--ease-out) backwards;
+}
+
+.page--tab-next {
+  animation: page-tab-next var(--dur-tab-slide) var(--ease-glide) backwards;
+}
+
+.page--tab-prev {
+  animation: page-tab-prev var(--dur-tab-slide) var(--ease-glide) backwards;
+}
+
+/*
+ * Between tabs the page slides in sideways from the side of the tab you moved to (later tabs
+ * sit at the reading end of the bar), soft-focused at first, then settles sharp. Sideways on
+ * every screen size, never up from below.
+ */
+@keyframes page-tab-next {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(calc(-48px * var(--reading-direction, 1)));
+  }
+}
+
+@keyframes page-tab-prev {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateX(calc(48px * var(--reading-direction, 1)));
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Forward comes in from the reading end: from the left in Hebrew, from the right in English. */
+@keyframes page-forward {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-24px * var(--reading-direction, 1)));
+  }
+}
+
+@keyframes page-back {
+  from {
+    opacity: 0;
+    transform: translateX(calc(24px * var(--reading-direction, 1)));
+  }
+}
+
+[dir='ltr'] {
+  --reading-direction: -1;
+}
+
+/* Cards below the fold start low and faint and settle when they scroll in. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--dur-reveal) ease,
+    transform var(--dur-reveal) var(--ease-out);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,8 @@
+#!/bin/sh
+# Runs the same check as GitHub before every push; a failure stops the push.
+# Skip once in an emergency with: git push --no-verify
+echo "pre-push: running npm run check..."
+npm run check || {
+  echo "pre-push: check failed, push stopped. Fix the errors above and push again."
+  exit 1
+}

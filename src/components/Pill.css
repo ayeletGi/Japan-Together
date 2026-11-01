@@ -1,0 +1,45 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Tone fills shared by pills, icon tiles and small squares. */
+.tone-pink {
+  background: var(--pink-soft);
+  color: var(--berry);
+}
+
+.tone-lav {
+  background: var(--lav-soft);
+  color: var(--lav-ink);
+}
+
+.tone-mint {
+  background: var(--mint-soft);
+  color: var(--mint-ink);
+}
+
+.tone-sky {
+  background: var(--sky);
+  color: var(--sky-ink);
+}
+
+.tone-sun {
+  background: var(--sun-soft);
+  color: var(--sun-ink);
+}
+
+.tone-gray {
+  background: var(--gray-soft);
+  color: var(--gray-ink);
+}
+
+.tone-card {
+  background: var(--card);
+  color: var(--berry);
+}

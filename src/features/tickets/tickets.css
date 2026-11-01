@@ -1,0 +1,55 @@
+/* The tickets tab: every booking by date, then what still needs booking. */
+.tickets {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 760px;
+  padding-top: 4px;
+}
+
+.tickets-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tickets-kicker {
+  color: var(--berry);
+  font-size: 13px;
+}
+
+.tickets-head h1 {
+  font-size: 26px;
+}
+
+.tickets-days {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tickets-day {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tickets-date {
+  margin: 0 2px;
+  color: var(--berry);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.ticket-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ticket-bring {
+  opacity: 0.85;
+}

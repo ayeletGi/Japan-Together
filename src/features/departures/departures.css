@@ -1,0 +1,72 @@
+/* All departures: one card per confirmed attraction, built around the stop sheet's leave block. */
+.departures {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 760px;
+  padding-top: 12px;
+}
+
+.departures-head h1 {
+  font-size: 26px;
+}
+
+.departures-head .muted {
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.departure-visit {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.departure-date {
+  color: var(--berry);
+  font-size: 13px;
+}
+
+.departure-visit h2 {
+  font-size: 18px;
+}
+
+.departure-note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.departure-sources {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.departure-sources small {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.park-slots summary {
+  color: var(--accent);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.park-slots ul {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.park-slots li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 10px;
+}

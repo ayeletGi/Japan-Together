@@ -1,0 +1,559 @@
+/* Today: hero, day chips, hint, stamp rally, next-up card and the day's plan. */
+
+/* Hero: a rounded sky card; text stays in the open sky above the skyline. */
+.day-hero {
+  position: relative;
+  overflow: hidden;
+  margin: 4px var(--gutter) 0;
+  padding: 18px 16px 104px;
+  border-radius: var(--radius-hero);
+  background: linear-gradient(180deg, var(--sky), var(--sky-2));
+  box-shadow: var(--shadow-sm);
+}
+
+.skyline {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.sk-b1 {
+  fill: var(--b1);
+}
+
+.sk-b2 {
+  fill: var(--b2);
+}
+
+.sk-b3 {
+  fill: var(--b3);
+}
+
+.sk-b4 {
+  fill: var(--b4);
+}
+
+.sk-fuji {
+  fill: var(--fuji);
+}
+
+.sk-cap {
+  fill: var(--fuji-cap);
+}
+
+.sk-tree {
+  fill: var(--tree);
+}
+
+.sk-tree-2 {
+  fill: var(--tree-2);
+}
+
+.sk-pink {
+  fill: var(--pink);
+}
+
+.sk-window {
+  fill: var(--card);
+}
+
+.sk-cat {
+  fill: var(--cat);
+}
+
+.sk-tail {
+  fill: none;
+  stroke: var(--cat);
+  stroke-width: 2.4;
+}
+
+.day-hero-top {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.day-hero-text {
+  min-width: 0;
+}
+
+.day-hero h1 {
+  margin-block: 2px;
+  font-size: 27px;
+  line-height: 1.15;
+}
+
+.day-hero-place {
+  color: var(--lav-ink);
+  font-size: 13px;
+}
+
+/* Day chips overlap the hero's bottom edge. */
+.today-chips {
+  position: relative;
+  margin: -30px 0 6px;
+}
+
+.day-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  scrollbar-width: none;
+}
+
+.day-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.day-chip {
+  display: flex;
+  /* Phones scroll the row; wider screens share the spare width so the row fills the hero. */
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  max-width: 72px;
+  height: 62px;
+  border-radius: var(--radius-box);
+  background: var(--card);
+  color: var(--muted);
+  font-size: 11px;
+  box-shadow: var(--shadow);
+}
+
+.day-chip b {
+  color: var(--ink);
+  font-size: 19px;
+}
+
+.day-chip[aria-current='date'] {
+  background: var(--pink);
+  color: var(--on-pink);
+  box-shadow: none;
+}
+
+.day-chip[aria-current='date'] b {
+  color: var(--on-pink);
+}
+
+.trip-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0 2px 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.trip-hint svg {
+  margin-top: 2px;
+  color: var(--pink-deep);
+}
+
+.today-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.today-grid > * {
+  min-width: 0;
+}
+
+/* Wide screens: the plan takes the main column; the stamp map and next-up sit beside it at
+   their phone size instead of stretching across the page. */
+@media (min-width: 1100px) {
+  .today-grid {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    align-items: start;
+  }
+
+  .today-grid > .rally {
+    grid-area: 1 / 2;
+  }
+
+  .today-grid > .day-plan {
+    grid-area: 1 / 1 / 3;
+  }
+
+  .today-grid > .next-up {
+    grid-area: 2 / 2;
+  }
+}
+
+/* Stamp rally: a short map; the stamps sit on the plan's path. */
+.rally-title {
+  color: var(--berry);
+  font-size: 18px;
+}
+
+.rally-map {
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  border-radius: 20px;
+  background: var(--sky-2);
+}
+
+.rally-map svg {
+  display: block;
+  width: 100%;
+  height: 84px;
+}
+
+.rally-river {
+  fill: none;
+  stroke: var(--sky);
+  stroke-width: 14;
+  stroke-linecap: round;
+}
+
+.rally-route,
+.rally-route-done {
+  fill: none;
+  stroke-dasharray: 5 7;
+  stroke-linecap: round;
+}
+
+.rally-route {
+  stroke: var(--route-faint);
+  stroke-width: 3;
+}
+
+.rally-route-done {
+  stroke: var(--pink-deep);
+  stroke-width: 3.5;
+}
+
+.rally-hotel {
+  fill: var(--lav-soft);
+}
+
+.rally-hotel-roof {
+  fill: var(--lav);
+}
+
+.rally-marker {
+  cursor: pointer;
+  transition: transform var(--dur-tap) ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.rally-marker:active {
+  transform: scale(0.92);
+}
+
+.rally-marker circle {
+  fill: var(--card);
+  stroke: var(--line);
+  stroke-width: 2.5;
+  transition:
+    fill var(--dur-tick),
+    stroke var(--dur-tick);
+}
+
+.rally-marker text {
+  fill: var(--muted);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.rally-marker.is-next circle {
+  stroke: var(--pink);
+}
+
+.rally-marker.is-next text {
+  fill: var(--accent);
+}
+
+.rally-marker.is-done circle {
+  fill: var(--pink);
+  stroke: var(--card);
+}
+
+.rally-marker.is-done text {
+  fill: var(--on-pink);
+}
+
+.rally-cat {
+  transition: transform var(--dur-walk) var(--ease-walk);
+}
+
+.cat-face {
+  fill: var(--cat-face);
+  stroke: var(--cat);
+  stroke-width: 1.8;
+}
+
+.cat-ear {
+  fill: var(--cat-ear);
+}
+
+.cat-eye {
+  fill: var(--cat);
+}
+
+.cat-cheek {
+  stroke: var(--pink);
+  stroke-width: 2;
+}
+
+.rally-hotel-tap {
+  cursor: pointer;
+}
+
+/* A bigger invisible target around the small hotel drawing. */
+.rally-hit {
+  fill: transparent;
+}
+
+/* Next up: a white card with a thin coloured edge; the colour stays in the edge and icon tile. */
+.next-up {
+  --next-edge: var(--pink);
+  --next-tint: var(--pink-soft);
+  --next-ink: var(--accent);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 64px;
+  padding: 12px 14px;
+  border-radius: 20px;
+  background: var(--frost);
+  box-shadow: var(--shadow);
+  text-align: start;
+}
+
+.next-up::before {
+  content: '';
+  position: absolute;
+  inset-block: 14px;
+  inset-inline-start: 0;
+  width: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--next-edge);
+}
+
+/* The edge cat: a bead that walks down the edge bar (14px in from top and bottom) in step with the
+   rally cat; the edge is strong where it has walked and faint ahead. */
+.next-up-cat {
+  position: absolute;
+  inset-block-start: calc(14px + var(--cat-at) * (100% - 28px));
+  inset-inline-start: -10px;
+  width: 23px;
+  height: 23px;
+  padding: 3px;
+  border: 2px solid var(--next-edge);
+  border-radius: 50%;
+  background: var(--card);
+  transform: translateY(-50%);
+  transition: inset-block-start var(--dur-walk) var(--ease-walk);
+  pointer-events: none;
+}
+
+.next-up-cat svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.next-up:has(.next-up-cat)::before {
+  background: linear-gradient(
+    var(--next-edge) calc(var(--cat-at) * 100%),
+    color-mix(in srgb, var(--next-edge) 30%, transparent) 0
+  );
+}
+
+.next-up-icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--next-tint);
+  color: var(--next-ink);
+}
+
+.next-up-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.next-up-text strong {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.next-up-text small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.next-up-text .next-up-kicker {
+  color: var(--next-ink);
+  font-size: 13px;
+}
+
+.next-up .pill {
+  padding-inline: 4px;
+  background: none;
+  color: var(--muted);
+}
+
+.next-up--leave {
+  --next-edge: var(--coin);
+  --next-tint: var(--sun-soft);
+  --next-ink: var(--sun-ink);
+}
+
+.next-up--done {
+  --next-edge: var(--mint);
+  --next-tint: var(--mint-soft);
+  --next-ink: var(--mint-ink);
+}
+
+/* Here the pill is a real button (add to the stamp book), so it keeps a soft fill. */
+.next-up--done .pill {
+  padding-inline: 10px;
+  background: var(--mint-soft);
+  color: var(--mint-ink);
+}
+
+/* The day's plan */
+.day-plan .section-title {
+  margin-top: 4px;
+}
+
+.day-plan .section-title h2 {
+  font-size: 19px;
+}
+
+.plan-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-list::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 21px;
+  top: 24px;
+  bottom: 24px;
+  border-inline-start: 2px dotted var(--pink);
+}
+
+.plan-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* A stop's stamp, on the plan's dotted path: dashed until the cat reaches it, then inked. */
+.plan-stamp {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px dashed var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--muted);
+  transition:
+    transform var(--dur-stamp) var(--ease-spring),
+    background var(--dur-tick),
+    border-color var(--dur-tick);
+}
+
+button.plan-stamp {
+  cursor: pointer;
+}
+
+.plan-stamp.is-done {
+  border: 2.5px solid var(--pink-deep);
+  background: var(--pink-soft);
+  color: var(--accent);
+  transform: rotate(-10deg);
+}
+
+.plan-box {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-box);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  text-align: start;
+}
+
+button.plan-box:hover {
+  box-shadow: var(--ring-soft), var(--shadow-sm);
+}
+
+.plan-row.is-past .plan-box {
+  opacity: 0.62;
+}
+
+.plan-row.is-now .plan-box {
+  box-shadow: var(--ring), var(--shadow-sm);
+}
+
+.plan-title {
+  min-width: 0;
+}
+
+.plan-marks {
+  gap: 6px;
+}
+
+.plan-pin {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.plan-meta {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.plan-price {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.plan-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.plan-estimate {
+  margin-inline-start: 4px;
+  opacity: 0.75;
+}

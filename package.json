@@ -1,0 +1,56 @@
+{
+  "name": "japan-together",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build && node scripts/check-public.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p worker",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "audit:source": "node scripts/check-baseline.mjs",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run build",
+    "sync:source": "node scripts/sync-source.mjs",
+    "build:web": "vite build --mode web --outDir dist-web && node scripts/build-web.mjs && node scripts/check-public.mjs",
+    "build:artifact": "vite build --base=./ && node scripts/check-public.mjs && node scripts/build-offline.mjs",
+    "live": "node scripts/live.mjs",
+    "prepare": "git config core.hooksPath .githooks || true"
+  },
+  "dependencies": {
+    "@fontsource/fredoka": "^5.3.0",
+    "@fontsource/varela-round": "^5.3.0",
+    "i18next": "^26.4.4",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^17.0.16"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261015.1",
+    "@eslint/js": "^9.39.5",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "globals": "^15.15.0",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.71.2",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.0",
+    "wrangler": "^4.151.0"
+  },
+  "allowScripts": {
+    "workerd@1.20261012.1": true
+  }
+}

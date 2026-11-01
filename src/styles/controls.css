@@ -1,0 +1,193 @@
+/* Buttons and small layout helpers shared by every screen. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: var(--tap);
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  color: var(--berry);
+  font-size: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary,
+.btn[aria-pressed='true'] {
+  background: var(--pink);
+  color: var(--on-pink);
+  box-shadow: var(--press-inset);
+}
+
+.btn--small {
+  min-height: 40px;
+  font-size: 13px;
+}
+
+.btn--danger {
+  color: var(--hanko);
+}
+
+.btn--wide {
+  width: 100%;
+}
+
+.round-button {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap);
+  height: var(--tap);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--berry);
+  box-shadow: var(--shadow-sm);
+}
+
+/* The light/dark and EN buttons: a white pill, a hairline border and bold berry text. */
+.quick-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 0 15px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.quick-button:hover {
+  background: var(--pink-soft);
+}
+
+.quick-button--icon {
+  justify-content: center;
+  width: 42px;
+  padding: 0;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spread {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* A link inside running text. */
+.inline-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.input {
+  min-height: var(--tap);
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+/* Unicode-safe "HH:MM בישראל": the small light Israel time beside every Japan time. */
+.israel-time {
+  margin-inline-start: 5px;
+  color: inherit;
+  font-size: 0.85em;
+  font-weight: 400;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.israel-time::before {
+  content: '·';
+  margin-inline-end: 5px;
+}
+
+.israel-time--block {
+  display: block;
+  margin: 2px 0 0;
+  font-size: 12px;
+}
+
+.israel-time--block::before,
+.israel-time--bare::before {
+  content: none;
+}
+
+.israel-time--bare {
+  margin-inline-start: 0;
+}
+
+/* The round + button over a page (Lists, Budget). */
+.fab {
+  position: fixed;
+  inset-inline-end: 20px;
+  bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--on-pink);
+  box-shadow:
+    var(--shadow-chip-on),
+    0 8px 22px color-mix(in srgb, var(--pink) 45%, transparent);
+  cursor: pointer;
+  transition: transform var(--dur-tab-fade) ease;
+}
+
+.fab:hover {
+  transform: scale(1.06);
+}
+
+.fab:active {
+  transform: scale(0.94);
+}
+
+@media (min-width: 860px) {
+  .fab {
+    bottom: 32px;
+  }
+}

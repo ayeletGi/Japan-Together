@@ -5,6 +5,7 @@ import {
   ChevronUp,
   Pencil,
   Plus,
+  Search,
   Trash2,
   X,
 } from 'lucide-react';
@@ -27,6 +28,7 @@ import {
   listSections,
   removeList,
   renameList,
+  searchItems,
   type Item,
   type List,
 } from './lists';
@@ -77,6 +79,10 @@ export function ListView({
   // Categories show what is left to do; everything done waits folded under one "✓ 17 done"
   // toggle at the bottom of the list, in a single run with no category headings.
   const [showDone, setShowDone] = useState(false);
+  // A search shows every match, open or done, in one run with no category headings.
+  const [query, setQuery] = useState('');
+  const searching = query.trim() !== '';
+  const found = searching ? searchItems(list, query, categoryName) : [];
   const doneItems = sections.flatMap((section) => section.items.filter((item) => item.done));
   const rows = (items: Item[]) => (
     <ul className="todo-list list-items">
@@ -216,36 +222,78 @@ export function ListView({
         <ProgressBar value={done} max={total} label={name} thin />
       )}
 
-      {sections.map((section) => {
-        const progress = listProgress({ ...list, items: section.items });
-        // A list with no categories at all needs no "Other" heading.
-        const titled = section.category || sections.length > 1;
-        return (
-          // Prefixed, so a category typed as "-" never shares a key with the uncategorised one.
-          <div key={`category:${section.category}`}>
-            {titled && (
-              <div className="list-category-head">
-                <h3 className="todo-group list-category">
-                  {categoryName(section.category)}{' '}
-                  <bdi className="num muted list-count">
-                    {progress.done}/{progress.total}
-                  </bdi>
-                </h3>
-                <button
-                  type="button"
-                  className="round-button list-action list-category-add"
-                  aria-label={t('lists.addTo', { name: categoryName(section.category) })}
-                  onClick={() => onAdd(section.category)}
-                >
-                  <Plus size={16} aria-hidden="true" />
-                </button>
-              </div>
-            )}
-            {rows(section.items.filter((item) => !item.done))}
-          </div>
-        );
-      })}
-      {doneItems.length > 0 && (
+      {total > 0 && (
+        <div className="list-search" role="search">
+          <Search size={16} aria-hidden="true" className="list-search-icon" />
+          <input
+            type="search"
+            className="input list-search-input"
+            value={query}
+            placeholder={t('lists.searchPlaceholder')}
+            aria-label={t('lists.search', { name })}
+            onChange={(event) => setQuery(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === 'Escape') setQuery('');
+            }}
+          />
+          {searching && (
+            <button
+              type="button"
+              className="round-button list-action list-search-clear"
+              aria-label={t('lists.clearSearch')}
+              onClick={() => setQuery('')}
+            >
+              <X size={14} aria-hidden="true" />
+            </button>
+          )}
+        </div>
+      )}
+
+      {searching &&
+        (found.length > 0 ? (
+          <>
+            <p className="muted list-search-count" aria-live="polite">
+              {t('lists.searchCount', { count: found.length })}
+            </p>
+            {rows(found)}
+          </>
+        ) : (
+          <p className="muted list-search-count" aria-live="polite">
+            {t('lists.searchNone', { query: query.trim() })}
+          </p>
+        ))}
+
+      {!searching &&
+        sections.map((section) => {
+          const progress = listProgress({ ...list, items: section.items });
+          // A list with no categories at all needs no "Other" heading.
+          const titled = section.category || sections.length > 1;
+          return (
+            // Prefixed, so a category typed as "-" never shares a key with the uncategorised one.
+            <div key={`category:${section.category}`}>
+              {titled && (
+                <div className="list-category-head">
+                  <h3 className="todo-group list-category">
+                    {categoryName(section.category)}{' '}
+                    <bdi className="num muted list-count">
+                      {progress.done}/{progress.total}
+                    </bdi>
+                  </h3>
+                  <button
+                    type="button"
+                    className="round-button list-action list-category-add"
+                    aria-label={t('lists.addTo', { name: categoryName(section.category) })}
+                    onClick={() => onAdd(section.category)}
+                  >
+                    <Plus size={16} aria-hidden="true" />
+                  </button>
+                </div>
+              )}
+              {rows(section.items.filter((item) => !item.done))}
+            </div>
+          );
+        })}
+      {!searching && doneItems.length > 0 && (
         <>
           <button
             type="button"

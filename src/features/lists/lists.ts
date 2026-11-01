@@ -293,6 +293,34 @@ export function listSections(list: List): Section[] {
     .filter((section) => section.items.length > 0);
 }
 
+/** How words are compared in a search: case, accents and Hebrew vowel marks set aside. */
+const searchable = (text: string) =>
+  text
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f\u0591-\u05c7]/g, '')
+    .toLocaleLowerCase();
+
+/**
+ * The list's items whose name, note or category has every word typed, in list order (open
+ * ones first). An empty search finds nothing to filter, so it gives every item.
+ */
+export function searchItems(
+  list: List,
+  query: string,
+  categoryName: (category: string) => string = (category) => category,
+): Item[] {
+  const words = searchable(query).split(/\s+/).filter(Boolean);
+  const items = listSections(list).flatMap((section) => section.items);
+  const ordered = [...items.filter((item) => !item.done), ...items.filter((item) => item.done)];
+  if (words.length === 0) return ordered;
+  return ordered.filter((item) => {
+    const haystack = searchable(
+      [item.text, item.note, item.link, item.category && categoryName(item.category)].join(' '),
+    );
+    return words.every((word) => haystack.includes(word));
+  });
+}
+
 /* Links: a web address typed or pasted in an item's name or note opens from its card. */
 
 /**

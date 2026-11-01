@@ -185,7 +185,7 @@ describe('an item card', () => {
     await waitFor(() => expect(server.state.listItems[ITEM]).toMatchObject({ done: true }));
   });
 
-  it('moves a ticked item below its category’s "✓ done" toggle, which folds it away and back', async () => {
+  it('moves a ticked item below its category’s "✓ done" toggle, folded away until it is opened', async () => {
     const server = fakeServer();
     renderLists();
     const card = () => screen.queryByRole('button', { name: new RegExp(`^${textOf()}`) });
@@ -197,15 +197,15 @@ describe('an item card', () => {
     const toggle = screen.getByRole('button', {
       name: new RegExp(i18n.t('lists.doneCount', { count: 1 })),
     });
-    expect(toggle.getAttribute('aria-expanded')).toBe('true');
-    expect(toggle.compareDocumentPosition(card()!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-
-    fireEvent.click(toggle);
     expect(toggle.getAttribute('aria-expanded')).toBe('false');
     expect(card()).toBeNull();
 
     fireEvent.click(toggle);
-    expect(card()).not.toBeNull();
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+    expect(toggle.compareDocumentPosition(card()!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+
+    fireEvent.click(toggle);
+    expect(card()).toBeNull();
   });
 
   it('opens a link pasted in the note from its pill, and the edit moves it to the link box', async () => {
@@ -309,8 +309,11 @@ describe("a group's points", () => {
     expect(document.querySelector('.list-group-points.is-popping')).not.toBeNull();
     const first = pop();
 
-    // Untick it from under "✓ done" (shown by default), then tick it again: a fresh "+N" (a new
+    // Untick it from under "✓ done" (unfolded first), then tick it again: a fresh "+N" (a new
     // element) replays the float.
+    fireEvent.click(
+      screen.getByRole('button', { name: new RegExp(i18n.t('lists.doneCount', { count: 1 })) }),
+    );
     tick();
     await waitFor(() => expect(server.state.listItems[ITEM]).toMatchObject({ done: false }));
     tick();

@@ -74,9 +74,9 @@ export function ListView({
       else delete next[id];
       return next;
     });
-  // Done items show at the bottom of their category, under "✓ 3 done"; the toggle folds them away.
-  // This holds the categories folded that way.
-  const [hiddenDone, setHiddenDone] = useState<Record<string, boolean>>({});
+  // Done items sit folded under their category's "✓ 3 done" toggle, so the open items of every
+  // category stay close together; the toggle unfolds them. This holds the categories unfolded.
+  const [shownDone, setShownDone] = useState<Record<string, boolean>>({});
   const rows = (items: Item[]) => (
     <ul className="todo-list list-items">
       {items.map((item) => (
@@ -246,22 +246,22 @@ export function ListView({
               <button
                 type="button"
                 className="list-done-toggle"
-                aria-expanded={!hiddenDone[section.category]}
+                aria-expanded={!!shownDone[section.category]}
                 onClick={() =>
-                  setHiddenDone((all) => ({ ...all, [section.category]: !all[section.category] }))
+                  setShownDone((all) => ({ ...all, [section.category]: !all[section.category] }))
                 }
               >
                 <Check size={14} aria-hidden="true" />
                 {t('lists.doneCount', { count: progress.done })} ·{' '}
-                {hiddenDone[section.category] ? t('lists.showDone') : t('lists.hideDone')}
-                {!hiddenDone[section.category] ? (
+                {shownDone[section.category] ? t('lists.hideDone') : t('lists.showDone')}
+                {shownDone[section.category] ? (
                   <ChevronUp size={14} aria-hidden="true" />
                 ) : (
                   <ChevronDown size={14} aria-hidden="true" />
                 )}
               </button>
             )}
-            {progress.done > 0 && !hiddenDone[section.category] && rows(doneItems)}
+            {progress.done > 0 && shownDone[section.category] && rows(doneItems)}
           </div>
         );
       })}

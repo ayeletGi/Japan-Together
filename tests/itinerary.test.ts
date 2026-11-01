@@ -46,8 +46,9 @@ describe('event display rules', () => {
     expect(statusKey(at('d2-01'))).toBe('confirmed');
     expect(statusKey(at('d5-03'))).toBe('confirmedBoth');
     expect(statusKey(at('d12-03'))).toBe('needsCheck');
-    // Getting to the airport is a must-not-miss stop that still needs arranging.
-    expect(statusKey(at('d18-02'))).toBe('toArrange');
+    // Getting to the airport is a must-not-miss stop; the limousine is booked in the live changes.
+    expect(statusKey(at('d18-02'))).toBe('confirmedBoth');
+    expect(statusKey({ ...at('d18-02'), status: 'todo' })).toBe('toArrange');
   });
 
   it("cleans the original plan's decoration from titles", () => {

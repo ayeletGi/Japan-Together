@@ -1,6 +1,6 @@
-import { useId, useState } from 'react';
+import { Check } from 'lucide-react';
+import { useEffect, useId, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useToast } from '../../app/toastContext';
 import type { Save } from '../../hooks/useSave';
 import { saveListEntries } from '../../lib/liveEdit';
 import { CategoryPicker } from './CategoryPicker';
@@ -10,7 +10,8 @@ import { isGiftList, newItem, type List } from './lists';
 
 /**
  * The + sheet's form: it stays open after each add, so a few items go in one after another. The
- * category stays picked between them.
+ * category stays picked between them. Each add is confirmed inside the sheet (a line naming what went
+ * in, and a moment of "added" on the button): a bottom toast would sit under the button or the keyboard.
  */
 export function AddItemForm({
   list,
@@ -22,7 +23,6 @@ export function AddItemForm({
   save: Save;
 }) {
   const { t } = useTranslation();
-  const toast = useToast();
   const textId = useId();
   const noteId = useId();
   const [text, setText] = useState('');
@@ -30,6 +30,14 @@ export function AddItemForm({
   const [category, setCategory] = useState(startCategory);
   const [photo, setPhoto] = useState<PhotoChoice>(null);
   const [link, setLink] = useState('');
+  const [added, setAdded] = useState<{ name: string; count: number; at: number } | null>(null);
+  const [flash, setFlash] = useState(false);
+  useEffect(() => {
+    if (!added) return;
+    setFlash(true);
+    const timer = window.setTimeout(() => setFlash(false), 1400);
+    return () => window.clearTimeout(timer);
+  }, [added]);
   const gifts = isGiftList(list.preset);
   const placeholder =
     list.preset === 'flight' || list.preset === 'pack' ? list.preset : ('custom' as const);
@@ -57,8 +65,13 @@ export function AddItemForm({
           await saveListEntries('listItems', entries);
         });
         // Saving failed: give back what was typed, unless something new was typed since.
-        if (saved) toast(t('lists.added'));
-        else {
+        if (saved) {
+          setAdded((now) => ({
+            name: (typed.text || typed.note).trim(),
+            count: (now?.count ?? 0) + 1,
+            at: Date.now(),
+          }));
+        } else {
           setText((now) => now || typed.text);
           setNote((now) => now || typed.note);
           setPhoto((now) => now ?? typed.photo);
@@ -66,6 +79,19 @@ export function AddItemForm({
         }
       }}
     >
+      <p className="list-added" role="status" aria-live="polite">
+        {added && (
+          <span key={added.at} className="list-added-line">
+            <Check size={16} strokeWidth={2.6} aria-hidden="true" />
+            <span className="list-added-name">{t('lists.addedItem', { name: added.name })}</span>
+            {added.count > 1 && (
+              <span className="list-added-count">
+                {t('lists.addedCount', { count: added.count })}
+              </span>
+            )}
+          </span>
+        )}
+      </p>
       <label className="muted" htmlFor={textId}>
         {gifts ? t('lists.giftWhat') : t('lists.item')}
       </label>
@@ -94,8 +120,11 @@ export function AddItemForm({
         <LinkField value={link} onChange={setLink} />
       </div>
       <CategoryPicker list={list} value={category} onChange={setCategory} />
-      <button type="submit" className="btn btn--primary btn--wide">
-        {t('lists.addButton')}
+      <button
+        type="submit"
+        className={`btn btn--primary btn--wide${flash ? ' list-add-done' : ''}`}
+      >
+        {flash ? t('lists.addedButton') : t('lists.addButton')}
       </button>
     </form>
   );

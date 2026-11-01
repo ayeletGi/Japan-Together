@@ -25,6 +25,55 @@
   margin-top: 8px;
 }
 
+/* The confirmation after each add: empty until the first one, so the form doesn't jump later. */
+.list-added {
+  min-height: 0;
+  margin: 0;
+}
+
+.list-added-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--mint-soft);
+  color: var(--mint-ink);
+  font-size: 14px;
+  font-weight: 600;
+  animation: list-added-in var(--dur-toast, 0.25s) ease-out;
+}
+
+.list-added-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.list-added-count {
+  margin-inline-start: auto;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.list-form .btn.list-add-done {
+  background: var(--mint);
+  color: var(--mint-ink);
+}
+
+@keyframes list-added-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-added-line {
+    animation: none;
+  }
+}
+
 .list-count {
   font-size: 14px;
   font-weight: 400;

@@ -10,7 +10,9 @@ describe('androidIntentUrl', () => {
   });
 
   it('drops the hash fragment from the intent path', () => {
-    expect(androidIntentUrl('http://example.com/a#b')).toMatch(/^intent:\/\/example\.com\/a#Intent;scheme=http;/);
+    expect(androidIntentUrl('http://example.com/a#b')).toMatch(
+      /^intent:\/\/example\.com\/a#Intent;scheme=http;/,
+    );
   });
 
   it('leaves non-web links alone', () => {

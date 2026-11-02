@@ -187,6 +187,7 @@ export const en: Translation = {
       ramen: 'Ramen',
       sushi: 'Sushi',
       japanese: 'Japanese',
+      chinese: 'Chinese',
       cafe: 'Café & sweets',
       burger: 'Burgers',
       other: 'Other',
@@ -212,7 +213,7 @@ export const en: Translation = {
     allDays: 'All days',
     rule: '100% vegan places only — never places that just have vegan options. Places from the plan were not re-checked; new places show their source and check date. Check hours before you go.',
     disneyNote:
-      'On Disney days a packed meal is planned. The parks have no fully vegan restaurants, but vegan dishes carry a green V on the menu (no meat, dairy, eggs or honey). At DisneySea, per a June 2026 review: a vegan burger at Snuggly Duckling and keema curry at Yucatan Base Camp Grill. Not every vegan dish is marked — check ingredients.',
+      'On Disney days a packed meal is planned. The parks have no fully vegan restaurants, but vegan dishes carry a green V on the menu (no meat, dairy, eggs or honey). At DisneySea, per a June 2026 review: a vegan burger at Snuggly Duckling. Not every vegan dish is marked — check ingredients.',
     cityFilter: 'City',
     cities: {
       all: 'All',
@@ -223,6 +224,16 @@ export const en: Translation = {
     },
     typeFilter: 'Food type',
     allTypes: 'All types',
+    sourceFilter: 'Source',
+    allSources: 'All sources',
+    heardFrom: 'Where it came from:',
+    sources: {
+      map: 'Our map',
+      drive: 'Drive file',
+      facebook: 'Facebook',
+      happycow: 'HappyCow',
+      claude: 'Claude',
+    },
     sort: 'Sort',
     sortNearby: 'Closest',
     sortRating: 'By rating',

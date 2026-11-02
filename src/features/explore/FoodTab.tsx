@@ -11,12 +11,14 @@ import {
   citiesIn,
   dayZones,
   diningLinks,
+  foodSources,
   proximity,
   restaurantForEvent,
   restaurants,
   zoneCity,
   zoneNames,
   type CityId,
+  type FoodSource,
   type FoodType,
   type Restaurant,
   type ZoneId,
@@ -36,6 +38,7 @@ type CityChoice = 'all' | CityId;
 
 const allCities: CityId[] = ['tokyo', 'kobe', 'osaka', 'kyoto'];
 type TypeChoice = 'all' | FoodType;
+type SourceChoice = 'all' | FoodSource;
 
 function RestaurantCard({
   restaurant,
@@ -95,6 +98,10 @@ function RestaurantCard({
           {restaurant.booked}
         </p>
       )}
+      <p className="small-note">
+        {t('food.heardFrom')}{' '}
+        {restaurant.sources.map((source) => t(`food.sources.${source}`)).join(' · ')}
+      </p>
       {restaurant.check && <SourceCheckNote check={restaurant.check} />}
       <details className="place-more">
         <summary>{t('discover.moreDetails')}</summary>
@@ -170,6 +177,7 @@ export function FoodTab({ date, eventId }: { date?: string; eventId?: string }) 
 
   const [city, setCity] = useState<CityChoice>(startCity);
   const [type, setType] = useState<TypeChoice>('all');
+  const [source, setSource] = useState<SourceChoice>('all');
   const [sort, setSort] = useState<SortChoice>('nearby');
 
   const origin = meal?.place ?? (mealDate ? routeFor(mealDate)?.start.query : undefined);
@@ -177,7 +185,8 @@ export function FoodTab({ date, eventId }: { date?: string; eventId?: string }) 
     restaurants.filter(
       (restaurant) =>
         (city === 'all' || restaurant.city === city) &&
-        (type === 'all' || restaurant.type === type),
+        (type === 'all' || restaurant.type === type) &&
+        (source === 'all' || restaurant.sources.includes(source)),
     ),
     zone,
     sort,
@@ -225,12 +234,25 @@ export function FoodTab({ date, eventId }: { date?: string; eventId?: string }) 
           label={t('food.typeFilter')}
           value={type}
           onChange={setType}
-          options={(['all', 'ramen', 'sushi', 'japanese', 'cafe', 'burger', 'other'] as const).map(
-            (value) => ({
-              value,
-              label: value === 'all' ? t('food.allTypes') : t(`food.types.${value}`),
-            }),
-          )}
+          options={(
+            ['all', 'ramen', 'sushi', 'japanese', 'chinese', 'cafe', 'burger', 'other'] as const
+          ).map((value) => ({
+            value,
+            label: value === 'all' ? t('food.allTypes') : t(`food.types.${value}`),
+          }))}
+        />
+        <FilterRow
+          label={t('food.sourceFilter')}
+          value={source}
+          onChange={setSource}
+          options={(['all', ...foodSources] as const).map((value) => ({
+            value,
+            label: value === 'all' ? t('food.allSources') : t(`food.sources.${value}`),
+            count:
+              value === 'all'
+                ? restaurants.length
+                : restaurants.filter((restaurant) => restaurant.sources.includes(value)).length,
+          }))}
         />
         <FilterRow
           label={t('food.sort')}

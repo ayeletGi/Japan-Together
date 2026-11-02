@@ -198,10 +198,13 @@ describe('calendar export', () => {
 });
 
 describe('restaurants', () => {
-  it('lists all 26 fully vegan places and links every planned meal to one', () => {
-    expect(restaurants).toHaveLength(26);
+  it('lists all 32 fully vegan places and links every planned meal to one', () => {
+    expect(restaurants).toHaveLength(32);
     for (const r of restaurants.filter((x) => x.check))
       expect(r.check!.link).toMatch(/^https:\/\//);
+    for (const r of restaurants) expect(r.sources.length, r.id).toBeGreaterThan(0);
+    // We don't like curry or Indian food.
+    for (const r of restaurants) expect(r.food, r.id).not.toMatch(/קארי|הודי/);
     const meals = allEvents.filter(
       (e) => e.kind === 'food' && !['d16-02', 'd17-02'].includes(e.id),
     );

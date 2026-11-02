@@ -5,13 +5,24 @@
  * Chabad meals are a separate, confirmed track and are not listed here.
  * Places added on 13.10.2026 carry a `check` with the source they were verified against; only
  * restaurants whose whole menu is vegan are added, never places with vegan options.
+ * We don't like curry or Indian food: no curry houses or Indian places, and curry is left out
+ * of the dish descriptions.
  */
 
 import { searchUrl } from '../lib/maps';
 import type { MoreLink, SourceCheck } from './types';
 
 export type CityId = 'tokyo' | 'kobe' | 'osaka' | 'kyoto';
-export type FoodType = 'ramen' | 'sushi' | 'japanese' | 'cafe' | 'burger' | 'other';
+export type FoodType = 'ramen' | 'sushi' | 'japanese' | 'chinese' | 'cafe' | 'burger' | 'other';
+
+/**
+ * Where we heard about a place: our Google My Maps food map, the meal-plan files in Drive,
+ * the vegan list shared in the Facebook group "יפן - טיפים ועזרה למטיילים", HappyCow, or Claude
+ * (found on the place's own site). The map itself is not readable from here: a place counts as
+ * "map" when the Drive meal plan did not flag it "NEW - ADD TO MAP".
+ */
+export type FoodSource = 'map' | 'drive' | 'facebook' | 'happycow' | 'claude';
+export const foodSources: FoodSource[] = ['map', 'drive', 'facebook', 'happycow', 'claude'];
 
 export type ZoneId =
   | 'tokyo_station'
@@ -27,10 +38,13 @@ export type ZoneId =
   | 'honmachi'
   | 'umeda'
   | 'kyoto_center'
+  | 'kyoto_station'
   | 'gion'
+  | 'okazaki'
   | 'motomachi'
   | 'kobe_center'
-  | 'maihama';
+  | 'maihama'
+  | 'narita';
 
 export const zoneNames: Record<ZoneId, string> = {
   tokyo_station: 'תחנת Tokyo',
@@ -46,10 +60,13 @@ export const zoneNames: Record<ZoneId, string> = {
   honmachi: 'Honmachi',
   umeda: 'Umeda',
   kyoto_center: 'מרכז קיוטו',
+  kyoto_station: 'תחנת Kyoto',
   gion: 'Gion',
+  okazaki: 'Okazaki / Higashiyama',
   motomachi: 'Motomachi',
   kobe_center: 'מרכז קובה',
   maihama: 'Maihama',
+  narita: 'שדה התעופה נריטה',
 };
 
 /** AREA_NEAR in the original plan: neighbourhoods close enough to suggest as alternatives. */
@@ -62,8 +79,10 @@ const nearbyZones: Partial<Record<ZoneId, ZoneId[]>> = {
   harajuku: ['shibuya'],
   ebisu: ['shibuya'],
   shinjuku: ['harajuku'],
-  gion: ['kyoto_center'],
-  kyoto_center: ['gion'],
+  gion: ['kyoto_center', 'okazaki'],
+  kyoto_center: ['gion', 'kyoto_station'],
+  kyoto_station: ['kyoto_center'],
+  okazaki: ['gion'],
   shinsaibashi: ['honmachi', 'tanimachi', 'umeda'],
   honmachi: ['shinsaibashi', 'umeda'],
   tanimachi: ['shinsaibashi'],
@@ -89,6 +108,7 @@ export const dayZones: Partial<Record<string, ZoneId>> = {
   '2037-11-15': 'shibuya',
   '2037-11-16': 'maihama',
   '2037-11-17': 'maihama',
+  '2037-11-18': 'narita',
 };
 
 export const zoneCity: Record<ZoneId, CityId | 'disney'> = {
@@ -105,10 +125,13 @@ export const zoneCity: Record<ZoneId, CityId | 'disney'> = {
   honmachi: 'osaka',
   umeda: 'osaka',
   kyoto_center: 'kyoto',
+  kyoto_station: 'kyoto',
   gion: 'kyoto',
+  okazaki: 'kyoto',
   motomachi: 'kobe',
   kobe_center: 'kobe',
   maihama: 'disney',
+  narita: 'tokyo',
 };
 
 export interface Restaurant {
@@ -132,6 +155,8 @@ export interface Restaurant {
   booked?: string;
   /** Added after the original plan: where the place and its hours were checked. */
   check?: SourceCheck;
+  /** Where we heard about the place, in the order we heard it. */
+  sources: FoodSource[];
 }
 
 export const restaurants: Restaurant[] = [
@@ -152,13 +177,14 @@ export const restaurants: Restaurant[] = [
     website: searchUrl('Ts Tantan Gransta Tokyo'),
     mapsQuery: "T's Tantan Gransta Tokyo",
     eventIds: ['d3-04', 'd15-04'],
+    sources: ['map', 'drive', 'facebook'],
   },
   {
     id: 'tsuminaki',
     name: 'TSUMINAKI Mapo Tofu',
     city: 'tokyo',
     zone: 'toranomon',
-    type: 'other',
+    type: 'chinese',
     food: 'מאפו טופו חריף בסגנון סצ׳ואן',
     hours: '11:00–15:00, 17:00–22:00',
     plannerHours: {
@@ -170,6 +196,7 @@ export const restaurants: Restaurant[] = [
     website: searchUrl('TSUMINAKI Mapo Tofu Tokyo'),
     mapsQuery: 'TSUMINAKI Mapo Tofu Toranomon Tokyo',
     eventIds: ['d3-05'],
+    sources: ['map', 'drive'],
   },
   {
     id: 'komeda-is',
@@ -188,6 +215,7 @@ export const restaurants: Restaurant[] = [
     website: 'https://www.komeda-is.com/',
     mapsQuery: 'KOMEDA is Higashi Ginza Tokyo',
     eventIds: ['d4-04'],
+    sources: ['map', 'drive'],
   },
   {
     id: 'uzu-tokyo',
@@ -206,6 +234,7 @@ export const restaurants: Restaurant[] = [
     website: 'https://vegan-uzu.com/pages/uzu-tokyo-en',
     mapsQuery: 'Vegan Ramen UZU Tokyo teamLab Planets',
     eventIds: ['d4-02'],
+    sources: ['map', 'drive'],
   },
   {
     id: 'ain-soph-shinjuku',
@@ -224,6 +253,7 @@ export const restaurants: Restaurant[] = [
     website: 'https://www.ain-soph.jp/',
     mapsQuery: 'AIN SOPH Journey Shinjuku',
     eventIds: ['d13-03'],
+    sources: ['map', 'drive'],
   },
   {
     id: 'healthytokyo',
@@ -242,6 +272,7 @@ export const restaurants: Restaurant[] = [
     website: 'https://healthytokyo.com/',
     mapsQuery: 'HealthyTOKYO Shinjuku Marui Honkan',
     eventIds: ['d13-01'],
+    sources: ['drive'],
   },
   {
     id: 'vegan-sushi-tokyo',
@@ -260,6 +291,7 @@ export const restaurants: Restaurant[] = [
     website: searchUrl('Vegan Sushi Tokyo Shoto'),
     mapsQuery: 'Vegan Sushi Tokyo Shibuya',
     eventIds: ['d12-03'],
+    sources: ['map', 'drive'],
   },
   {
     id: 'sushi-babylon',
@@ -278,6 +310,7 @@ export const restaurants: Restaurant[] = [
     website: 'https://www.tablecheck.com/en/sushi-babylon',
     mapsQuery: 'Vegan Sushi BABYLON Shinjuku Tokyo',
     eventIds: ['d14-02'],
+    sources: ['drive'],
   },
   {
     id: 'hemp-cafe',
@@ -296,6 +329,7 @@ export const restaurants: Restaurant[] = [
     website: searchUrl('Hemp Cafe Tokyo Ebisu'),
     mapsQuery: 'Hemp Cafe Tokyo Ebisu',
     eventIds: ['d15-03'],
+    sources: ['map', 'drive'],
   },
   {
     id: 'brown-rice',
@@ -314,6 +348,7 @@ export const restaurants: Restaurant[] = [
     website: 'https://www.brownrice.jp/en/',
     mapsQuery: 'Brown Rice Tokyo Omotesando',
     eventIds: ['d12-02'],
+    sources: ['map', 'drive'],
   },
   {
     id: 'mercy',
@@ -321,7 +356,7 @@ export const restaurants: Restaurant[] = [
     city: 'osaka',
     zone: 'tanimachi',
     type: 'japanese',
-    food: 'אוכל יפני, בנטו, קארי, סושי וקינוחים',
+    food: 'אוכל יפני, בנטו, סושי, קימבאפ וקינוחים',
     hours: '08:00–17:00; 18:00–21:00 (סגור שבת)',
     plannerHours: {
       hours: '08:00–10:30 / 10:30–17:00 / 18:00–21:00',
@@ -332,6 +367,7 @@ export const restaurants: Restaurant[] = [
     website: 'https://www.mercy-vegan.jp/',
     mapsQuery: 'MERCY Vegan Factory Osaka Honten',
     eventIds: ['d8-03', 'd9-01'],
+    sources: ['map', 'drive'],
   },
   {
     id: 'shojin-minamo',
@@ -350,19 +386,7 @@ export const restaurants: Restaurant[] = [
     website: searchUrl('Shojin Sushi Minamo Osaka'),
     mapsQuery: 'Shojin Sushi Minamo Osaka Shinsaibashi',
     eventIds: ['d8-06'],
-  },
-  {
-    id: 'paprika',
-    name: 'Paprika Shokudo Vegan',
-    city: 'osaka',
-    zone: 'shinsaibashi',
-    type: 'japanese',
-    food: 'קערות, פסטה, המבורגר וקארי טבעוניים',
-    hours: '11:30–14:00; 17:30–21:00 (סגור רביעי)',
-    rating: 4.6,
-    website: searchUrl('Paprika shokudo Vegan Osaka'),
-    mapsQuery: 'Paprika shokudo Vegan Osaka',
-    eventIds: [],
+    sources: ['drive'],
   },
   {
     id: 'green-earth',
@@ -381,6 +405,7 @@ export const restaurants: Restaurant[] = [
     website: searchUrl('Green Earth Osaka Vegan'),
     mapsQuery: 'Green Earth Osaka Vegan',
     eventIds: ['d11-02'],
+    sources: ['map', 'drive'],
   },
   {
     id: 'secondroom',
@@ -399,6 +424,7 @@ export const restaurants: Restaurant[] = [
     website: 'https://www.happycow.net/reviews/vegan-and-glutenfree-osaka-384115',
     mapsQuery: 'Vegan & Gluten Free Osaka THE SECONDROOM',
     eventIds: ['d10-08'],
+    sources: ['drive'],
   },
   {
     id: 'uzu-kyoto',
@@ -418,6 +444,7 @@ export const restaurants: Restaurant[] = [
     mapsQuery: '146 Umenokicho, Nakagyo Ward, Kyoto 604-0905, Japan',
     eventIds: ['d9-05'],
     booked: '9.11 · 18:00 · אושר לשתיכן',
+    sources: ['map', 'drive'],
   },
   {
     id: 'zirael',
@@ -436,6 +463,7 @@ export const restaurants: Restaurant[] = [
     website: searchUrl('ZIRAEL Vegan Kyoto'),
     mapsQuery: 'ZIRAEL Vegan Restaurant Kyoto Gion',
     eventIds: ['d9-04'],
+    sources: ['drive', 'facebook'],
   },
   {
     id: 'ain-soph-kyoto',
@@ -454,6 +482,7 @@ export const restaurants: Restaurant[] = [
       link: 'https://www.ain-soph.jp/journey-kyoto',
       official: true,
     },
+    sources: ['claude', 'facebook'],
   },
   {
     id: 'ain-soph-ginza',
@@ -473,6 +502,7 @@ export const restaurants: Restaurant[] = [
       link: 'https://www.ain-soph.jp/ginza',
       official: true,
     },
+    sources: ['claude'],
   },
   {
     id: 'jangara-vegan',
@@ -491,6 +521,7 @@ export const restaurants: Restaurant[] = [
       link: 'https://kyushujangara.co.jp/shops/veganbistro/',
       official: true,
     },
+    sources: ['claude'],
   },
   {
     id: 'nuts-exchange',
@@ -510,6 +541,7 @@ export const restaurants: Restaurant[] = [
       link: 'https://www.timeout.com/tokyo/restaurants/the-nuts-exchange',
       official: false,
     },
+    sources: ['happycow'],
   },
   {
     id: 'oko-takoyaki',
@@ -529,6 +561,7 @@ export const restaurants: Restaurant[] = [
       link: 'https://www.happycow.net/reviews/oko-takoyaki-osaka-363992',
       official: false,
     },
+    sources: ['happycow'],
   },
   {
     id: 'sukhasana',
@@ -548,6 +581,7 @@ export const restaurants: Restaurant[] = [
       link: 'https://www.happycow.net/reviews/unique-pizzeria-sukhasana-osaka-236386',
       official: false,
     },
+    sources: ['happycow'],
   },
   {
     id: 'tu-casa',
@@ -567,6 +601,7 @@ export const restaurants: Restaurant[] = [
       link: 'https://www.happycow.net/reviews/tu-casa-kyoto-315360',
       official: false,
     },
+    sources: ['happycow'],
   },
   {
     id: 'veggie-junkies',
@@ -585,6 +620,7 @@ export const restaurants: Restaurant[] = [
     website: searchUrl('Veggie Junkies Burger Motomachi'),
     mapsQuery: 'Veggie Junkies Burger Barom Kobe Motomachi',
     eventIds: ['d6-02'],
+    sources: ['drive'],
   },
   {
     id: 'vegan-bread-4690',
@@ -603,6 +639,147 @@ export const restaurants: Restaurant[] = [
     website: searchUrl('Vegan Bread 4690 Kobe'),
     mapsQuery: 'Vegan Bread 4690 Kobe',
     eventIds: ['d7-02'],
+    sources: ['drive'],
+  },
+  {
+    id: 'gion-soy-ramen',
+    name: 'Gion Soy Milk Ramen (Uno Yukiko)',
+    city: 'kyoto',
+    zone: 'gion',
+    type: 'ramen',
+    food: 'ראמן טבעוני לגמרי על ציר חלב סויה קרמי, שלושה סוגי קערות וגיוזה; ממש בגיון, ליד הקימונו',
+    hours: 'בערך 11:00–20:30 כל יום לפי אתר רשימות; המקורות לא אחידים — לבדוק לפני',
+    rating: null,
+    website: 'https://www.happycow.net/reviews/uno-yukiko-gion-soy-milk-ramen-kyoto-317927',
+    mapsQuery: 'Gion Soy Milk Ramen Uno Yukiko 40 Kameicho Gion Kyoto',
+    eventIds: [],
+    check: {
+      date: '2037-11-02',
+      source: 'HappyCow',
+      link: 'https://www.happycow.net/reviews/uno-yukiko-gion-soy-milk-ramen-kyoto-317927',
+      official: false,
+    },
+    sources: ['facebook'],
+  },
+  {
+    id: 'vegan-ramen-zen',
+    name: 'Vegan Ramen ZEN',
+    city: 'kyoto',
+    zone: 'kyoto_center',
+    type: 'ramen',
+    food: 'ראמן טבעוני בלי ציר מן החי, מרכיבים עונתיים; קומה 2, הליכה קצרה מ־Gion-Shijo. כ־¥3,000 לקערה',
+    hours: 'לא מצאתי שעות פתיחה — להזמין או לבדוק דרך TableCheck',
+    rating: null,
+    website: 'https://www.tablecheck.com/veganramen-zen',
+    mapsQuery: 'Vegan Ramen ZEN Kyoto Nakagyo',
+    eventIds: [],
+    check: {
+      date: '2037-11-02',
+      source: 'TableCheck',
+      link: 'https://www.tablecheck.com/veganramen-zen',
+      official: false,
+    },
+    sources: ['facebook'],
+  },
+  {
+    id: 'choice-kyoto',
+    name: 'Choice',
+    city: 'kyoto',
+    zone: 'okazaki',
+    type: 'cafe',
+    food: 'קפה־מסעדה טבעוני וללא גלוטן: כריכים, קערות וקינוחים; צפונית לגיון, ליד Heian-jingu',
+    hours: 'המקורות סותרים (בערך 09:00/09:30 עד 20:30–21:00); כנראה סגור חמישי — לבדוק לפני',
+    rating: null,
+    website: 'https://www.happycow.net/reviews/choice-kyoto-42327',
+    mapsQuery: 'Choice vegan gluten free cafe Higashiyama Kyoto',
+    eventIds: [],
+    check: {
+      date: '2037-11-02',
+      source: 'HappyCow · Inside Kyoto',
+      link: 'https://insidekyoto.com/choice-northern-higashiyama',
+      official: false,
+    },
+    sources: ['facebook'],
+  },
+  {
+    id: 'veg-out',
+    name: 'Veg Out',
+    city: 'kyoto',
+    zone: 'kyoto_station',
+    type: 'cafe',
+    food: 'בית קפה טבעוני על גדת נהר Kamo: בודהה בול, צלחת Veg Out ולאטה סויה; 2 דקות מתחנת Shichijo',
+    hours: 'ג׳–א׳ בערך 09:00–18:00, סגור שני; לפעמים נסגר מוקדם כשנגמר האוכל',
+    rating: null,
+    website: 'https://www.happycow.net/reviews/veg-out-kyoto-63991',
+    mapsQuery: 'Veg Out vegan cafe 448 Inaricho Shimogyo Kyoto',
+    eventIds: [],
+    check: {
+      date: '2037-11-02',
+      source: 'HappyCow',
+      link: 'https://www.happycow.net/reviews/veg-out-kyoto-63991',
+      official: false,
+    },
+    sources: ['facebook'],
+  },
+  {
+    id: 'mercy-bakery-kyoto',
+    name: 'MERCY Vegan Bakery Kyoto',
+    city: 'kyoto',
+    zone: 'kyoto_station',
+    type: 'cafe',
+    food: 'המאפייה הטבעונית של MERCY: גרטן פטריות, פיצה־לחם, סופגניות קינמון. טוב לארוחת בוקר כשמגיעות לקיוטו',
+    hours: 'מ־07:00 ועד שהלחם נגמר; ימי סגירה משתנים — לבדוק באינסטגרם ‎@mercyveganbakery',
+    rating: null,
+    website: 'https://prtimes.jp/main/html/rd/p/000000026.000174572.html',
+    mapsQuery: 'MERCY Vegan Bakery Hotel Elite Kyoto Station',
+    eventIds: [],
+    check: {
+      date: '2037-11-02',
+      source: 'PR Times (הודעת החברה)',
+      link: 'https://prtimes.jp/main/html/rd/p/000000026.000174572.html',
+      official: false,
+    },
+    sources: ['facebook'],
+  },
+  {
+    id: 'veggie-joga',
+    name: 'Vegan Veggie Joga',
+    city: 'tokyo',
+    zone: 'harajuku',
+    type: 'chinese',
+    food: 'מסעדה סינית טבעונית לגמרי עם צמחי מרפא: מאפו טופו (יש גרסה ירוקה לא חריפה) וסיר חם; סטים זולים בצהריים. הליכה קצרה מ־Omotesando',
+    hours: 'לא מצאתי שעות עדכניות — לבדוק באינסטגרם לפני',
+    rating: null,
+    website: 'https://www.timeout.com/tokyo/restaurants/vegan-veggie-joga',
+    mapsQuery: 'Vegan Veggie Joga 6-2-13 Minamiaoyama Minato Tokyo',
+    eventIds: [],
+    check: {
+      date: '2037-11-02',
+      source: 'Time Out · HappyCow',
+      link: 'https://www.happycow.net/reviews/vegan-veggie-joga-tokyo-297870',
+      official: false,
+    },
+    sources: ['facebook'],
+  },
+  {
+    id: 'ts-tantan-narita',
+    name: 'T’s Tantan Narita',
+    city: 'tokyo',
+    zone: 'narita',
+    type: 'ramen',
+    food: 'אותו T’s Tantan, בשדה: טרמינל 2, קומה 4, לפני הביקורת. אנחנו טסות מ־T1 — שאטל חינם בין הטרמינלים. ב־T1 יש לכל היותר דוכן טייק־אוויי',
+    hours: 'בערך 07:30–21:00 (הזמנה אחרונה 20:30); דיווח אחד שהסניף ב־T2 נסגר — לבדוק לפני',
+    rating: null,
+    website: 'https://www.happycow.net/reviews/ts-tantan-narita-190303',
+    mapsQuery: "T's Tantan Narita Airport Terminal 2",
+    eventIds: [],
+    check: {
+      date: '2037-11-02',
+      source: 'HappyCow',
+      link: 'https://www.happycow.net/reviews/ts-tantan-narita-190303',
+      official: false,
+    },
+    sources: ['facebook'],
   },
 ];
 

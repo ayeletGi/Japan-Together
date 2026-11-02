@@ -108,8 +108,9 @@ export const eventPresentation: Record<string, EventPresentation> = {
       'אופציה: להשאיר בדלפק לפני היציאה. מגיעות ל־CANDEO Kobe ב־5.11, ושוב לא צריך לחזור למלון לפני השינקנסן.',
   },
   'luggage-kobe-osaka': {
-    title: 'מזוודות איתנו',
-    description: 'רכבת קצרה לאוסקה, אז לא שולחות. משאירות בדלפק של CANDEO Osaka Namba עד הצ׳ק־אין.',
+    title: 'מזוודות לאוסקה',
+    description:
+      'ברירת מחדל: איתנו ב־Hanshin, ומשאירות בדלפק של CANDEO Osaka Namba. Yamato באותו יום רק אם שני המלונות אישרו מראש.',
   },
   'luggage-to-omori': {
     title: 'מזוודות לאומורי',

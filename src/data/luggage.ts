@@ -19,9 +19,13 @@ import type { TripEvent } from './types';
  * - Arrival: SAGAWA counters in the Narita T1/T2 arrival halls (since 22.7.2026) deliver to hotels in ten
  *   Tokyo wards, Minato included (Shinagawa Prince), the same day. Walk-up, drop by 14:00; with the ¥660
  *   airport charge ¥1,570 up to 60 cm, ¥2,180 up to 100 cm, ¥2,840 up to 140 cm (larger: Sagawa's list).
- * - Kobe → Osaka goes by train with the suitcases: next-day forwarding could only be handed in on
- *   motzash or the morning of 8.11 and would reach Osaka on 9.11 (the kimono morning); a same-day
- *   private service costs about €30 a bag. The Hanshin line runs straight to Osaka-Namba in ~40 minutes.
+ * - Kobe → Osaka: by default the suitcases come with us on the Hanshin line (straight to Osaka-Namba in
+ *   ~40 minutes); next-day forwarding handed in on motzash or 8.11 would only reach Osaka on 9.11 (the
+ *   kimono morning). Correction 2.11.2026 (checked by us on Yamato's official site): Yamato has same-day
+ *   delivery from Kobe to parts of Osaka, and Naniwa ward (Namba) is in the service area. It depends on
+ *   the drop-off point, the hand-in time and the bag, and there is no promised arrival time. CANDEO
+ *   Osaka Namba asks to be told ahead when luggage is sent before arrival. So it is an option only once
+ *   both hotels confirm; until then, plan on the train.
  */
 
 const event = (
@@ -64,13 +68,13 @@ export const luggageEvents: TripEvent[] = [
   }),
   event({
     id: 'luggage-kobe-osaka',
-    title: '🧳 להשאיר את המזוודות בדלפק של CANDEO Osaka Namba',
+    title: '🧳 מזוודות לאוסקה: ברכבת, או Yamato באותו יום אם שני המלונות אישרו',
     time: '12:05',
     end: null,
     date: '2037-11-08',
     city: 'אוסקה',
     place: 'CANDEO HOTELS Osaka Namba',
-    note: 'במעבר הזה לא שולחות: שליחה רגילה תגיע לאוסקה רק ב־9.11 (גם אם מוסרות במוצ״ש), ושירות של אותו יום עולה כ־€30 למזוודה. הרכבת קצרה — לוקחות אותן ב־Hanshin ישר ל־Osaka-Namba, משאירות בדלפק לפני ארוחת הצהריים, ונכנסות לחדר ב־15:00.',
+    note: 'ברירת המחדל: לוקחות את המזוודות ב־Hanshin ישר ל־Osaka-Namba (כ־40 דקות), משאירות בדלפק לפני ארוחת הצהריים, ונכנסות לחדר ב־15:00. אופציה: ל־Yamato יש משלוח באותו יום מקובה לחלקים מאוסקה, ו־Namba (רובע Naniwa) באזור השירות — אבל זה תלוי בנקודת המסירה, בשעת הקבלה ובמזוודה, ואין התחייבות לשעת הגעה. משלוח רגיל (למחרת) יגיע רק ב־9.11, בוקר הקימונו. לבנות על זה רק אחרי אישור משני המלונות: CANDEO Kobe מאשר שאפשר למסור ב־8.11 בבוקר ושהמזוודות יגיעו באותו יום, ו־CANDEO Osaka Namba מבקש שיודיעו לו מראש. בלי שני האישורים — ברכבת. אם שולחות: תיק קטן עם מה שצריך עד הערב.',
   }),
   event({
     id: 'luggage-to-omori',

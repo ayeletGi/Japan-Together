@@ -100,7 +100,7 @@ export const eventPresentation: Record<string, EventPresentation> = {
   'luggage-narita-sameday': {
     title: 'מזוודות איתנו מנריטה',
     description:
-      'SAGAWA סוגר ב־14:00, צפוף מדי אחרי נחיתה ב־13:25. המזוודות ב־N’EX, ובתחנת Tokyo אפשר לוקר או שמירת חפצים.',
+      'SAGAWA סוגר ב־14:00, צפוף מדי אחרי נחיתה ב־13:25. המזוודות איתנו ב־N’EX ישר ל־Shinagawa.',
   },
   'luggage-to-kobe': {
     title: 'מזוודות לקובה',

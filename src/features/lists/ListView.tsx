@@ -76,14 +76,20 @@ export function ListView({
       else delete next[id];
       return next;
     });
-  // Categories show what is left to do; everything done waits folded under one "✓ 17 done"
-  // toggle at the bottom of the list, in a single run with no category headings.
-  const [showDone, setShowDone] = useState(false);
+  // Each category shows what is left to do; its done items wait folded under its own
+  // "✓ 3 done" toggle right below them. Holds the categories whose done items are open.
+  const [openDone, setOpenDone] = useState<ReadonlySet<string>>(new Set());
+  const toggleDone = (category: string) =>
+    setOpenDone((open) => {
+      const next = new Set(open);
+      if (next.has(category)) next.delete(category);
+      else next.add(category);
+      return next;
+    });
   // A search shows every match, open or done, in one run with no category headings.
   const [query, setQuery] = useState('');
   const searching = query.trim() !== '';
   const found = searching ? searchItems(list, query, categoryName) : [];
-  const doneItems = sections.flatMap((section) => section.items.filter((item) => item.done));
   const rows = (items: Item[]) => (
     <ul className="todo-list list-items">
       {items.map((item) => (
@@ -268,6 +274,8 @@ export function ListView({
           const progress = listProgress({ ...list, items: section.items });
           // A list with no categories at all needs no "Other" heading.
           const titled = section.category || sections.length > 1;
+          const doneItems = section.items.filter((item) => item.done);
+          const showDone = openDone.has(section.category);
           return (
             // Prefixed, so a category typed as "-" never shares a key with the uncategorised one.
             <div key={`category:${section.category}`}>
@@ -290,29 +298,29 @@ export function ListView({
                 </div>
               )}
               {rows(section.items.filter((item) => !item.done))}
+              {doneItems.length > 0 && (
+                <>
+                  <button
+                    type="button"
+                    className="list-done-toggle"
+                    aria-expanded={showDone}
+                    onClick={() => toggleDone(section.category)}
+                  >
+                    <Check size={14} aria-hidden="true" />
+                    {t('lists.doneCount', { count: doneItems.length })} ·{' '}
+                    {showDone ? t('lists.hideDone') : t('lists.showDone')}
+                    {showDone ? (
+                      <ChevronUp size={14} aria-hidden="true" />
+                    ) : (
+                      <ChevronDown size={14} aria-hidden="true" />
+                    )}
+                  </button>
+                  {showDone && rows(doneItems)}
+                </>
+              )}
             </div>
           );
         })}
-      {!searching && doneItems.length > 0 && (
-        <>
-          <button
-            type="button"
-            className="list-done-toggle"
-            aria-expanded={showDone}
-            onClick={() => setShowDone((shown) => !shown)}
-          >
-            <Check size={14} aria-hidden="true" />
-            {t('lists.doneCount', { count: doneItems.length })} ·{' '}
-            {showDone ? t('lists.hideDone') : t('lists.showDone')}
-            {showDone ? (
-              <ChevronUp size={14} aria-hidden="true" />
-            ) : (
-              <ChevronDown size={14} aria-hidden="true" />
-            )}
-          </button>
-          {showDone && rows(doneItems)}
-        </>
-      )}
     </section>
   );
 }

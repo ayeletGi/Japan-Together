@@ -218,7 +218,7 @@ describe('an item card', () => {
     await waitFor(() => expect(server.state.listItems[ITEM]).toMatchObject({ done: true }));
   });
 
-  it('moves a ticked item under the list’s one "✓ done" toggle, folded away until it is opened', async () => {
+  it('moves a ticked item under its category’s "✓ done" toggle, folded away until it is opened', async () => {
     const server = fakeServer();
     renderLists();
     const card = () => screen.queryByRole('button', { name: new RegExp(`^${textOf()}`) });

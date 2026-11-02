@@ -98,9 +98,9 @@ export const eventPresentation: Record<string, EventPresentation> = {
       'מיד אחרי הצ׳ק־אין, בחדר הכביסה ליד הדלפק. תשלום באשראי או QR בלבד, בלי צורך באבקה. מה שלא התייבש — לתלות בחדר.',
   },
   'luggage-narita-sameday': {
-    title: 'מזוודות מנריטה ישר למלון',
+    title: 'מזוודות איתנו מנריטה',
     description:
-      'אופציה: דלפק SAGAWA באולם ההגעה, עד 14:00. המזוודות מחכות ב־Shinagawa Prince, ואתן אוכלות בלעדיהן.',
+      'SAGAWA סוגר ב־14:00, צפוף מדי אחרי נחיתה ב־13:25. המזוודות ב־N’EX, ובתחנת Tokyo אפשר לוקר או שמירת חפצים.',
   },
   'luggage-to-kobe': {
     title: 'מזוודות לקובה',

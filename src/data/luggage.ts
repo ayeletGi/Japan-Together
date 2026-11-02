@@ -17,8 +17,9 @@ import type { TripEvent } from './types';
  *   from a front desk that works with Yamato. Here it arrives on the check-in day itself, which usually
  *   works for an evening arrival but is not promised.
  * - Arrival: SAGAWA counters in the Narita T1/T2 arrival halls (since 22.7.2026) deliver to hotels in ten
- *   Tokyo wards, Minato included (Shinagawa Prince), the same day. Walk-up, drop by 14:00; with the ¥660
- *   airport charge ¥1,570 up to 60 cm, ¥2,180 up to 100 cm, ¥2,840 up to 140 cm (larger: Sagawa's list).
+ *   Tokyo wards, Minato included (Shinagawa Prince), the same day, but only for bags dropped by 14:00.
+ *   With landing at 13:25, immigration and baggage claim, that is not realistic (decided 2.11.2026), so on
+ *   3.11 the suitcases come with us on the N'EX. The counter stays a fallback only if we are out early.
  * - Kobe → Osaka: by default the suitcases come with us on the Hanshin line (straight to Osaka-Namba in
  *   ~40 minutes); next-day forwarding handed in on motzash or 8.11 would only reach Osaka on 9.11 (the
  *   kimono morning). Correction 2.11.2026 (checked by us on Yamato's official site): Yamato has same-day
@@ -51,13 +52,13 @@ export const luggageEvents: TripEvent[] = [
   event({
     id: 'luggage-narita-sameday',
     kind: 'transport',
-    title: '🧳 לשלוח את המזוודות מנריטה למלון (SAGAWA, באותו יום)',
+    title: '🧳 המזוודות איתנו מנריטה (N’EX → Tokyo → Shinagawa)',
     time: '14:00',
     end: null,
     date: '2037-11-03',
     city: 'טוקיו',
     place: 'Narita International Airport Terminal 1',
-    note: 'באולם ההגעה של טרמינל 1 יש דלפק SAGAWA (佐川急便) שמוביל מזוודות באותו יום למלונות ב־Minato, ובו Shinagawa Prince. לא מזמינים מראש: ניגשות לדלפק, נותנות את שם המלון ומשלמות. צריך להגיע לדלפק עד 14:00 — עם נחיתה ב־13:25 זה צפוף, אז ללכת לדלפק מיד אחרי המכס. מחיר לפי סכום שלוש הצלעות, כולל ¥660 עמלת שדה: עד 140 ס״מ ¥2,840, עד 160 ס״מ ¥3,650 (לפי האתר של SAGAWA ב־2.11.2026). המשלוח מגיע למלון מ־16:00 בערך, כך שאם תגיעו לפני כן — המזוודות עוד בדרך. לפי השאלות הנפוצות של המלון כותבים על הטופס: תאריך הלינה, שם ההזמנה, טלפון ושם המגדל (Tower), ומשלמות מראש — לא בתשלום בקבלה. המזוודות מחכות בקבלה של המלון, ואתן אוכלות ב־T’s Tantan בלי לגרור אותן. אם פספסתן את 14:00 — לוקחות אותן איתכן לארוחה (יש לוקרים ושמירת חפצים בתחנת Tokyo) ולמלון.',
+    note: 'לא שולחות מהשדה: דלפק SAGAWA שמוביל למלון באותו יום מקבל מזוודות רק עד 14:00, ועם נחיתה ב־13:25, ביקורת דרכונים ואיסוף מזוודות זה לא מציאותי. לכן המזוודות נוסעות איתכן ב־N’EX (יש מקום למזוודות בקצה הקרון). בתחנת Tokyo, אם המקום ב־T’s Tantan צפוף, אפשר להשאיר אותן בשמירת החפצים של GRANSTA או בלוקר בתוך השערים, ואז להמשיך ל־Shinagawa (צ׳ק־אין מ־15:00). רק אם במקרה יצאתן לאולם ההגעה לפני 14:00 — אפשר עדיין לשלוח בדלפק SAGAWA (עד 160 ס״מ ¥3,650, מגיע למלון מ־16:00 בערך; על הטופס: תאריך הלינה, שם ההזמנה, טלפון ושם המגדל).',
   }),
   event({
     id: 'luggage-to-kobe',

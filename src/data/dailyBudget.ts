@@ -84,7 +84,6 @@ export const dailyBudget: DailyDay[] = [
     foodBudget: 8000,
     rides: 3750,
     notSuica: 3140,
-    luggage: { yen: 2840, note: 'SAGAWA מנריטה (עד 140 ס״מ)' },
     tip: 'קונות את ערכת המטבח כבר היום, כדי לבשל מהערב הראשון.',
   },
   {

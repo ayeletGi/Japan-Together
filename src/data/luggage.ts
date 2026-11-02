@@ -24,7 +24,10 @@ import type { TripEvent } from './types';
  *   kimono morning). Correction 2.11.2026 (checked by us on Yamato's official site): Yamato has same-day
  *   delivery from Kobe to parts of Osaka, and Naniwa ward (Namba) is in the service area. It depends on
  *   the drop-off point, the hand-in time and the bag, and there is no promised arrival time. CANDEO
- *   Osaka Namba asks to be told ahead when luggage is sent before arrival. So it is an option only once
+ *   Osaka Namba asks to be told ahead when luggage is sent before arrival (its official FAQ). Re-checked
+ *   2.11.2026 on Yamato's baggage pages (search snippets; the pages themselves could not be opened from
+ *   here): same-day is handed in at listed Yamato offices, e.g. Kobe Flower Road with an 11:00 cutoff,
+ *   bags up to 200 cm; it is not clear that a hotel desk pickup counts. So it is an option only once
  *   both hotels confirm; until then, plan on the train.
  */
 
@@ -74,7 +77,7 @@ export const luggageEvents: TripEvent[] = [
     date: '2037-11-08',
     city: 'אוסקה',
     place: 'CANDEO HOTELS Osaka Namba',
-    note: 'ברירת המחדל: לוקחות את המזוודות ב־Hanshin ישר ל־Osaka-Namba (כ־40 דקות), משאירות בדלפק לפני ארוחת הצהריים, ונכנסות לחדר ב־15:00. אופציה: ל־Yamato יש משלוח באותו יום מקובה לחלקים מאוסקה, ו־Namba (רובע Naniwa) באזור השירות — אבל זה תלוי בנקודת המסירה, בשעת הקבלה ובמזוודה, ואין התחייבות לשעת הגעה. משלוח רגיל (למחרת) יגיע רק ב־9.11, בוקר הקימונו. לבנות על זה רק אחרי אישור משני המלונות: CANDEO Kobe מאשר שאפשר למסור ב־8.11 בבוקר ושהמזוודות יגיעו באותו יום, ו־CANDEO Osaka Namba מבקש שיודיעו לו מראש. בלי שני האישורים — ברכבת. אם שולחות: תיק קטן עם מה שצריך עד הערב.',
+    note: 'ברירת המחדל: לוקחות את המזוודות ב־Hanshin ישר ל־Osaka-Namba (כ־40 דקות), משאירות בדלפק לפני ארוחת הצהריים, ונכנסות לחדר ב־15:00. אופציה: ל־Yamato יש משלוח באותו יום מקובה לחלקים מאוסקה, ו־Namba (רובע Naniwa) באזור השירות — אבל זה תלוי בנקודת המסירה, בשעת הקבלה ובמזוודה, ואין התחייבות לשעת הגעה. לפי Yamato מוסרים בסניפים מסוימים (למשל Kobe Flower Road, עד 11:00, עד 200 ס״מ), ולא ברור שמסירה בדלפק המלון נחשבת. משלוח רגיל (למחרת) יגיע רק ב־9.11, בוקר הקימונו. לבנות על זה רק אחרי אישור משני המלונות: CANDEO Kobe מאשר שאפשר למסור ב־8.11 בבוקר ושהמזוודות יגיעו באותו יום, ו־CANDEO Osaka Namba מבקש שיודיעו לו מראש. בלי שני האישורים — ברכבת. אם שולחות: תיק קטן עם מה שצריך עד הערב.',
   }),
   event({
     id: 'luggage-to-omori',
